@@ -1,16 +1,16 @@
-node_modules
-dist
-.vite
-.DS_Store
-*.local
-.vscode/*
-!.vscode/extensions.json
-
-# PPT 与提取缓存（体积大，不进仓库）
-*.pptx
-*.ppt
-scripts/pptx_extracted.json
-
-# Office 临时锁文件
-~$*
-*.tmp
+node_modules
+dist
+.vite
+.DS_Store
+*.local
+.vscode/*
+!.vscode/extensions.json
+
+# PPT 与提取缓存（体积大，不进仓库）
+*.pptx
+*.ppt
+scripts/pptx_extracted.json
+
+# Office 临时锁文件
+~$*
+*.tmp
