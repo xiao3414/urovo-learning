@@ -1,0 +1,1 @@
+import{j as a,T as o}from"./trainingContent-Bc9tk3Md.js";import{h as e,f as n,o as t}from"./index-DFMSPbXe.js";const p={__name:"内部协作",setup(r){return(l,s)=>(t(),e(o,{content:n(a),"page-id":"collaboration","intro-label":"协作指南"},null,8,["content"]))}};export{p as default};

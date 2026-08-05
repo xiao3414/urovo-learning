@@ -1,0 +1,1 @@
+import{i as t,T as e}from"./trainingContent-Bc9tk3Md.js";import{h as n,f as o,o as a}from"./index-DFMSPbXe.js";const p={__name:"物流",setup(r){return(s,i)=>(a(),n(e,{content:o(t),"page-id":"logistics","intro-label":"方案介绍"},null,8,["content"]))}};export{p as default};

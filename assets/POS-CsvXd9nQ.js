@@ -1,0 +1,1 @@
+import{b as e,T as o}from"./trainingContent-Bc9tk3Md.js";import{h as t,f as a,o as n}from"./index-DFMSPbXe.js";const i={__name:"POS",setup(r){return(c,s)=>(n(),t(o,{content:a(e),"page-id":"pos","intro-label":"产品介绍"},null,8,["content"]))}};export{i as default};

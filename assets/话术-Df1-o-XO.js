@@ -1,0 +1,1 @@
+import{h as e,T as t}from"./trainingContent-Bc9tk3Md.js";import{h as a,f as r,o as s}from"./index-DFMSPbXe.js";const _={__name:"话术",setup(n){return(o,c)=>(s(),a(t,{content:r(e),"page-id":"scripts"},null,8,["content"]))}};export{_ as default};

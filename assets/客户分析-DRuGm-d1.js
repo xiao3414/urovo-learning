@@ -1,0 +1,1 @@
+import{g as a,T as e}from"./trainingContent-Bc9tk3Md.js";import{h as s,f as n,o as t}from"./index-DFMSPbXe.js";const m={__name:"客户分析",setup(o){return(r,c)=>(t(),s(e,{content:n(a),"page-id":"customer-analysis"},null,8,["content"]))}};export{m as default};

@@ -1,0 +1,1 @@
+import{c as e,T as a}from"./trainingContent-Bc9tk3Md.js";import{h as t,f as n,o}from"./index-DFMSPbXe.js";const f={__name:"UMS",setup(r){return(s,c)=>(o(),t(a,{content:n(e),"page-id":"ums","intro-label":"平台介绍"},null,8,["content"]))}};export{f as default};

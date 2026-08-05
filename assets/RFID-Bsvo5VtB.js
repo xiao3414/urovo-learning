@@ -1,0 +1,1 @@
+import{a,T as e}from"./trainingContent-Bc9tk3Md.js";import{h as r,f as t,o as n}from"./index-DFMSPbXe.js";const _={__name:"RFID",setup(o){return(c,s)=>(n(),r(e,{content:t(a),"page-id":"rfid","intro-label":"产品介绍"},null,8,["content"]))}};export{_ as default};

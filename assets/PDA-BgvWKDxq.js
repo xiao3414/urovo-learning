@@ -1,0 +1,1 @@
+import{p as a,T as e}from"./trainingContent-Bc9tk3Md.js";import{h as t,f as n,o}from"./index-DFMSPbXe.js";const i={__name:"PDA",setup(r){return(c,p)=>(o(),t(e,{content:n(a),"page-id":"pda","intro-label":"产品介绍"},null,8,["content"]))}};export{i as default};

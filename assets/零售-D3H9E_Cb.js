@@ -1,0 +1,1 @@
+import{e,T as t}from"./trainingContent-Bc9tk3Md.js";import{h as a,f as n,o as r}from"./index-DFMSPbXe.js";const p={__name:"零售",setup(o){return(s,c)=>(r(),a(t,{content:n(e),"page-id":"retail","intro-label":"方案介绍"},null,8,["content"]))}};export{p as default};

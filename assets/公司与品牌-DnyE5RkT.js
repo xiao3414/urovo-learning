@@ -1,0 +1,1 @@
+import{f as a,T as e}from"./trainingContent-Bc9tk3Md.js";import{h as n,f as o,o as t}from"./index-DFMSPbXe.js";const m={__name:"公司与品牌",setup(r){return(s,c)=>(t(),n(e,{content:o(a),"page-id":"company","intro-label":"知识要点"},null,8,["content"]))}};export{m as default};

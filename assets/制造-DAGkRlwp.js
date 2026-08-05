@@ -1,0 +1,1 @@
+import{d as n,T as a}from"./trainingContent-Bc9tk3Md.js";import{h as t,f as r,o as e}from"./index-DFMSPbXe.js";const f={__name:"制造",setup(o){return(c,s)=>(e(),t(a,{content:r(n),"page-id":"manufacturing","intro-label":"方案介绍"},null,8,["content"]))}};export{f as default};
