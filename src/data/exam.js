@@ -17,6 +17,8 @@ export const examQuestions = [
   { id: 13, category: '异议处理', question: '客户说"价格太贵"，最佳回应是？', options: ['直接降价', '算 ROI/TCO 长期价值', '不回应', '攻击竞品'], answer: 1, explain: '用 ROI 和总拥有成本分析，将焦点从单价转移到长期价值。' },
   { id: 14, category: 'Day3-4', question: '客户服务中心的主要职责是？', options: ['产品研发', '售后支持与客诉处理', '原材料采购', '财务审计'], answer: 1, explain: '客户服务中心负责售后支持、客诉处理等服务。' },
   { id: 15, category: '企业文化', question: '优博讯核心价值观是？', options: ['利润至上', '志存高远、脚踏实地', '快速迭代', '规模第一'], answer: 1, explain: '优博讯核心价值观：志存高远、脚踏实地。' },
+  { id: 16, category: '产品知识', question: 'DT66 旗舰 PDA 的屏幕尺寸是？', options: ['5.7 寸', '6.5 寸', '4 寸', '10.1 寸'], answer: 1, explain: '2026 全系产品介绍：DT66 为 6.5 寸高清全面屏旗舰 PDA。' },
+  { id: 17, category: '研发流程', question: 'PVT 阶段的全称是？', options: ['Product Verification Test 生产验证测试', 'Project Validation Test 项目验证', 'Production Version Test 量产版本', 'Plan Verification Test 计划验证'], answer: 0, explain: 'PVT = Production Verification Test，小批量生产验证阶段，之后进入 MP 量产。' },
 ]
 
 export const PASS_SCORE = 80

@@ -21,24 +21,30 @@ export const productPDA = {
       <li><strong>零售连锁</strong>：库存盘点、移动收银、货品追溯</li>
       <li><strong>医疗健康</strong>：护理药房管理、医保结算、处方核验</li>
     </ul>
-    <h3>代表产品</h3>
-    <h4>DT50 — 经典工业 PDA</h4>
-    <p>5.7 寸 HD+ 屏 · IP67 · 5000mAh · 1300W 后置 · 标距/远距扫描引擎 · 支持 RFID/指纹/身份证扩展</p>
-    <h4>RT40S — 远距扫描旗舰</h4>
-    <p>适合高位货架、物流分拣，远距扫描减少弯腰动作，拣货效率显著提升</p>
+    <h3>代表产品（2026 全系）</h3>
+    <h4>DT66 — 6.5 寸旗舰 PDA（新）</h4>
+    <p>6.5 寸高清全面屏 · 86.5% 屏占比 · 屏下+背部双 NFC · 可选 iToF 3D 体积测量 · 高通 8 核 2.4GHz · Android 13 · IP67 · 5000mAh 热插拔 · Wi-Fi 6E</p>
     <h4>DT630 — 企业级智能手机</h4>
-    <p>Android 15 · 8 核 2.5GHz · 内置 UHF RFID（1.2m 批量识读 ≥50 标签/秒）· 5G · Wi-Fi 6E · IP68</p>
-    <h4>UPad — 智能商业平板</h4>
-    <p>11 寸 · 7mm 纤薄 · 条码+RFID 一体 · SoftPOS/NFC/扫码支付 · 零售/酒店/餐饮全场景</p>
+    <p>Android 15 · 8 核 2.5GHz · 内置 UHF RFID（1.2m 批量识读 ≥50 标签/秒，Gen2X）· 5000 万像素后置 · 5G · Wi-Fi 6E · IP68 · 后置专业扫描引擎</p>
+    <h4>DT50 系列 — 经典工业 PDA</h4>
+    <p>5.7 寸 HD+ · IP67 · 5000mAh 热插拔 · 衍生型号：DT50 5G · DT50 DP（DPM 码专用）· DT50 Ex（防爆）· DT50 5G 开源鸿蒙版 · DT50B（身份证硬解）</p>
+    <h4>RT40S — 远距/冷链旗舰</h4>
+    <p>可选 15 米超远距扫描 · 冷链版 -30°C 可用（屏幕/扫描窗自加热）· IP68 · 5200mAh 热插拔 · 38 键全键盘 · Wi-Fi 6</p>
+    <h4>RT30 — 仓储物流内场专用</h4>
+    <p>3.5 寸 · Android 14 · ≥103dB 大喇叭 · 4900mAh 热插拔 · IP67 · 人体工学握把 · 适合分拣/内场作业</p>
+    <h4>DT510 — 5G 超值之选</h4>
+    <p>5.5 寸 · Android 13 · 5G 全网通 · 5000mAh · IP67 · AI 智能充电引擎</p>
+    <h4>其他系列</h4>
+    <p>CT48/CT58（轻量手持）· DT40（4 寸按键 PDA）· P8100P（10.1 寸工业平板）· U2S（穿戴式 4 寸）· UPad（11 寸商业平板）</p>
     <h3>产品矩阵概览</h3>
-    <p>优博讯覆盖全触屏 PDA、按键 PDA、RFID 手持、穿戴式、工业平板、打印机、扫描枪等全系列 AIDC 产品。<strong>PDA 出货量全球第二、中国第一</strong>（VDC 数据）。</p>
+    <p>优博讯覆盖全触屏 PDA、按键 PDA、RFID 手持、穿戴式、工业平板、打印机、扫描枪等全系列 AIDC 产品。<strong>PDA 出货量全球第二、中国第一</strong>（2024 VDC 数据）。</p>
   `,
   specs: [
-    { label: '明星型号', value: 'DT50 / RT40S / DT630 / i6310' },
-    { label: '操作系统', value: 'Android 11 ~ 15' },
-    { label: '防护等级', value: 'IP65 ~ IP68，1.5m 跌落' },
-    { label: '扫描能力', value: '一维/二维/DPM/远距 DSM' },
-    { label: '扩展配件', value: 'RFID 手柄、扫描手柄、座充、保护套' },
+    { label: '明星型号', value: 'DT66 / DT630 / DT50 系列 / RT40S / RT30' },
+    { label: '操作系统', value: 'Android 11 ~ 15 / OpenHarmony 5.0' },
+    { label: '防护等级', value: 'IP65 ~ IP68，1.5~1.8m 跌落' },
+    { label: '扫描能力', value: '一维/二维/DPM/远距 15m/屏幕码' },
+    { label: '特殊版本', value: '防爆 Ex · 冷链 -30°C · 身份证硬解 · DPM' },
     { label: '资料库', value: 'file.urovo.com（OA 登录）' },
   ],
   scripts: [
@@ -72,10 +78,11 @@ export const productRFID = {
     </ul>
     <h3>核心能力</h3>
     <ul>
-      <li>UHF 860-960MHz，读取距离 0.5~8 米可调</li>
-      <li>批量读取 200+ 标签/秒，穿透包装</li>
-      <li>终端：DT50U 手持 · FR1000/FR2000 固定式读写器</li>
-      <li>DT630 内置 UHF：1.2m 内 ≥50 标签/秒，支持 Impinj Gen2X</li>
+      <li>UHF 860-960MHz，读取距离 0.5~20 米（机型不同）</li>
+      <li>批量读取最高 1300+ 标签/秒（RFG91/DT50U Lite，Impinj E710/Gen2X）</li>
+      <li><strong>手持终端</strong>：DT50U（20m+ / 9000mAh）· DT50U Lite（498g 轻便）· DT50D（内置 UHF）· DT630（内置 1.2m）</li>
+      <li><strong>RFID 手柄</strong>：RFG91（条码+RFID 三模式，390g，15m+）</li>
+      <li><strong>固定/桌面式</strong>：FR1000（8 天线，1000+ 张/秒）· FR2000（零售结算）· FR7000（6/9dBi 一体式）</li>
     </ul>
     <h3>典型场景</h3>
     <ul>
@@ -85,10 +92,11 @@ export const productRFID = {
     </ul>
   `,
   specs: [
-    { label: '手持终端', value: 'DT50U / DT630（内置 UHF）' },
-    { label: '固定读写', value: 'FR1000 智能固定 / FR2000 桌面' },
+    { label: '手持终端', value: 'DT50U / DT50U Lite / DT50D / DT630' },
+    { label: 'RFID 手柄', value: 'RFG91（1300+ 张/秒，15m+）' },
+    { label: '固定读写', value: 'FR1000 / FR2000 / FR7000 系列' },
     { label: '协议', value: 'EPC C1G2 / ISO 18000-6C / Gen2X' },
-    { label: '混合方案', value: '条码 + RFID 二合一设备' },
+    { label: '混合方案', value: '条码 + RFID 二合一 / RFG91 手柄扩展' },
   ],
   scripts: [
     { scene: '需求挖掘', content: 'X总，贵司盘点一次要多少人、多长时间？RFID 同样工作量可能只需原来的 1/10，且不需要逐件扫码。' },
@@ -242,7 +250,7 @@ export const industryLogistics = {
       <li>收款 → POS / 云音箱</li>
     </ul>
     <h3>推荐产品</h3>
-    <p>RT40S（远距拣货）· DT50（通用仓储）· i9000S（揽派一体）· 便携打印机 · Q1500 云音箱</p>
+    <p>RT30（内场专用）· RT40S（远距/冷链拣货）· DT50/DT66（通用仓储）· i9000S（揽派一体）· 便携打印机 · Q1500 云音箱</p>
   `,
   specs: [
     { label: '核心场景', value: '揽收/分拣/拣货/派件/签收' },
@@ -255,7 +263,7 @@ export const industryLogistics = {
   ],
   faqs: [
     { q: '冷链能用吗？', a: '有宽温版（-20°C ~ 60°C），适合冷库和常温混合作业。' },
-    { q: '大促撑得住吗？', a: '头部电商仓储中心 1000+ 台 RT40 部署，大促处理能力提升 40%。' },
+    { q: '大促撑得住吗？', a: 'RT40S 可选 15 米远距扫描，冷链版支持 -30°C。头部电商仓储 1000+ 台部署，大促处理能力提升 40%。' },
   ],
   cases: [
     { customer: '电商仓储中心', industry: '物流', challenge: '大促拣货瓶颈', solution: '1000 台 RT40S + 定制 APP', result: '处理能力提升 40%' },
@@ -349,6 +357,14 @@ export const salesCompany = {
       <li><strong>行业覆盖</strong>：物流、零售、制造、金融、医疗、政务等</li>
       <li><strong>上市平台</strong>：深交所创业板（300531）</li>
     </ul>
+    <h3>公司规模（2026）</h3>
+    <ul>
+      <li><strong>UEE 云平台</strong>：活跃设备 400 万+</li>
+      <li><strong>全球布局</strong>：产品覆盖 100+ 国家和地区，100+ 分支机构与售后网点</li>
+      <li><strong>生态伙伴</strong>：500+ 全球分销商、集成商与合作伙伴</li>
+      <li><strong>制造能力</strong>：工厂 7.8 万+ 平方米，年产能 800 万+ 台</li>
+      <li><strong>团队规模</strong>：1500+ 员工</li>
+    </ul>
     <h3>发展里程碑</h3>
     <ul>
       <li>2006 — 国内第一款 PDA，推动物流数字化</li>
@@ -357,6 +373,7 @@ export const salesCompany = {
       <li>2019 — 发布 Safedroid OS 安全操作系统</li>
       <li>2020 — 联合高通推出国内首款 5G 旗舰 PDA</li>
       <li>2021 — 发布 UEE 行业生态平台</li>
+      <li>2024 — 全球 PDA 出货量第二、中国第一；RT40 和 DT50 5G 获德国红点奖</li>
       <li>2023 — 海外业务高速增长，国内市场份额连续第一</li>
     </ul>
     <h3>销售必备资源</h3>
@@ -376,8 +393,9 @@ export const salesCompany = {
   `,
   specs: [
     { label: '定位', value: '全球领先 IoT 数字化方案提供商' },
-    { label: '股票代码', value: '300531（深交所）' },
-    { label: '核心优势', value: 'PDA 全球第二/中国第一' },
+    { label: '股票代码', value: '300531（深交所创业板）' },
+    { label: '市场地位', value: 'PDA 全球第二 / 中国第一（2024 VDC）' },
+    { label: 'UEE 平台', value: '400 万+ 活跃设备' },
   ],
   scripts: [
     { scene: '公司介绍', content: '优博讯专注 AIDC 领域 20 年，PDA 出货量中国第一。我们提供从硬件到软件到云服务的完整方案，服务了顺丰、京东物流等头部客户。' },
@@ -468,6 +486,24 @@ export const salesCollaboration = {
   title: '内部协作指南',
   subtitle: '销售过程中找谁 · 怎么走流程',
   intro: `
+    <h3>产品研发流程（销售必知）</h3>
+    <p>了解 IPD 研发流程，有助于管理客户对新品的预期、样机交付节奏和量产时间。</p>
+    <ul>
+      <li><strong>概念与规划</strong>：市场调研、立项论证 → 概念决策评审（CDCP）</li>
+      <li><strong>设计与开发</strong>：架构设计、样机制作 → 计划决策评审（PDCP）</li>
+      <li><strong>验证与测试</strong>：DVT/PVT 测试 → 量产决策评审（LRR）</li>
+      <li><strong>发布与量产</strong>：产线调试、正式上市、早期生产遏制（EPC）</li>
+      <li><strong>生命周期管理</strong>：版本迭代、市场反馈、产品退市</li>
+    </ul>
+    <h4>样机阶段缩写（与客户沟通常用）</h4>
+    <ul>
+      <li><strong>EVT</strong>：工程验证（原型样机）</li>
+      <li><strong>DVT</strong>：设计验证（工程样机）</li>
+      <li><strong>PVT</strong>：生产验证（小批量）</li>
+      <li><strong>MP</strong>：量产</li>
+    </ul>
+    <h4>跨职能角色</h4>
+    <p>产品经理（PM）定价值方向 · 研发（R&D）做技术实现 · 测试（TE）保质量 · 项目经理（PjM）控交付 · 供应链保物料齐套</p>
     <h3>组织架构（销售相关）</h3>
     <ul>
       <li><strong>营销中心</strong>：销售部 · 渠道部 · 行业大客户部 · 海外事业部</li>
