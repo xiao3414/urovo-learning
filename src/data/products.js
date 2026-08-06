@@ -1,7 +1,4 @@
-/**
- * 产品图鉴 - 单品数据（图片 / 参数 / 场景）
- * 数据来源：优博讯全系列产品介绍 PPT（20260131）
- */
+/** 产品图鉴数据 */
 
 export const productCategories = [
   { id: 'all', title: '全部' },

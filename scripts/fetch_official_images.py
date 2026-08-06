@@ -1,8 +1,7 @@
-"""Download official Urovo product images, compress to WebP, remove legacy PNG/JPG."""
+"""从优博讯官网下载产品图，压缩为 WebP 写入 public/products/。"""
 from __future__ import annotations
 
 import json
-import re
 import subprocess
 import sys
 import urllib.request
@@ -13,14 +12,13 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "public" / "products"
 MAP_FILE = ROOT / "scripts" / "official_image_urls.json"
 
-UA = (
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-)
-HEADERS = {"User-Agent": UA, "Referer": "https://www.urovo.com/"}
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0",
+    "Referer": "https://www.urovo.com/",
+}
 
-# 已验证的官网大图（优先 /image/ 画廊、产品详情页主图）
-OFFICIAL_SOURCES: dict[str, str] = {
+# 官网大图 URL（youboxunguanwang / enoss / en-urovo CDN）
+SOURCES: dict[str, str] = {
     "dt630": "https://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2026-03-27/69c6446ee8efd.png",
     "dt66": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2024-06-13/666aa37e1b6b6.jpg",
     "dt50": "https://enoss.urovo.com/images/dt50/DT50_04.jpg",
@@ -61,123 +59,38 @@ OFFICIAL_SOURCES: dict[str, str] = {
     "s710": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/newproduct/pimages/s710/S710_01.png",
 }
 
-# 官网暂无独立产品页，从 git 中的 PPT 原图压缩（仅作兜底）
-GIT_PPT_FALLBACK = {"d9100", "q1500"}
-
-PRODUCT_PAGES_CN: dict[str, str] = {
-    "dt66": "/products/mobile/DT66.html",
-    "dt50": "/products/mobile/DT50.html",
-    "dt50-5g": "/products/mobile/dt505g.html",
-    "dt50-5g-harmony": "/products/mobile/DT505GOpenHarmony.html",
-    "rt40s": "/products/mobile/rt40s.html",
-    "ct48": "/products/mobile/CT48C.html",
-    "ct58": "/products/mobile/CT58.html",
-    "p8100p": "/products/tablets/P8100P.html",
-    "u2s": "/products/Wearable/U2S.html",
-    "dt50u": "/products/rfid/DT50U.html",
-    "dt50u-lite": "/products/rfid/DT50PLite.html",
-    "rfg91": "/products/rfid/RFG91.html",
-    "fr1000": "/products/rfid/FR1000.html",
-    "fr2000": "/products/rfid/FR2000.html",
-    "fr7000": "/products/rfid/FR7000.html",
-    "d81r": "/products/rfid/D81R%E7%B3%BB%E5%88%97.html",
-    "k329": "/products/printer/k329.html",
-    "k419": "/products/printer/K419.html",
-    "d7100": "/products/printer/d7100.html",
-    "d8100-plus": "/products/printer/d8100plus.html",
-    "k388-pro": "/products/printer/K388Pro.html",
-    "i9000s": "/products/payment/i9000s1.html",
-    "q200": "/products/scanner/Q200.html",
-    "k200": "/products/scanner/K200.html",
-    "k220": "/products/scanner/K220.html",
-    "s716": "/products/scanner/S716.html",
-    "s710": "/products/scanner/S710.html",
-}
-
-PRODUCT_PAGES_EN: dict[str, str] = {
-    "dt630": "/products/handheld-mobile-computer/DT630.html",
-    "dt50": "/products/handheld-mobile-computer/DT50.html",
-    "dt50-5g": "/products/handheld-mobile-computer/DT505G.html",
-    "dt40": "/products/handheld-mobile-computer/DT40.html",
-    "rt30": "/products/mobile/RT30.html",
-    "dt510": "/products/handheld-mobile-computer/DT510.html",
-    "p8100": "/products/rugged-tablets/P8100.html",
-    "dt50u-lite": "/products/Handheld-RFID-Reader/DT50PLite.html",
-    "k329": "/products/printer/K329.html",
-    "k419": "/products/printer/K419.html",
-    "sr5600": "/products/wearable-computer/SR5600.html",
-}
+# 官网无产品页，从 git 历史 PPT 原图压缩
+GIT_FALLBACK = {"d9100", "q1500"}
 
 
-def fetch(url: str) -> bytes:
+def download(url: str) -> bytes:
     url = url.replace("http://", "https://")
     req = urllib.request.Request(url, headers=HEADERS)
     with urllib.request.urlopen(req, timeout=60) as resp:
         data = resp.read()
     if len(data) < 8000:
-        raise ValueError(f"image too small ({len(data)} bytes): {url}")
+        raise ValueError(f"too small ({len(data)} B): {url}")
     return data
 
 
-def fetch_git_png(product_id: str) -> bytes:
-    result = subprocess.run(
+def download_git_png(product_id: str) -> bytes:
+    r = subprocess.run(
         ["git", "show", f"HEAD:public/products/{product_id}.png"],
         cwd=ROOT,
         capture_output=True,
         check=False,
     )
-    if result.returncode != 0 or len(result.stdout) < 8000:
-        raise ValueError(f"no git png fallback for {product_id}")
-    return result.stdout
+    if r.returncode != 0 or len(r.stdout) < 8000:
+        raise ValueError(f"no git png for {product_id}")
+    return r.stdout
 
 
-def gallery_image(page_url: str) -> str | None:
-    req = urllib.request.Request(page_url, headers=HEADERS)
-    html = urllib.request.urlopen(req, timeout=30).read().decode("utf-8", "ignore")
-    if len(html) < 50000:
-        return None
-    imgs = re.findall(
-        r"https?://[^\"']+/image/[^\"']+\.(?:jpg|jpeg|png|webp)",
-        html,
-        re.I,
-    )
-    for u in imgs:
-        u = u.split("?")[0].replace("http://", "https://")
-        if "logo" not in u.lower():
-            return u
-    return None
-
-
-def resolve_source(product_id: str) -> tuple[str, str]:
-    if product_id in GIT_PPT_FALLBACK:
-        return "git-ppt", f"HEAD:public/products/{product_id}.png"
-
-    if product_id in OFFICIAL_SOURCES:
-        return "manual", OFFICIAL_SOURCES[product_id]
-
-    for base, pages in [
-        ("https://www.urovo.com", PRODUCT_PAGES_CN),
-        ("https://en.urovo.com", PRODUCT_PAGES_EN),
-    ]:
-        path = pages.get(product_id)
-        if not path:
-            continue
-        try:
-            g = gallery_image(base + path)
-            if g:
-                return "gallery", g
-        except Exception:
-            pass
-
-    raise ValueError(f"no official source for {product_id}")
-
-
-def save_webp(data: bytes, dest: Path, max_width: int, quality: int) -> None:
+def to_webp(data: bytes, dest: Path, max_width: int, quality: int) -> None:
     from PIL import Image
 
     img = Image.open(BytesIO(data))
     if img.width < 120 or img.height < 120:
-        raise ValueError(f"image too small: {img.size}")
+        raise ValueError(f"too small: {img.size}")
     if img.mode in ("RGBA", "P"):
         bg = Image.new("RGBA", img.size, (245, 247, 250, 255))
         rgba = img.convert("RGBA")
@@ -192,50 +105,45 @@ def save_webp(data: bytes, dest: Path, max_width: int, quality: int) -> None:
     img.save(dest, "WEBP", quality=quality, method=6)
 
 
-def main():
+def main() -> None:
     try:
         from PIL import Image  # noqa: F401
     except ImportError:
         subprocess.check_call([sys.executable, "-m", "pip", "install", "pillow", "-q"])
 
-    all_ids = sorted(set(OFFICIAL_SOURCES) | GIT_PPT_FALLBACK)
     results: dict = {}
+    ids = sorted(set(SOURCES) | GIT_FALLBACK)
 
-    for pid in all_ids:
-        print(f"[{pid}]")
+    for pid in ids:
+        print(pid, end=" ")
         try:
-            kind, source = resolve_source(pid)
-            raw = fetch_git_png(pid) if kind == "git-ppt" else fetch(source)
-            thumb_path = OUT / f"{pid}.webp"
-            detail_path = OUT / f"{pid}-detail.webp"
-            save_webp(raw, thumb_path, max_width=360, quality=78)
-            save_webp(raw, detail_path, max_width=720, quality=82)
+            if pid in GIT_FALLBACK:
+                raw = download_git_png(pid)
+                source = f"git:public/products/{pid}.png"
+            else:
+                source = SOURCES[pid]
+                raw = download(source)
+            thumb = OUT / f"{pid}.webp"
+            detail = OUT / f"{pid}-detail.webp"
+            to_webp(raw, thumb, 360, 78)
+            to_webp(raw, detail, 720, 82)
             results[pid] = {
-                "source_kind": kind,
                 "source": source,
-                "thumb_kb": round(thumb_path.stat().st_size / 1024, 1),
-                "detail_kb": round(detail_path.stat().st_size / 1024, 1),
+                "thumb_kb": round(thumb.stat().st_size / 1024, 1),
+                "detail_kb": round(detail.stat().st_size / 1024, 1),
             }
-            print(
-                f"  ok {kind} thumb={results[pid]['thumb_kb']}KB "
-                f"detail={results[pid]['detail_kb']}KB"
-            )
+            print(f"OK {results[pid]['thumb_kb']}+{results[pid]['detail_kb']} KB")
         except Exception as e:
-            print(f"  FAILED: {e}")
+            print(f"FAIL {e}")
             results[pid] = {"error": str(e)}
 
-    removed = 0
-    if OUT.exists():
-        for f in OUT.iterdir():
-            if f.suffix.lower() in (".png", ".jpg", ".jpeg", ".svg") and f.is_file():
-                f.unlink()
-                removed += 1
-    print(f"removed {removed} legacy image files")
+    for f in OUT.glob("*"):
+        if f.suffix.lower() in {".png", ".jpg", ".jpeg", ".svg"}:
+            f.unlink()
 
     MAP_FILE.write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
-    ok = [p for p in results if "error" not in results[p]]
-    total_kb = sum(results[p]["thumb_kb"] + results[p]["detail_kb"] for p in ok)
-    print(f"\nDone {len(ok)}/{len(all_ids)} products, total WebP ~{total_kb:.0f}KB")
+    ok = sum(1 for v in results.values() if "error" not in v)
+    print(f"\n{ok}/{len(ids)} done")
 
 
 if __name__ == "__main__":

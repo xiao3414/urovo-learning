@@ -6,12 +6,13 @@ dist
 .vscode/*
 !.vscode/extensions.json
 
-# PPT 与提取缓存（体积大，不进仓库）
+# PPT 与提取缓存
 *.pptx
 *.ppt
+scripts/pptx_extract/
 scripts/pptx_extracted.json
 scripts/wxwork_extracted.json
-scripts/pptx_extract/
+scripts/official_image_urls.json
 
 # Office 临时锁文件
 ~$*
