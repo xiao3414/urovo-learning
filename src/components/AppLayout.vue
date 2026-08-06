@@ -17,7 +17,7 @@
         <el-progress
           :percentage="progressStore.progressPercent"
           :stroke-width="10"
-          :color="'#0052D9'"
+          :color="'var(--color-primary)'"
         />
       </div>
 
@@ -79,11 +79,11 @@ const currentTitle = computed(() => {
 }
 
 .sidebar {
-  background: #001529;
+  background: var(--color-sidebar);
   color: #fff;
   display: flex;
   flex-direction: column;
-  transition: width 0.3s;
+  transition: width var(--duration-normal) var(--ease-out);
   overflow: hidden;
 }
 
@@ -139,15 +139,17 @@ const currentTitle = computed(() => {
 }
 
 .main-header {
-  background: #fff;
-  border-bottom: 1px solid #ebeef5;
+  background: var(--color-bg-elevated);
+  border-bottom: 1px solid var(--color-border);
   display: flex;
   align-items: center;
-  padding: 0 24px;
+  padding: 0 var(--space-6);
+  height: var(--header-height);
 }
 
 .main-content {
-  padding: 24px;
+  padding: var(--space-6);
   overflow-y: auto;
+  background: var(--color-bg);
 }
 </style>

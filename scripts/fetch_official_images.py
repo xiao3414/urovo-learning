@@ -21,25 +21,21 @@ HEADERS = {
 SOURCES: dict[str, str] = {
     "dt630": "https://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2026-03-27/69c6446ee8efd.png",
     "dt66": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2024-06-13/666aa37e1b6b6.jpg",
-    "dt50": "https://enoss.urovo.com/images/dt50/DT50_04.jpg",
-    "dt50-5g": "https://enoss.urovo.com/product/dt50/images/DT505Gxn-m.jpg",
-    "dt50-dp": "https://enoss.urovo.com/images/dt50/DT50_04.jpg",
-    "dt50-ex": "https://enoss.urovo.com/images/dt50/DT50_04.jpg",
+    "dt50": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/images/dt50/DT50_02.jpg",
+    "dt50-5g": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/images/dt505g/DT505G_p1.png",
     "dt50-5g-harmony": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2024-06-25/667a6a0b87c2a.png",
-    "dt50b": "https://enoss.urovo.com/images/dt50/DT50_04.jpg",
     "rt30": "https://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2025-09-08/68be71a4a2f06.jpg",
     "dt40": "https://enoss.urovo.com/images/dt40/DT40_04.jpg",
     "rt40s": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2024-06-28/667e6fc453b88.jpg",
     "ct48": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2023-08-21/64e33b4bbc6b2.jpg",
     "ct58": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2023-05-27/6471ad1c785ed.jpg",
-    "dt510": "https://enoss.urovo.com/product/dt50/images/p1_pc.jpg",
     "p8100p": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2024-06-28/667e54d4b350e.png",
     "p8100": "https://enoss.urovo.com/newproduct/mimages/p8100/P8100_02.png",
     "u2s": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2025-03-05/67c7b0af46372.jpg",
     "sr5600": "https://enoss.urovo.com/product/SR5600/images/s1.png",
     "dt50u": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2025-02-19/67b58d7d11583.jpg",
     "dt50u-lite": "https://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2025-02-19/67b53cc56fd9e.png",
-    "dt50d": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2025-02-19/67b58d7d11583.jpg",
+    "dt50d": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/product/dt50d/p1_pc.png",
     "rfg91": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2026-04-17/69e203924b41a.jpg",
     "fr1000": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2025-02-21/67b81e31dbb2e.jpg",
     "fr2000": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2025-02-21/67b850b2ee31d.png",
@@ -47,7 +43,7 @@ SOURCES: dict[str, str] = {
     "d81r": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2024-01-12/65a0b34d6237e.png",
     "k329": "https://enoss.urovo.com/product/k329/images/p2.jpg",
     "k419": "https://enoss.urovo.com/newproduct/mimages/k419/k419_01.jpg",
-    "d7100": "https://www.urovo.com/Public/Mobile/images/img116.png",
+    "d7100": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/images/img121.jpg",
     "d8100-plus": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2024-06-18/66712bfd0c24c.jpg",
     "k388-pro": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2026-05-27/6a16b69ae3e2c.png",
     "i9000s": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2024-09-14/66e4e6780adf3.png",
@@ -59,8 +55,9 @@ SOURCES: dict[str, str] = {
     "s710": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/newproduct/pimages/s710/S710_01.png",
 }
 
-# 官网无产品页，从 git 历史 PPT 原图压缩
-GIT_FALLBACK = {"d9100", "q1500"}
+# 官网无独立产品页：从 git 历史 PPT 原图压缩（10d0462 提交中保留的产品实拍）
+GIT_FALLBACK = {"d9100", "q1500", "dt50-dp", "dt50-ex", "dt50b", "dt510"}
+GIT_PPT_REF = "10d0462"
 
 
 def download(url: str) -> bytes:
@@ -75,13 +72,13 @@ def download(url: str) -> bytes:
 
 def download_git_png(product_id: str) -> bytes:
     r = subprocess.run(
-        ["git", "show", f"HEAD:public/products/{product_id}.png"],
+        ["git", "show", f"{GIT_PPT_REF}:public/products/{product_id}.png"],
         cwd=ROOT,
         capture_output=True,
         check=False,
     )
     if r.returncode != 0 or len(r.stdout) < 8000:
-        raise ValueError(f"no git png for {product_id}")
+        raise ValueError(f"no git png for {product_id} @ {GIT_PPT_REF}")
     return r.stdout
 
 
@@ -119,7 +116,7 @@ def main() -> None:
         try:
             if pid in GIT_FALLBACK:
                 raw = download_git_png(pid)
-                source = f"git:public/products/{pid}.png"
+                source = f"git:{GIT_PPT_REF}:public/products/{pid}.png"
             else:
                 source = SOURCES[pid]
                 raw = download(source)
