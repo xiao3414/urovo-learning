@@ -9,6 +9,8 @@ const router = createRouter({
       component: AppLayout,
       children: [
         { path: '', name: 'home', component: () => import('@/views/HomeView.vue') },
+        { path: 'products', name: 'product-catalog', component: () => import('@/views/products/Catalog.vue') },
+        { path: 'products/:id', name: 'product-detail', component: () => import('@/views/products/Detail.vue') },
         { path: 'product/pda', name: 'pda', component: () => import('@/views/产品学习/PDA.vue') },
         { path: 'product/rfid', name: 'rfid', component: () => import('@/views/产品学习/RFID.vue') },
         { path: 'product/pos', name: 'pos', component: () => import('@/views/产品学习/POS.vue') },

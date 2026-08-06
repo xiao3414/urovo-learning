@@ -5,9 +5,10 @@
         <div class="welcome-text">
           <el-tag type="warning" effect="dark" size="small">销售新人专属</el-tag>
           <h2>优博讯销售培训学习平台</h2>
-          <p>产品知识 · 行业方案 · 销售话术 · 客户问题 · 成功案例 · 在线考试</p>
+          <p>产品图鉴 · 产品知识 · 行业方案 · 销售话术 · 在线考试</p>
           <div class="actions">
-            <el-button type="primary" size="large" @click="continueLearning">
+            <el-button type="primary" size="large" @click="$router.push('/products')">浏览产品图鉴</el-button>
+            <el-button size="large" @click="continueLearning">
               {{ lastPage ? '继续学习' : '开始学习' }}
             </el-button>
             <el-button size="large" @click="$router.push('/exam')">结业考试</el-button>
@@ -23,11 +24,11 @@
     </el-card>
 
     <el-row :gutter="16">
-      <el-col v-for="group in menuConfig.filter(g => g.children)" :key="group.id" :xs="24" :sm="12" :lg="8">
+      <el-col v-for="group in menuConfig.filter(g => g.children || g.path)" :key="group.id" :xs="24" :sm="12" :lg="8">
         <el-card shadow="hover" class="module-card" @click="startGroup(group)">
           <el-icon :size="28" color="#0052d9"><component :is="iconMap[group.icon]" /></el-icon>
           <h3>{{ group.title }}</h3>
-          <p>{{ group.children.length }} 个模块</p>
+          <p>{{ group.children ? `${group.children.length} 个模块` : '14 款产品' }}</p>
         </el-card>
       </el-col>
     </el-row>
@@ -37,13 +38,13 @@
 <script setup>
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
-import { Box, Monitor, OfficeBuilding, ChatDotRound } from '@element-plus/icons-vue'
+import { Box, Monitor, OfficeBuilding, ChatDotRound, Goods } from '@element-plus/icons-vue'
 import { menuConfig, allPages } from '@/data/menu'
 import { useProgressStore } from '@/stores/progress'
 
 const router = useRouter()
 const progressStore = useProgressStore()
-const iconMap = { Box, Monitor, OfficeBuilding, ChatDotRound }
+const iconMap = { Box, Monitor, OfficeBuilding, ChatDotRound, Goods }
 
 const lastPage = computed(() =>
   progressStore.lastVisited ? allPages.find((p) => p.id === progressStore.lastVisited) : null
@@ -54,6 +55,10 @@ function continueLearning() {
 }
 
 function startGroup(group) {
+  if (group.path) {
+    router.push(group.path)
+    return
+  }
   router.push(group.children[0].path)
 }
 </script>

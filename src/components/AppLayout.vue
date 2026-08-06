@@ -36,6 +36,9 @@
       <el-header class="main-header" height="56px">
         <el-breadcrumb separator="/">
           <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+          <el-breadcrumb-item v-if="route.name === 'product-detail'" :to="{ path: '/products' }">
+            产品图鉴
+          </el-breadcrumb-item>
           <el-breadcrumb-item v-if="currentTitle">{{ currentTitle }}</el-breadcrumb-item>
         </el-breadcrumb>
       </el-header>
@@ -53,6 +56,7 @@ import { Fold, Expand } from '@element-plus/icons-vue'
 import SidebarMenu from './SidebarMenu.vue'
 import { useProgressStore } from '@/stores/progress'
 import { allPages } from '@/data/menu'
+import { getProductById } from '@/data/products'
 
 const collapsed = ref(false)
 const route = useRoute()
@@ -60,6 +64,10 @@ const progressStore = useProgressStore()
 
 const currentTitle = computed(() => {
   if (route.name === 'home') return ''
+  if (route.name === 'product-catalog') return '产品图鉴'
+  if (route.name === 'product-detail') {
+    return getProductById(route.params.id)?.name || '产品详情'
+  }
   const page = allPages.find((p) => p.id === route.name)
   return page?.title || ''
 })

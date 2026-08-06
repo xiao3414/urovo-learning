@@ -43,7 +43,7 @@
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import {
-  Reading, Briefcase, TrendCharts, ChatDotRound, EditPen, CircleCheckFilled,
+  Box, Monitor, OfficeBuilding, ChatDotRound, EditPen, Goods, CircleCheckFilled,
 } from '@element-plus/icons-vue'
 import { menuConfig } from '@/data/menu'
 import { useProgressStore } from '@/stores/progress'
@@ -53,7 +53,7 @@ defineProps({ collapsed: Boolean })
 const route = useRoute()
 const progressStore = useProgressStore()
 
-const iconMap = { Reading, Briefcase, TrendCharts, ChatDotRound, EditPen }
+const iconMap = { Box, Monitor, OfficeBuilding, ChatDotRound, EditPen, Goods }
 const defaultOpeneds = menuConfig.filter((g) => g.children).map((g) => g.id)
 const activePath = computed(() => route.path)
 </script>

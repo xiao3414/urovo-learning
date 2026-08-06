@@ -3,13 +3,19 @@
  */
 export const menuConfig = [
   {
-    id: 'product',
+    id: 'catalog',
+    title: '产品图鉴',
+    icon: 'Goods',
+    path: '/products',
+  },
+  {
+    id: 'product-learn',
     title: '产品学习',
     icon: 'Box',
     children: [
-      { id: 'pda', title: 'PDA 数据采集终端', path: '/product/pda' },
-      { id: 'rfid', title: 'RFID 方案', path: '/product/rfid' },
-      { id: 'pos', title: 'POS 支付终端', path: '/product/pos' },
+      { id: 'pda', title: 'PDA 知识要点', path: '/product/pda' },
+      { id: 'rfid', title: 'RFID 知识要点', path: '/product/rfid' },
+      { id: 'pos', title: 'POS 知识要点', path: '/product/pos' },
     ],
   },
   {
