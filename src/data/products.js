@@ -20,7 +20,8 @@ export const productCatalog = [
     name: "DT630",
     subtitle: "企业级智能手机 · 移动作业新基准",
     category: "pda",
-    image: `${import.meta.env.BASE_URL}products/dt630.png`,
+    image: `${import.meta.env.BASE_URL}products/dt630.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/dt630-detail.webp`,
     highlight: "Android 15 · 内置 UHF RFID · 5000 万像素 · 5G",
     specs: [
       { label: "处理器", value: "8 核 2.5GHz · 独立 AI NPU" },
@@ -44,7 +45,8 @@ export const productCatalog = [
     name: "DT66",
     subtitle: "6.5 寸企业级旗舰智能数据终端",
     category: "pda",
-    image: `${import.meta.env.BASE_URL}products/dt66.png`,
+    image: `${import.meta.env.BASE_URL}products/dt66.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/dt66-detail.webp`,
     highlight: "86.5% 屏占比 · 双 NFC · 可选 iToF · Wi-Fi 6E",
     specs: [
       { label: "处理器", value: "八核 2.4GHz" },
@@ -68,7 +70,8 @@ export const productCatalog = [
     name: "DT50",
     subtitle: "经典工业 PDA · 企业级智能数据终端",
     category: "pda",
-    image: `${import.meta.env.BASE_URL}products/dt50.png`,
+    image: `${import.meta.env.BASE_URL}products/dt50.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/dt50-detail.webp`,
     highlight: "5.7 寸 · IP67 · 5000mAh · Wi-Fi 6 Ready",
     specs: [
       { label: "处理器", value: "八核 2.45GHz" },
@@ -91,7 +94,8 @@ export const productCatalog = [
     name: "DT50 5G",
     subtitle: "5G 企业级智能数据终端",
     category: "pda",
-    image: `${import.meta.env.BASE_URL}products/dt50-5g.png`,
+    image: `${import.meta.env.BASE_URL}products/dt50-5g.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/dt50-5g-detail.webp`,
     highlight: "5G 全网通 · Android 12 · 可选 18W 快充 · IP67",
     specs: [
       { label: "处理器", value: "八核 2.2GHz" },
@@ -115,7 +119,8 @@ export const productCatalog = [
     name: "DT50 DP",
     subtitle: "工业级 DPM 安全智能终端",
     category: "pda",
-    image: `${import.meta.env.BASE_URL}products/dt50-dp.png`,
+    image: `${import.meta.env.BASE_URL}products/dt50-dp.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/dt50-dp-detail.webp`,
     highlight: "专业 DPM 引擎 · 多光源照明 · Wi-Fi 6 Ready",
     specs: [
       { label: "处理器", value: "八核 2.45GHz" },
@@ -138,7 +143,8 @@ export const productCatalog = [
     name: "DT50 Ex",
     subtitle: "防爆智能终端",
     category: "pda",
-    image: `${import.meta.env.BASE_URL}products/dt50-ex.png`,
+    image: `${import.meta.env.BASE_URL}products/dt50-ex.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/dt50-ex-detail.webp`,
     highlight: "Ex ib IIC T4 Gb · IP67 · 5000mAh · 头部 NFC",
     specs: [
       { label: "处理器", value: "八核 2.45GHz" },
@@ -186,7 +192,8 @@ export const productCatalog = [
     name: "DT50B",
     subtitle: "身份证硬解终端",
     category: "pda",
-    image: `${import.meta.env.BASE_URL}products/dt50b.png`,
+    image: `${import.meta.env.BASE_URL}products/dt50b.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/dt50b-detail.webp`,
     highlight: "身份证硬解 · NFC · Wi-Fi 6 Ready · IP67",
     specs: [
       { label: "处理器", value: "八核 2.45GHz" },
@@ -210,7 +217,8 @@ export const productCatalog = [
     name: "RT30",
     subtitle: "仓储物流内场专用手持终端",
     category: "pda",
-    image: `${import.meta.env.BASE_URL}products/rt30.png`,
+    image: `${import.meta.env.BASE_URL}products/rt30.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/rt30-detail.webp`,
     highlight: "3.5 寸 · ≥103dB 喇叭 · Android 14 · 人体工学握把",
     specs: [
       { label: "处理器", value: "八核 2.0GHz" },
@@ -234,7 +242,8 @@ export const productCatalog = [
     name: "DT40",
     subtitle: "工业级智能数据终端",
     category: "pda",
-    image: `${import.meta.env.BASE_URL}products/dt40.png`,
+    image: `${import.meta.env.BASE_URL}products/dt40.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/dt40-detail.webp`,
     highlight: "4 寸 · 21 键键盘 · DPM 可选 · IP67",
     specs: [
       { label: "处理器", value: "八核 2.0GHz" },
@@ -258,7 +267,8 @@ export const productCatalog = [
     name: "RT40S",
     subtitle: "远距扫描 · 全键盘工业终端",
     category: "pda",
-    image: `${import.meta.env.BASE_URL}products/rt40s.png`,
+    image: `${import.meta.env.BASE_URL}products/rt40s.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/rt40s-detail.webp`,
     highlight: "可选 15m 超远距 · 冷链 -30°C · IP68 · 5200mAh",
     specs: [
       { label: "处理器", value: "八核 2.45GHz" },
@@ -282,7 +292,8 @@ export const productCatalog = [
     name: "CT48",
     subtitle: "轻巧工业级智能手持终端",
     category: "pda",
-    image: `${import.meta.env.BASE_URL}products/ct48.png`,
+    image: `${import.meta.env.BASE_URL}products/ct48.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/ct48-detail.webp`,
     highlight: "252g · 5000mAh · 25° 扫描视窗 · IP67",
     specs: [
       { label: "处理器", value: "八核 2.0GHz" },
@@ -306,7 +317,8 @@ export const productCatalog = [
     name: "CT58",
     subtitle: "工业级智能手持终端",
     category: "pda",
-    image: `${import.meta.env.BASE_URL}products/ct58.png`,
+    image: `${import.meta.env.BASE_URL}products/ct58.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/ct58-detail.webp`,
     highlight: "5.7 寸 HD+ · PDAF · 25° 扫描视窗 · IP65",
     specs: [
       { label: "处理器", value: "八核 2.45GHz" },
@@ -329,7 +341,8 @@ export const productCatalog = [
     name: "DT510",
     subtitle: "5G 智能数据终端 · 超值之选",
     category: "pda",
-    image: `${import.meta.env.BASE_URL}products/dt510.png`,
+    image: `${import.meta.env.BASE_URL}products/dt510.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/dt510-detail.webp`,
     highlight: "5G 全网通 · 5.5 寸 · AI 智能充电 · IP67",
     specs: [
       { label: "处理器", value: "八核 2.2GHz" },
@@ -352,7 +365,8 @@ export const productCatalog = [
     name: "P8100P",
     subtitle: "10.1 寸工业平板电脑",
     category: "tablet",
-    image: `${import.meta.env.BASE_URL}products/p8100p.png`,
+    image: `${import.meta.env.BASE_URL}products/p8100p.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/p8100p-detail.webp`,
     highlight: "10.1 寸 · 10000mAh · 专业扫描 · 4G/5G 可选",
     specs: [
       { label: "处理器", value: "八核 2.45GHz（4G）/ 2.4GHz（5G）" },
@@ -375,7 +389,8 @@ export const productCatalog = [
     name: "P8100",
     subtitle: "8 寸工业平板电脑",
     category: "tablet",
-    image: `${import.meta.env.BASE_URL}products/p8100.png`,
+    image: `${import.meta.env.BASE_URL}products/p8100.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/p8100-detail.webp`,
     highlight: "8 寸 · Wi-Fi 6 Ready · 物理按键 · IP67",
     specs: [
       { label: "处理器", value: "八核 2.45GHz" },
@@ -398,7 +413,8 @@ export const productCatalog = [
     name: "U2S",
     subtitle: "穿戴式企业智能终端",
     category: "wearable",
-    image: `${import.meta.env.BASE_URL}products/u2s.png`,
+    image: `${import.meta.env.BASE_URL}products/u2s.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/u2s-detail.webp`,
     highlight: "4 寸 · Wi-Fi 6E · 3500mAh 热插拔 · IP65",
     specs: [
       { label: "处理器", value: "八核 2.4GHz" },
@@ -421,7 +437,8 @@ export const productCatalog = [
     name: "SR5600",
     subtitle: "蓝牙无线指环扫描器",
     category: "scanner",
-    image: `${import.meta.env.BASE_URL}products/sr5600.png`,
+    image: `${import.meta.env.BASE_URL}products/sr5600.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/sr5600-detail.webp`,
     highlight: "75g · BT 5.3 · 80m 传输 · NFC 配对",
     specs: [
       { label: "传感器", value: "1280×1080 CMOS · 60fps" },
@@ -443,7 +460,8 @@ export const productCatalog = [
     name: "DT50U",
     subtitle: "超高频 RFID 智能手持终端",
     category: "rfid",
-    image: `${import.meta.env.BASE_URL}products/dt50u.png`,
+    image: `${import.meta.env.BASE_URL}products/dt50u.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/dt50u-detail.webp`,
     highlight: "20m+ 识读 · 1000+ 张/秒 · 9000mAh",
     specs: [
       { label: "处理器", value: "八核 2.0GHz · Android 11" },
@@ -466,7 +484,8 @@ export const productCatalog = [
     name: "DT50U Lite",
     subtitle: "轻便型 UHF RFID 手持终端",
     category: "rfid",
-    image: `${import.meta.env.BASE_URL}products/dt50u-lite.png`,
+    image: `${import.meta.env.BASE_URL}products/dt50u-lite.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/dt50u-lite-detail.webp`,
     highlight: "498g · 1300+ 张/秒 · 15m+ · 6500mAh",
     specs: [
       { label: "处理器", value: "高通八核 2.45GHz · Android 13" },
@@ -488,7 +507,8 @@ export const productCatalog = [
     name: "DT50D",
     subtitle: "便携式 UHF RFID 手持终端",
     category: "rfid",
-    image: `${import.meta.env.BASE_URL}products/dt50d.png`,
+    image: `${import.meta.env.BASE_URL}products/dt50d.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/dt50d-detail.webp`,
     highlight: "307g · 内置 UHF · 1.5m 批量识读 · IP67",
     specs: [
       { label: "处理器", value: "八核 2.0GHz · Android 11" },
@@ -511,7 +531,8 @@ export const productCatalog = [
     name: "RFG91",
     subtitle: "超高频 RFID 手柄 · 条码+RFID 三合一",
     category: "rfid",
-    image: `${import.meta.env.BASE_URL}products/rfg91.png`,
+    image: `${import.meta.env.BASE_URL}products/rfg91.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/rfg91-detail.webp`,
     highlight: "1300+ 张/秒 · 15m+ · 390g · 蓝牙扩展",
     specs: [
       { label: "芯片", value: "Impinj E710 · Gen2X" },
@@ -534,7 +555,8 @@ export const productCatalog = [
     name: "FR1000",
     subtitle: "固定式超高频 RFID 读写器",
     category: "rfid",
-    image: `${import.meta.env.BASE_URL}products/fr1000.png`,
+    image: `${import.meta.env.BASE_URL}products/fr1000.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/fr1000-detail.webp`,
     highlight: "1000+ 张/秒 · 8 天线 · PoE+ · Android 10",
     specs: [
       { label: "处理器", value: "八核 1.6GHz · Android 10" },
@@ -556,7 +578,8 @@ export const productCatalog = [
     name: "FR2000",
     subtitle: "桌面式 RFID 读写器 · 零售结算",
     category: "rfid",
-    image: `${import.meta.env.BASE_URL}products/fr2000.png`,
+    image: `${import.meta.env.BASE_URL}products/fr2000.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/fr2000-detail.webp`,
     highlight: "99.9% 识读 · 防窜读 · USB/PoE · 即插即用",
     specs: [
       { label: "频率", value: "840~960MHz · ISO18000-6C" },
@@ -578,7 +601,8 @@ export const productCatalog = [
     name: "FR7000",
     subtitle: "一体式超高频 RFID 读写器",
     category: "rfid",
-    image: `${import.meta.env.BASE_URL}products/fr7000.png`,
+    image: `${import.meta.env.BASE_URL}products/fr7000.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/fr7000-detail.webp`,
     highlight: "1000 张/秒 · 6/9dBi · 7~12m 读距 · IP65",
     specs: [
       { label: "芯片", value: "Impinj E710" },
@@ -600,7 +624,8 @@ export const productCatalog = [
     name: "D81R 系列",
     subtitle: "桌面式 RFID 打印机",
     category: "printer",
-    image: `${import.meta.env.BASE_URL}products/d81r.png`,
+    image: `${import.meta.env.BASE_URL}products/d81r.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/d81r-detail.webp`,
     highlight: "RFID 读写打印 · 203/300DPI · 智能校准",
     specs: [
       { label: "打印", value: "热敏/热转印 · 203/300DPI · 最大 4inch/s" },
@@ -621,7 +646,8 @@ export const productCatalog = [
     name: "K329",
     subtitle: "移动便携打印机",
     category: "printer",
-    image: `${import.meta.env.BASE_URL}products/k329.png`,
+    image: `${import.meta.env.BASE_URL}products/k329.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/k329-detail.webp`,
     highlight: "120mm/s · 双模蓝牙 · NFC · 72mm 宽",
     specs: [
       { label: "打印", value: "热敏 · 203DPI · 最大 120mm/s" },
@@ -642,7 +668,8 @@ export const productCatalog = [
     name: "K419",
     subtitle: "移动便携打印机",
     category: "printer",
-    image: `${import.meta.env.BASE_URL}products/k419.png`,
+    image: `${import.meta.env.BASE_URL}products/k419.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/k419-detail.webp`,
     highlight: "90mm/s · 110mm 纸宽 · 56mm 大纸仓",
     specs: [
       { label: "打印", value: "热敏 · 203DPI · 最大 90mm/s" },
@@ -663,7 +690,8 @@ export const productCatalog = [
     name: "D7100 系列",
     subtitle: "热转印桌面打印机",
     category: "printer",
-    image: `${import.meta.env.BASE_URL}products/d7100.png`,
+    image: `${import.meta.env.BASE_URL}products/d7100.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/d7100-detail.webp`,
     highlight: "152mm/s · 120mm 纸宽 · 200/300DPI",
     specs: [
       { label: "打印", value: "热转印 · 203DPI · 最大 125mm/s" },
@@ -683,7 +711,8 @@ export const productCatalog = [
     name: "D8100 Plus",
     subtitle: "热转印桌面打印机",
     category: "printer",
-    image: `${import.meta.env.BASE_URL}products/d8100-plus.png`,
+    image: `${import.meta.env.BASE_URL}products/d8100-plus.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/d8100-plus-detail.webp`,
     highlight: "203mm/s · TSPL/EPL/ZPL · 裁刀/剥纸器可选",
     specs: [
       { label: "处理器", value: "400MHz ARM9 · 128MB SDRAM/Flash" },
@@ -704,7 +733,8 @@ export const productCatalog = [
     name: "D9100 Plus",
     subtitle: "工业级打印机",
     category: "printer",
-    image: `${import.meta.env.BASE_URL}products/d9100.png`,
+    image: `${import.meta.env.BASE_URL}products/d9100.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/d9100-detail.webp`,
     highlight: "8 寸纸仓 · 450m 碳带 · 9.65kg 全金属",
     specs: [
       { label: "处理器", value: "400MHz ARM9 · 128MB SDRAM/Flash" },
@@ -746,7 +776,8 @@ export const productCatalog = [
     name: "i9000S",
     subtitle: "PDA-POS 二合一 · 智能移动 POS",
     category: "pos",
-    image: `${import.meta.env.BASE_URL}products/i9000s.png`,
+    image: `${import.meta.env.BASE_URL}products/i9000s.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/i9000s-detail.webp`,
     highlight: "揽件+支付+打印 · 8 核 · 5000mAh · 全支付受理",
     specs: [
       { label: "处理器", value: "八核 2.0GHz · Android 13" },
@@ -769,7 +800,8 @@ export const productCatalog = [
     name: "i9200",
     subtitle: "轻薄智能移动终端 · 非金/金融可选",
     category: "pos",
-    image: `${import.meta.env.BASE_URL}products/i9200.png`,
+    image: `${import.meta.env.BASE_URL}products/i9200.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/i9200-detail.webp`,
     highlight: "5.5 寸 · 400g · 58mm 打印 · 双模打印",
     specs: [
       { label: "处理器", value: "四核 2.0GHz · Android 13" },
@@ -791,7 +823,8 @@ export const productCatalog = [
     name: "Q1500",
     subtitle: "4G 云音箱 · 支付语音播报",
     category: "pos",
-    image: `${import.meta.env.BASE_URL}products/q1500.png`,
+    image: `${import.meta.env.BASE_URL}products/q1500.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/q1500-detail.webp`,
     highlight: "TTS 播报 · 4G Cat1 · Wi-Fi · 2000mAh",
     specs: [
       { label: "通信", value: "4G Cat1 · Wi-Fi" },
@@ -813,7 +846,8 @@ export const productCatalog = [
     name: "Q200",
     subtitle: "台式扫描盒 · 高效收银",
     category: "scanner",
-    image: `${import.meta.env.BASE_URL}products/q200.png`,
+    image: `${import.meta.env.BASE_URL}products/q200.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/q200-detail.webp`,
     highlight: "360° 扫码 · 自动感应 · 270g · 1.5m 跌落",
     specs: [
       { label: "摄像头", value: "640×480 CMOS · 30fps" },
@@ -835,7 +869,8 @@ export const productCatalog = [
     name: "K200",
     subtitle: "CODEK 有线工业扫描枪 · DPM 专用",
     category: "scanner",
-    image: `${import.meta.env.BASE_URL}products/k200.png`,
+    image: `${import.meta.env.BASE_URL}products/k200.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/k200-detail.webp`,
     highlight: "DPM 码 · IP54 · 1.8m 跌落 · ≥3mil 精度",
     specs: [
       { label: "传感器", value: "130 万像素 CMOS · 60 帧/秒" },
@@ -858,7 +893,8 @@ export const productCatalog = [
     name: "K220",
     subtitle: "无线工业扫描枪",
     category: "scanner",
-    image: `${import.meta.env.BASE_URL}products/k220.png`,
+    image: `${import.meta.env.BASE_URL}products/k220.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/k220-detail.webp`,
     highlight: "3200mAh · 25h 续航 · BT 5.0 · 100m 传输",
     specs: [
       { label: "电池", value: "3200mAh · 连续工作 25 小时" },
@@ -878,7 +914,8 @@ export const productCatalog = [
     name: "S716",
     subtitle: "无线扫描枪",
     category: "scanner",
-    image: `${import.meta.env.BASE_URL}products/s716.png`,
+    image: `${import.meta.env.BASE_URL}products/s716.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/s716-detail.webp`,
     highlight: "BT 4.2 + 2.4G · 2200mAh · 160g",
     specs: [
       { label: "传感器", value: "640×480 CMOS" },
@@ -900,7 +937,8 @@ export const productCatalog = [
     name: "S710",
     subtitle: "有线扫描枪",
     category: "scanner",
-    image: `${import.meta.env.BASE_URL}products/s710.png`,
+    image: `${import.meta.env.BASE_URL}products/s710.webp`,
+    imageDetail: `${import.meta.env.BASE_URL}products/s710-detail.webp`,
     highlight: "USB-HID · 360° 识读 · 185g · 1.8m 线",
     specs: [
       { label: "传感器", value: "640×480 CMOS · 水平 31°" },

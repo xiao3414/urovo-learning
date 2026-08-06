@@ -34,7 +34,14 @@
       >
         <el-card shadow="hover" class="product-card" @click="goDetail(item.id)">
           <div class="image-wrap">
-            <img :src="item.image" :alt="item.name" loading="lazy" />
+            <img
+              :src="item.image"
+              :alt="item.name"
+              loading="lazy"
+              decoding="async"
+              width="360"
+              height="270"
+            />
             <el-tag size="small" class="category-tag">{{ getCategoryTitle(item.category) }}</el-tag>
           </div>
           <div class="card-body">

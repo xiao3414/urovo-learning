@@ -1,0 +1,242 @@
+{
+  "ct48": {
+    "source_kind": "manual",
+    "source": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2023-08-21/64e33b4bbc6b2.jpg",
+    "thumb_kb": 3.6,
+    "detail_kb": 10.7
+  },
+  "ct58": {
+    "source_kind": "manual",
+    "source": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2023-05-27/6471ad1c785ed.jpg",
+    "thumb_kb": 2.7,
+    "detail_kb": 9.5
+  },
+  "d7100": {
+    "source_kind": "manual",
+    "source": "https://www.urovo.com/Public/Mobile/images/img116.png",
+    "thumb_kb": 11.1,
+    "detail_kb": 14.5
+  },
+  "d8100-plus": {
+    "source_kind": "manual",
+    "source": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2024-06-18/66712bfd0c24c.jpg",
+    "thumb_kb": 4.0,
+    "detail_kb": 13.2
+  },
+  "d81r": {
+    "source_kind": "manual",
+    "source": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2024-01-12/65a0b34d6237e.png",
+    "thumb_kb": 2.1,
+    "detail_kb": 6.8
+  },
+  "d9100": {
+    "source_kind": "git-ppt",
+    "source": "HEAD:public/products/d9100.png",
+    "thumb_kb": 6.8,
+    "detail_kb": 21.4
+  },
+  "dt40": {
+    "source_kind": "manual",
+    "source": "https://enoss.urovo.com/images/dt40/DT40_04.jpg",
+    "thumb_kb": 9.1,
+    "detail_kb": 23.8
+  },
+  "dt50": {
+    "source_kind": "manual",
+    "source": "https://enoss.urovo.com/images/dt50/DT50_04.jpg",
+    "thumb_kb": 2.8,
+    "detail_kb": 8.9
+  },
+  "dt50-5g": {
+    "source_kind": "manual",
+    "source": "https://enoss.urovo.com/product/dt50/images/DT505Gxn-m.jpg",
+    "thumb_kb": 17.7,
+    "detail_kb": 59.0
+  },
+  "dt50-5g-harmony": {
+    "source_kind": "manual",
+    "source": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2024-06-25/667a6a0b87c2a.png",
+    "thumb_kb": 5.9,
+    "detail_kb": 17.4
+  },
+  "dt50-dp": {
+    "source_kind": "manual",
+    "source": "https://enoss.urovo.com/images/dt50/DT50_04.jpg",
+    "thumb_kb": 2.8,
+    "detail_kb": 8.9
+  },
+  "dt50-ex": {
+    "source_kind": "manual",
+    "source": "https://enoss.urovo.com/images/dt50/DT50_04.jpg",
+    "thumb_kb": 2.8,
+    "detail_kb": 8.9
+  },
+  "dt50b": {
+    "source_kind": "manual",
+    "source": "https://enoss.urovo.com/images/dt50/DT50_04.jpg",
+    "thumb_kb": 2.8,
+    "detail_kb": 8.9
+  },
+  "dt50d": {
+    "source_kind": "manual",
+    "source": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2025-02-19/67b58d7d11583.jpg",
+    "thumb_kb": 6.3,
+    "detail_kb": 19.1
+  },
+  "dt50u": {
+    "source_kind": "manual",
+    "source": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2025-02-19/67b58d7d11583.jpg",
+    "thumb_kb": 6.3,
+    "detail_kb": 19.1
+  },
+  "dt50u-lite": {
+    "source_kind": "manual",
+    "source": "https://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2025-02-19/67b53cc56fd9e.png",
+    "thumb_kb": 3.8,
+    "detail_kb": 12.0
+  },
+  "dt510": {
+    "source_kind": "manual",
+    "source": "https://enoss.urovo.com/product/dt50/images/p1_pc.jpg",
+    "thumb_kb": 10.2,
+    "detail_kb": 39.8
+  },
+  "dt630": {
+    "source_kind": "manual",
+    "source": "https://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2026-03-27/69c6446ee8efd.png",
+    "thumb_kb": 6.8,
+    "detail_kb": 19.8
+  },
+  "dt66": {
+    "source_kind": "manual",
+    "source": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2024-06-13/666aa37e1b6b6.jpg",
+    "thumb_kb": 3.8,
+    "detail_kb": 11.8
+  },
+  "fr1000": {
+    "source_kind": "manual",
+    "source": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2025-02-21/67b81e31dbb2e.jpg",
+    "thumb_kb": 11.2,
+    "detail_kb": 35.9
+  },
+  "fr2000": {
+    "source_kind": "manual",
+    "source": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2025-02-21/67b850b2ee31d.png",
+    "thumb_kb": 3.4,
+    "detail_kb": 10.5
+  },
+  "fr7000": {
+    "source_kind": "manual",
+    "source": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2025-02-21/67b83ae0e0a3d.png",
+    "thumb_kb": 3.4,
+    "detail_kb": 9.6
+  },
+  "i9000s": {
+    "source_kind": "manual",
+    "source": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2024-09-14/66e4e6780adf3.png",
+    "thumb_kb": 7.5,
+    "detail_kb": 22.8
+  },
+  "i9200": {
+    "source_kind": "manual",
+    "source": "https://en-urovo.oss-ap-southeast-1.aliyuncs.com/Product%20Documents/POS/i9200%E9%9D%9E%E9%87%91/%E5%AE%98%E7%BD%91.png",
+    "thumb_kb": 3.5,
+    "detail_kb": 9.3
+  },
+  "k200": {
+    "source_kind": "manual",
+    "source": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2023-10-09/6523add71e8ed.jpg",
+    "thumb_kb": 1.0,
+    "detail_kb": 2.9
+  },
+  "k220": {
+    "source_kind": "manual",
+    "source": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2024-08-14/66bc12a54ab1b.jpg",
+    "thumb_kb": 3.9,
+    "detail_kb": 11.7
+  },
+  "k329": {
+    "source_kind": "manual",
+    "source": "https://enoss.urovo.com/product/k329/images/p2.jpg",
+    "thumb_kb": 4.2,
+    "detail_kb": 13.6
+  },
+  "k388-pro": {
+    "source_kind": "manual",
+    "source": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2026-05-27/6a16b69ae3e2c.png",
+    "thumb_kb": 7.8,
+    "detail_kb": 24.8
+  },
+  "k419": {
+    "source_kind": "manual",
+    "source": "https://enoss.urovo.com/newproduct/mimages/k419/k419_01.jpg",
+    "thumb_kb": 8.4,
+    "detail_kb": 24.6
+  },
+  "p8100": {
+    "source_kind": "manual",
+    "source": "https://enoss.urovo.com/newproduct/mimages/p8100/P8100_02.png",
+    "thumb_kb": 18.3,
+    "detail_kb": 60.8
+  },
+  "p8100p": {
+    "source_kind": "manual",
+    "source": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2024-06-28/667e54d4b350e.png",
+    "thumb_kb": 9.1,
+    "detail_kb": 25.5
+  },
+  "q1500": {
+    "source_kind": "git-ppt",
+    "source": "HEAD:public/products/q1500.png",
+    "thumb_kb": 9.1,
+    "detail_kb": 29.2
+  },
+  "q200": {
+    "source_kind": "manual",
+    "source": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/newproduct/pimages/q200/Q200_01.png",
+    "thumb_kb": 5.7,
+    "detail_kb": 16.2
+  },
+  "rfg91": {
+    "source_kind": "manual",
+    "source": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2026-04-17/69e203924b41a.jpg",
+    "thumb_kb": 4.4,
+    "detail_kb": 11.9
+  },
+  "rt30": {
+    "source_kind": "manual",
+    "source": "https://en-urovo.oss-ap-southeast-1.aliyuncs.com/image/2025-09-08/68be71a4a2f06.jpg",
+    "thumb_kb": 2.8,
+    "detail_kb": 8.1
+  },
+  "rt40s": {
+    "source_kind": "manual",
+    "source": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2024-06-28/667e6fc453b88.jpg",
+    "thumb_kb": 7.6,
+    "detail_kb": 23.1
+  },
+  "s710": {
+    "source_kind": "manual",
+    "source": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/newproduct/pimages/s710/S710_01.png",
+    "thumb_kb": 2.5,
+    "detail_kb": 6.4
+  },
+  "s716": {
+    "source_kind": "manual",
+    "source": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2023-01-09/63bb6da03e57a.jpg",
+    "thumb_kb": 5.0,
+    "detail_kb": 14.2
+  },
+  "sr5600": {
+    "source_kind": "manual",
+    "source": "https://enoss.urovo.com/product/SR5600/images/s1.png",
+    "thumb_kb": 5.4,
+    "detail_kb": 18.3
+  },
+  "u2s": {
+    "source_kind": "manual",
+    "source": "https://youboxunguanwang.oss-cn-shenzhen.aliyuncs.com/image/2025-03-05/67c7b0af46372.jpg",
+    "thumb_kb": 12.8,
+    "detail_kb": 50.1
+  }
+}

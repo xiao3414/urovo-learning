@@ -5,7 +5,14 @@
     <el-row :gutter="24" class="hero">
       <el-col :xs="24" :md="10">
         <div class="image-panel">
-          <img :src="product.image" :alt="product.name" />
+          <img
+            :src="product.imageDetail || product.image"
+            :alt="product.name"
+            loading="eager"
+            decoding="async"
+            width="720"
+            height="540"
+          />
         </div>
       </el-col>
       <el-col :xs="24" :md="14">
