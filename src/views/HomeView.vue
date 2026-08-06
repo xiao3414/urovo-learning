@@ -28,7 +28,7 @@
         <el-card shadow="hover" class="module-card" @click="startGroup(group)">
           <el-icon :size="28" color="#0052d9"><component :is="iconMap[group.icon]" /></el-icon>
           <h3>{{ group.title }}</h3>
-          <p>{{ group.children ? `${group.children.length} 个模块` : '14 款产品' }}</p>
+          <p>{{ group.children ? `${group.children.length} 个模块` : `${productCount} 款产品` }}</p>
         </el-card>
       </el-col>
     </el-row>
@@ -40,11 +40,13 @@ import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { Box, Monitor, OfficeBuilding, ChatDotRound, Goods } from '@element-plus/icons-vue'
 import { menuConfig, allPages } from '@/data/menu'
+import { productCatalog } from '@/data/products'
 import { useProgressStore } from '@/stores/progress'
 
 const router = useRouter()
 const progressStore = useProgressStore()
 const iconMap = { Box, Monitor, OfficeBuilding, ChatDotRound, Goods }
+const productCount = productCatalog.length
 
 const lastPage = computed(() =>
   progressStore.lastVisited ? allPages.find((p) => p.id === progressStore.lastVisited) : null

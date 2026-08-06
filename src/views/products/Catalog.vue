@@ -3,7 +3,7 @@
     <div class="catalog-header">
       <div>
         <h2>产品图鉴</h2>
-        <p>浏览优博讯主力产品 · 查看图片、参数与应用场景</p>
+        <p>浏览优博讯全系列产品 · 查看图片、参数与应用场景</p>
       </div>
       <el-input
         v-model="keyword"

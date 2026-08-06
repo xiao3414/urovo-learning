@@ -11,6 +11,7 @@ dist
 *.ppt
 scripts/pptx_extracted.json
 scripts/wxwork_extracted.json
+scripts/pptx_extract/
 
 # Office 临时锁文件
 ~$*
