@@ -1,24 +1,20 @@
 <template>
   <div class="home">
-    <!-- Hero -->
     <section class="hero">
       <div class="hero-inner">
         <div class="hero-copy">
-          <span class="hero-badge">UROVO · 优博讯</span>
-          <h1>智能数据终端<br />全系列产品培训</h1>
-          <p class="hero-desc">
-            覆盖 PDA、RFID、POS、工业平板等 {{ productCount }} 款产品图鉴，
-            配合行业方案与销售话术，助力新人快速上手。
-          </p>
+          <span class="hero-badge">{{ t('home.badge') }}</span>
+          <h1 v-html="t('home.title')" />
+          <p class="hero-desc">{{ t('home.desc', { count: productCount }) }}</p>
           <div class="hero-actions">
             <el-button type="primary" size="large" round @click="$router.push('/products')">
-              浏览产品图鉴
+              {{ t('home.browseCatalog') }}
             </el-button>
             <el-button size="large" round plain @click="continueLearning">
-              {{ lastPage ? '继续学习' : '开始学习' }}
+              {{ lastPage ? t('home.continueLearning') : t('home.startLearning') }}
             </el-button>
             <el-button size="large" round plain @click="$router.push('/exam')">
-              结业考试
+              {{ t('home.finalExam') }}
             </el-button>
           </div>
         </div>
@@ -29,7 +25,7 @@
           </div>
           <div class="progress-wrap">
             <div class="progress-head">
-              <span>学习进度</span>
+              <span>{{ t('nav.progress') }}</span>
               <span>{{ progressStore.progressPercent }}%</span>
             </div>
             <el-progress
@@ -43,15 +39,14 @@
       </div>
     </section>
 
-    <!-- Featured products -->
     <section class="section featured">
       <div class="section-head">
         <div>
-          <h2 class="section-title">明星产品</h2>
-          <p class="section-desc">优博讯主力机型，点击查看参数与应用场景</p>
+          <h2 class="section-title">{{ t('home.featuredTitle') }}</h2>
+          <p class="section-desc">{{ t('home.featuredDesc') }}</p>
         </div>
         <el-button type="primary" link @click="$router.push('/products')">
-          查看全部 {{ productCount }} 款 →
+          {{ t('home.viewAll', { count: productCount }) }}
         </el-button>
       </div>
       <div class="featured-grid">
@@ -73,10 +68,9 @@
       </div>
     </section>
 
-    <!-- Category shortcuts -->
     <section class="section categories">
-      <h2 class="section-title">产品分类</h2>
-      <p class="section-desc">按品类快速进入图鉴筛选</p>
+      <h2 class="section-title">{{ t('home.categoryTitle') }}</h2>
+      <p class="section-desc">{{ t('home.categoryDesc') }}</p>
       <div class="category-grid">
         <button
           v-for="cat in categoryShortcuts"
@@ -91,10 +85,9 @@
       </div>
     </section>
 
-    <!-- Training modules -->
     <section class="section modules">
-      <h2 class="section-title">培训模块</h2>
-      <p class="section-desc">产品知识、行业方案与销售技能系统学习</p>
+      <h2 class="section-title">{{ t('home.trainingTitle') }}</h2>
+      <p class="section-desc">{{ t('home.trainingDesc') }}</p>
       <div class="module-grid">
         <article
           v-for="group in menuConfig.filter((g) => g.children || g.path)"
@@ -106,8 +99,8 @@
             <el-icon :size="26"><component :is="iconMap[group.icon]" /></el-icon>
           </div>
           <h3>{{ group.title }}</h3>
-          <p>{{ group.children ? `${group.children.length} 个子模块` : `${productCount} 款产品` }}</p>
-          <span class="module-link">进入 →</span>
+          <p>{{ group.children ? t('home.subModules', { count: group.children.length }) : t('home.productsCount', { count: productCount }) }}</p>
+          <span class="module-link">{{ t('home.enter') }}</span>
         </article>
       </div>
     </section>
@@ -118,46 +111,46 @@
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { Box, Monitor, OfficeBuilding, ChatDotRound, Goods } from '@element-plus/icons-vue'
-import { menuConfig, allPages } from '@/data/menu'
-import {
-  productCatalog,
-  productCategories,
-  getCategoryTitle,
-} from '@/data/products'
+import { useMenuConfig } from '@/composables/useMenuConfig'
+import { useProductCatalog } from '@/composables/useProductCatalog'
 import { useProgressStore } from '@/stores/progress'
+import { useI18n } from '@/i18n'
 
 const FEATURED_IDS = ['dt630', 'dt66', 'dt50-5g', 'rfg91', 'i9000s', 'k388-pro']
 
 const router = useRouter()
 const progressStore = useProgressStore()
+const { menuConfig, allPages } = useMenuConfig()
+const { productCatalog, productCount, getCategoryTitle, productCategories } = useProductCatalog()
+const { t } = useI18n()
 const iconMap = { Box, Monitor, OfficeBuilding, ChatDotRound, Goods }
-const productCount = productCatalog.length
 
 const featuredProducts = computed(() =>
-  FEATURED_IDS.map((id) => productCatalog.find((p) => p.id === id)).filter(Boolean)
+  FEATURED_IDS.map((id) => productCatalog.value.find((p) => p.id === id)).filter(Boolean)
 )
 
 const categoryShortcuts = computed(() =>
-  productCategories
+  productCategories.value
     .filter((c) => c.id !== 'all')
     .map((c) => ({
       ...c,
-      count: productCatalog.filter((p) => p.category === c.id).length,
+      count: productCatalog.value.filter((p) => p.category === c.id).length,
     }))
 )
 
 const statItems = computed(() => [
-  { label: '学习模块', value: progressStore.totalCount },
-  { label: '已完成', value: progressStore.completedCount },
-  { label: '产品图鉴', value: productCount },
+  { label: t('home.modules'), value: progressStore.totalCount },
+  { label: t('home.completed'), value: progressStore.completedCount },
+  { label: t('home.productCatalog'), value: productCount },
 ])
 
 const lastPage = computed(() =>
-  progressStore.lastVisited ? allPages.find((p) => p.id === progressStore.lastVisited) : null
+  progressStore.lastVisited ? allPages.value.find((p) => p.id === progressStore.lastVisited) : null
 )
 
 function continueLearning() {
-  router.push((lastPage.value || allPages[0]).path)
+  const target = lastPage.value || allPages.value[0]
+  if (target) router.push(target.path)
 }
 
 function startGroup(group) {
@@ -175,7 +168,6 @@ function startGroup(group) {
   margin: 0 auto;
 }
 
-/* Hero */
 .hero {
   margin: calc(-1 * var(--space-6));
   margin-bottom: var(--space-10);
@@ -282,7 +274,6 @@ function startGroup(group) {
   margin-bottom: var(--space-2);
 }
 
-/* Sections */
 .section {
   margin-bottom: var(--space-10);
 }
@@ -296,7 +287,6 @@ function startGroup(group) {
   flex-wrap: wrap;
 }
 
-/* Featured grid */
 .featured-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -362,7 +352,6 @@ function startGroup(group) {
   overflow: hidden;
 }
 
-/* Category chips */
 .category-grid {
   display: flex;
   flex-wrap: wrap;
@@ -403,7 +392,6 @@ function startGroup(group) {
   color: var(--color-primary);
 }
 
-/* Module grid */
 .module-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));

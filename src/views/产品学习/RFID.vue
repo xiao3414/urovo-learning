@@ -1,7 +1,8 @@
 <template>
-  <TrainingPage :content="productRFID" page-id="rfid" intro-label="产品介绍" />
+  <TrainingPage :content="content" page-id="rfid" />
 </template>
 <script setup>
 import TrainingPage from '@/components/TrainingPage.vue'
-import { productRFID } from '@/data/trainingContent'
+import { useTrainingContent } from '@/composables/useTrainingContent'
+const content = useTrainingContent('productRFID')
 </script>

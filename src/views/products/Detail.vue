@@ -1,6 +1,6 @@
 <template>
   <div v-if="product" class="product-detail">
-    <el-button :icon="ArrowLeft" text @click="$router.push('/products')">返回产品图鉴</el-button>
+    <el-button :icon="ArrowLeft" text @click="$router.push('/products')">{{ t('product.back') }}</el-button>
 
     <el-row :gutter="24" class="hero">
       <el-col :xs="24" :md="10">
@@ -22,15 +22,15 @@
         <p class="highlight">{{ product.highlight }}</p>
         <div class="actions">
           <el-button v-if="product.trainingPath" type="primary" @click="$router.push(product.trainingPath)">
-            进入销售培训
+            {{ t('product.enterTraining') }}
           </el-button>
-          <el-button @click="activeTab = 'scenarios'">查看应用场景</el-button>
+          <el-button @click="activeTab = 'scenarios'">{{ t('product.viewScenarios') }}</el-button>
         </div>
       </el-col>
     </el-row>
 
     <el-tabs v-model="activeTab" type="border-card" class="detail-tabs">
-      <el-tab-pane label="规格参数" name="specs">
+      <el-tab-pane :label="t('product.specs')" name="specs">
         <el-descriptions :column="1" border>
           <el-descriptions-item
             v-for="spec in product.specs"
@@ -42,7 +42,7 @@
         </el-descriptions>
       </el-tab-pane>
 
-      <el-tab-pane label="应用场景" name="scenarios">
+      <el-tab-pane :label="t('product.scenarios')" name="scenarios">
         <el-row :gutter="16">
           <el-col v-for="(scene, i) in product.scenarios" :key="i" :xs="24" :md="8">
             <el-card shadow="never" class="scene-card">
@@ -56,8 +56,8 @@
     </el-tabs>
   </div>
 
-  <el-empty v-else description="产品不存在">
-    <el-button type="primary" @click="$router.push('/products')">返回产品图鉴</el-button>
+  <el-empty v-else :description="t('product.notFound')">
+    <el-button type="primary" @click="$router.push('/products')">{{ t('product.back') }}</el-button>
   </el-empty>
 </template>
 
@@ -65,10 +65,13 @@
 import { ref, computed, watch, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { ArrowLeft } from '@element-plus/icons-vue'
-import { getProductById, getCategoryTitle } from '@/data/products'
+import { useProductCatalog } from '@/composables/useProductCatalog'
+import { useI18n } from '@/i18n'
 
 const route = useRoute()
 const activeTab = ref('specs')
+const { getProductById, getCategoryTitle } = useProductCatalog()
+const { t, locale } = useI18n()
 
 const product = computed(() => getProductById(route.params.id))
 
@@ -83,6 +86,10 @@ watch(
     window.scrollTo(0, 0)
   }
 )
+
+watch(locale, () => {
+  /* re-localize product display */
+})
 </script>
 
 <style scoped>
@@ -93,58 +100,50 @@ watch(
 
 .hero {
   margin: var(--space-4) 0 var(--space-6);
-  align-items: center;
 }
 
 .image-panel {
-  background: linear-gradient(135deg, var(--color-primary-light), #e6f4ff);
-  border-radius: var(--radius-lg);
-  padding: var(--space-4);
-  border: 1px solid var(--color-primary-muted);
+  background: linear-gradient(180deg, var(--color-primary-light) 0%, var(--color-bg) 100%);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
 }
 
 .image-panel img {
-  width: 100%;
-  display: block;
-  border-radius: var(--radius-md);
-}
-
-.hero :deep(h2) {
-  font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-text);
-  margin: var(--space-2) 0;
+  max-width: 100%;
+  max-height: 360px;
+  object-fit: contain;
 }
 
 .subtitle {
+  font-size: var(--font-size-md);
   color: var(--color-text-secondary);
   margin: var(--space-2) 0;
-  font-size: var(--font-size-md);
 }
 
 .highlight {
+  font-size: var(--font-size-sm);
   color: var(--color-text-muted);
-  font-size: var(--font-size-base);
-  line-height: var(--line-height-normal);
   margin-bottom: var(--space-4);
 }
 
 .actions {
   display: flex;
-  gap: var(--space-3);
   flex-wrap: wrap;
+  gap: var(--space-3);
 }
 
 .detail-tabs {
-  margin-top: var(--space-2);
+  margin-top: var(--space-4);
 }
 
 .scene-card {
-  margin-bottom: var(--space-4);
-  min-height: 140px;
+  height: 100%;
   position: relative;
-  padding-left: var(--space-2);
-  border-radius: var(--radius-md);
+  padding-top: var(--space-2);
 }
 
 .scene-num {
@@ -153,9 +152,9 @@ watch(
   right: var(--space-3);
   width: 28px;
   height: 28px;
-  border-radius: 50%;
-  background: var(--color-primary);
-  color: #fff;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-light);
+  color: var(--color-primary);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
   display: flex;
@@ -164,15 +163,14 @@ watch(
 }
 
 .scene-card h4 {
-  margin-bottom: var(--space-2);
-  color: var(--color-primary);
-  padding-right: 36px;
   font-size: var(--font-size-md);
+  margin-bottom: var(--space-2);
+  padding-right: var(--space-8);
 }
 
 .scene-card p {
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
   line-height: var(--line-height-normal);
 }
 </style>

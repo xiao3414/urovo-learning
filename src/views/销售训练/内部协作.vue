@@ -1,7 +1,8 @@
 <template>
-  <TrainingPage :content="salesCollaboration" page-id="collaboration" intro-label="协作指南" />
+  <TrainingPage :content="content" page-id="collaboration" />
 </template>
 <script setup>
 import TrainingPage from '@/components/TrainingPage.vue'
-import { salesCollaboration } from '@/data/trainingContent'
+import { useTrainingContent } from '@/composables/useTrainingContent'
+const content = useTrainingContent('salesCollaboration')
 </script>

@@ -1,7 +1,8 @@
 <template>
-  <TrainingPage :content="productPDA" page-id="pda" intro-label="产品介绍" />
+  <TrainingPage :content="content" page-id="pda" />
 </template>
 <script setup>
 import TrainingPage from '@/components/TrainingPage.vue'
-import { productPDA } from '@/data/trainingContent'
+import { useTrainingContent } from '@/composables/useTrainingContent'
+const content = useTrainingContent('productPDA')
 </script>

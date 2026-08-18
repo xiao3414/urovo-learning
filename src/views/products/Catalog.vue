@@ -2,12 +2,12 @@
   <div class="catalog">
     <header class="catalog-hero">
       <div>
-        <h1>产品图鉴</h1>
-        <p>优博讯全系列 {{ productCatalog.length }} 款产品 · 参数 · 应用场景</p>
+        <h1>{{ t('catalog.title') }}</h1>
+        <p>{{ t('catalog.subtitle', { count: productCatalog.length }) }}</p>
       </div>
       <el-input
         v-model="keyword"
-        placeholder="搜索型号、特性…"
+        :placeholder="t('catalog.searchPlaceholder')"
         clearable
         class="search"
         :prefix-icon="Search"
@@ -57,12 +57,12 @@
           <h3>{{ item.name }}</h3>
           <p class="card-subtitle">{{ item.subtitle }}</p>
           <p class="card-highlight">{{ item.highlight }}</p>
-          <span class="card-cta">查看详情 →</span>
+          <span class="card-cta">{{ t('catalog.viewDetail') }}</span>
         </div>
       </article>
     </TransitionGroup>
 
-    <el-empty v-else description="未找到匹配产品" class="empty" />
+    <el-empty v-else :description="t('catalog.notFound')" class="empty" />
   </div>
 </template>
 
@@ -70,21 +70,24 @@
 import { ref, computed, watch, onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { Search } from '@element-plus/icons-vue'
-import { productCatalog, productCategories, getCategoryTitle } from '@/data/products'
+import { useProductCatalog } from '@/composables/useProductCatalog'
+import { useI18n } from '@/i18n'
 
 const router = useRouter()
 const route = useRoute()
+const { t } = useI18n()
+const { productCatalog, productCategories, getCategoryTitle } = useProductCatalog()
 const keyword = ref('')
 const activeCategory = ref('all')
 
 function countByCategory(id) {
-  if (id === 'all') return productCatalog.length
-  return productCatalog.filter((p) => p.category === id).length
+  if (id === 'all') return productCatalog.value.length
+  return productCatalog.value.filter((p) => p.category === id).length
 }
 
 const filteredProducts = computed(() => {
   const kw = keyword.value.trim().toLowerCase()
-  return productCatalog.filter((p) => {
+  return productCatalog.value.filter((p) => {
     const matchCat = activeCategory.value === 'all' || p.category === activeCategory.value
     const matchKw =
       !kw ||
@@ -97,9 +100,13 @@ const filteredProducts = computed(() => {
 
 const resultHint = computed(() => {
   const n = filteredProducts.value.length
-  const cat = productCategories.find((c) => c.id === activeCategory.value)
-  if (keyword.value.trim()) return `搜索「${keyword.value.trim()}」共 ${n} 款`
-  if (activeCategory.value !== 'all') return `${cat?.title} · 共 ${n} 款`
+  const cat = productCategories.value.find((c) => c.id === activeCategory.value)
+  if (keyword.value.trim()) {
+    return t('catalog.resultHintSearch', { keyword: keyword.value.trim(), count: n })
+  }
+  if (activeCategory.value !== 'all') {
+    return t('catalog.resultHint', { category: cat?.title, count: n })
+  }
   return ''
 })
 
@@ -114,7 +121,7 @@ function goDetail(id) {
 
 function syncCategoryFromQuery() {
   const cat = route.query.category
-  if (cat && productCategories.some((c) => c.id === cat)) {
+  if (cat && productCategories.value.some((c) => c.id === cat)) {
     activeCategory.value = cat
   }
 }

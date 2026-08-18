@@ -1,62 +1,62 @@
 /**
- * 销售新人学习平台 - 菜单结构
+ * Menu structure — titles resolved via i18n titleKey
  */
-export const menuConfig = [
+export const menuStructure = [
   {
     id: 'catalog',
-    title: '产品图鉴',
+    titleKey: 'menu.catalog',
     icon: 'Goods',
     path: '/products',
   },
   {
     id: 'product-learn',
-    title: '产品学习',
+    titleKey: 'menu.productLearn',
     icon: 'Box',
     children: [
-      { id: 'pda', title: 'PDA 知识要点', path: '/product/pda' },
-      { id: 'rfid', title: 'RFID 知识要点', path: '/product/rfid' },
-      { id: 'pos', title: 'POS 知识要点', path: '/product/pos' },
+      { id: 'pda', titleKey: 'menu.pda', path: '/product/pda' },
+      { id: 'rfid', titleKey: 'menu.rfid', path: '/product/rfid' },
+      { id: 'pos', titleKey: 'menu.pos', path: '/product/pos' },
     ],
   },
   {
     id: 'software',
-    title: '软件生态',
+    titleKey: 'menu.software',
     icon: 'Monitor',
     children: [
-      { id: 'uee', title: 'UEE 设备管理', path: '/software/uee' },
-      { id: 'ums', title: 'UMS 运维平台', path: '/software/ums' },
+      { id: 'uee', titleKey: 'menu.uee', path: '/software/uee' },
+      { id: 'ums', titleKey: 'menu.ums', path: '/software/ums' },
     ],
   },
   {
     id: 'industry',
-    title: '行业方案',
+    titleKey: 'menu.industry',
     icon: 'OfficeBuilding',
     children: [
-      { id: 'logistics', title: '智慧物流', path: '/industry/logistics' },
-      { id: 'manufacturing', title: '智能制造', path: '/industry/manufacturing' },
-      { id: 'retail', title: '连锁零售', path: '/industry/retail' },
+      { id: 'logistics', titleKey: 'menu.logistics', path: '/industry/logistics' },
+      { id: 'manufacturing', titleKey: 'menu.manufacturing', path: '/industry/manufacturing' },
+      { id: 'retail', titleKey: 'menu.retail', path: '/industry/retail' },
     ],
   },
   {
     id: 'sales',
-    title: '销售训练',
+    titleKey: 'menu.sales',
     icon: 'ChatDotRound',
     children: [
-      { id: 'company', title: '公司与品牌', path: '/sales/company' },
-      { id: 'customer-analysis', title: '客户分析', path: '/sales/customer-analysis' },
-      { id: 'scripts', title: '销售话术', path: '/sales/scripts' },
-      { id: 'collaboration', title: '内部协作', path: '/sales/collaboration' },
+      { id: 'company', titleKey: 'menu.company', path: '/sales/company' },
+      { id: 'customer-analysis', titleKey: 'menu.customerAnalysis', path: '/sales/customer-analysis' },
+      { id: 'scripts', titleKey: 'menu.scripts', path: '/sales/scripts' },
+      { id: 'collaboration', titleKey: 'menu.collaboration', path: '/sales/collaboration' },
     ],
   },
   {
     id: 'exam',
-    title: '考试系统',
+    titleKey: 'menu.exam',
     icon: 'EditPen',
     path: '/exam',
   },
 ]
 
-export function flattenPages(items = menuConfig) {
+export function flattenPages(items = menuStructure) {
   const result = []
   for (const item of items) {
     if (item.path) result.push(item)
@@ -66,3 +66,6 @@ export function flattenPages(items = menuConfig) {
 }
 
 export const allPages = flattenPages()
+
+/** @deprecated use useMenuConfig() */
+export const menuConfig = menuStructure

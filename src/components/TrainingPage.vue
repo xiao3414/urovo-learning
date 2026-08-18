@@ -10,12 +10,12 @@
         :icon="progressStore.isCompleted(pageId) ? CircleCheckFilled : CircleCheck"
         @click="progressStore.toggleCompleted(pageId)"
       >
-        {{ progressStore.isCompleted(pageId) ? '已学完' : '标记学完' }}
+        {{ progressStore.isCompleted(pageId) ? t('training.completed') : t('training.markComplete') }}
       </el-button>
     </div>
 
     <el-tabs v-model="activeTab" type="border-card">
-      <el-tab-pane :label="introLabel" name="intro">
+      <el-tab-pane :label="introLabel || t('training.intro')" name="intro">
         <div class="intro-content" v-html="content.intro" />
         <el-descriptions v-if="content.specs?.length" :column="2" border class="specs">
           <el-descriptions-item
@@ -30,7 +30,7 @@
 
       <el-tab-pane name="scripts">
         <template #label>
-          <span>销售话术 <el-badge :value="content.scripts?.length || 0" type="primary" /></span>
+          <span>{{ t('training.scripts') }} <el-badge :value="content.scripts?.length || 0" type="primary" /></span>
         </template>
         <el-collapse v-if="content.scripts?.length" accordion>
           <el-collapse-item
@@ -40,33 +40,33 @@
             :name="i"
           >
             <div class="script-content">
-              <el-tag type="warning" size="small">话术模板</el-tag>
+              <el-tag type="warning" size="small">{{ t('training.scriptTemplate') }}</el-tag>
               <p>{{ item.content }}</p>
-              <el-button size="small" text type="primary" @click="copyText(item.content)">复制话术</el-button>
+              <el-button size="small" text type="primary" @click="copyText(item.content)">{{ t('training.copyScript') }}</el-button>
             </div>
           </el-collapse-item>
         </el-collapse>
-        <el-empty v-else description="本模块暂无专项话术，请参考「销售话术」" />
+        <el-empty v-else :description="t('training.noScripts')" />
       </el-tab-pane>
 
       <el-tab-pane name="faqs">
         <template #label>
-          <span>客户问题 <el-badge :value="content.faqs?.length || 0" type="danger" /></span>
+          <span>{{ t('training.faqs') }} <el-badge :value="content.faqs?.length || 0" type="danger" /></span>
         </template>
         <el-collapse v-if="content.faqs?.length" accordion>
           <el-collapse-item v-for="(item, i) in content.faqs" :key="i" :title="item.q" :name="i">
             <div class="faq-answer">
-              <el-tag type="success" size="small">参考答案</el-tag>
+              <el-tag type="success" size="small">{{ t('training.referenceAnswer') }}</el-tag>
               <p>{{ item.a }}</p>
             </div>
           </el-collapse-item>
         </el-collapse>
-        <el-empty v-else description="暂无" />
+        <el-empty v-else :description="t('training.noFaqs')" />
       </el-tab-pane>
 
       <el-tab-pane name="cases">
         <template #label>
-          <span>成功案例 <el-badge :value="content.cases?.length || 0" type="success" /></span>
+          <span>{{ t('training.cases') }} <el-badge :value="content.cases?.length || 0" type="success" /></span>
         </template>
         <el-row v-if="content.cases?.length" :gutter="16">
           <el-col v-for="(item, i) in content.cases" :key="i" :xs="24" :md="12" class="case-col">
@@ -78,38 +78,40 @@
                 </div>
               </template>
               <div class="case-body">
-                <p><strong>挑战：</strong>{{ item.challenge }}</p>
-                <p><strong>方案：</strong>{{ item.solution }}</p>
-                <p class="case-result"><strong>成果：</strong>{{ item.result }}</p>
+                <p><strong>{{ t('training.challenge') }}:</strong> {{ item.challenge }}</p>
+                <p><strong>{{ t('training.solution') }}:</strong> {{ item.solution }}</p>
+                <p class="case-result"><strong>{{ t('training.result') }}:</strong> {{ item.result }}</p>
               </div>
             </el-card>
           </el-col>
         </el-row>
-        <el-empty v-else description="暂无" />
+        <el-empty v-else :description="t('training.noCases')" />
       </el-tab-pane>
     </el-tabs>
   </div>
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import { CircleCheck, CircleCheckFilled } from '@element-plus/icons-vue'
 import { ElMessage } from 'element-plus'
 import { useProgressStore } from '@/stores/progress'
+import { useI18n } from '@/i18n'
 
 const props = defineProps({
   content: { type: Object, required: true },
   pageId: { type: String, required: true },
-  introLabel: { type: String, default: '知识要点' },
+  introLabel: { type: String, default: '' },
 })
 
 const progressStore = useProgressStore()
+const { t } = useI18n()
 const activeTab = ref('intro')
 
 onMounted(() => progressStore.visitPage(props.pageId))
 
 function copyText(text) {
-  navigator.clipboard.writeText(text).then(() => ElMessage.success('话术已复制'))
+  navigator.clipboard.writeText(text).then(() => ElMessage.success(t('training.copied')))
 }
 </script>
 

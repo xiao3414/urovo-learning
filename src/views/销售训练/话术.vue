@@ -1,7 +1,8 @@
 <template>
-  <TrainingPage :content="salesScripts" page-id="scripts" />
+  <TrainingPage :content="content" page-id="scripts" />
 </template>
 <script setup>
 import TrainingPage from '@/components/TrainingPage.vue'
-import { salesScripts } from '@/data/trainingContent'
+import { useTrainingContent } from '@/composables/useTrainingContent'
+const content = useTrainingContent('salesScripts')
 </script>

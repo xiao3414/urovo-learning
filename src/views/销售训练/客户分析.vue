@@ -1,7 +1,8 @@
 <template>
-  <TrainingPage :content="salesCustomerAnalysis" page-id="customer-analysis" />
+  <TrainingPage :content="content" page-id="customer-analysis" />
 </template>
 <script setup>
 import TrainingPage from '@/components/TrainingPage.vue'
-import { salesCustomerAnalysis } from '@/data/trainingContent'
+import { useTrainingContent } from '@/composables/useTrainingContent'
+const content = useTrainingContent('salesCustomerAnalysis')
 </script>

@@ -1,7 +1,8 @@
 <template>
-  <TrainingPage :content="softwareUEE" page-id="uee" intro-label="平台介绍" />
+  <TrainingPage :content="content" page-id="uee" />
 </template>
 <script setup>
 import TrainingPage from '@/components/TrainingPage.vue'
-import { softwareUEE } from '@/data/trainingContent'
+import { useTrainingContent } from '@/composables/useTrainingContent'
+const content = useTrainingContent('softwareUEE')
 </script>
