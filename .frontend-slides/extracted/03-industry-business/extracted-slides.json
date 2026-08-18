@@ -1,0 +1,1234 @@
+[
+  {
+    "number": 1,
+    "title": "",
+    "content": [
+      {
+        "type": "text",
+        "content": "\u884c\u4e1a\u5e94\u7528\u4e8b\u4e1a\u90e8\u53ca\u4e1a\u52a1\u6d41\u7a0b"
+      },
+      {
+        "type": "text",
+        "content": "\u8bb2\u5e08\uff1a\u8d56\u94ed"
+      }
+    ],
+    "images": [],
+    "notes": ""
+  },
+  {
+    "number": 2,
+    "title": "",
+    "content": [
+      {
+        "type": "text",
+        "content": "\u5148\u5bfc\uff1a\u90e8\u95e8\u613f\u666f\u76ee\u6807"
+      },
+      {
+        "type": "text",
+        "content": "\u613f\u666f"
+      },
+      {
+        "type": "text",
+        "content": "\u7531\u8f6f\u4ef6\u9a71\u52a8\u786c\u4ef6"
+      },
+      {
+        "type": "text",
+        "content": "\u76ee\u6807"
+      },
+      {
+        "type": "text",
+        "content": "\u52aa\u529b\u8ba9\u516c\u53f8\u6ca1\u6709\u96be\u505a\u7684\u9879\u76ee\n                    \u6253\u9020\u51e0\u6b3e\u4f18\u79c0\u7684\u8f6f\u4ef6\u4ea7\u54c1"
+      }
+    ],
+    "images": [],
+    "notes": ""
+  },
+  {
+    "number": 3,
+    "title": "",
+    "content": [
+      {
+        "type": "text",
+        "content": "\u5148\u5bfc\uff1a\u90e8\u95e8\u7ec4\u7ec7\u67b6\u6784"
+      }
+    ],
+    "images": [],
+    "notes": ""
+  },
+  {
+    "number": 4,
+    "title": "",
+    "content": [
+      {
+        "type": "text",
+        "content": "\u5148\u5bfc\uff1a\u90e8\u95e8\u4eba\u5458\u53ca\u5206\u5de5"
+      }
+    ],
+    "images": [],
+    "notes": ""
+  },
+  {
+    "number": 5,
+    "title": "",
+    "content": [
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": "\u4e00\u3001\u90e8\u95e8\u4e3b\u7ebf\u4e1a\u52a1\u8bb2\u89e3"
+      },
+      {
+        "type": "text",
+        "content": "\u4ea7\u54c1\u9700\u6c42"
+      },
+      {
+        "type": "text",
+        "content": "\u4ea7\u54c1\u89c4\u5212"
+      },
+      {
+        "type": "text",
+        "content": "\u4ea7\u54c1\u5f00\u53d1"
+      },
+      {
+        "type": "text",
+        "content": "\u4ea7\u54c1\u6837\u673a"
+      },
+      {
+        "type": "text",
+        "content": "\u4ea7\u54c1\u63a8\u5e7f"
+      },
+      {
+        "type": "text",
+        "content": "\u4ea7\u54c1\u9500\u552e"
+      },
+      {
+        "type": "text",
+        "content": "\u4ea7\u54c1\u4ea4\u4ed8"
+      },
+      {
+        "type": "text",
+        "content": "\u4ea7\u54c1\u91cf\u4ea7"
+      },
+      {
+        "type": "text",
+        "content": "\u4ea7\u54c1\u4ea4\u4ed8"
+      },
+      {
+        "type": "text",
+        "content": "\u4ea7\u54c1\u552e\u540e"
+      },
+      {
+        "type": "text",
+        "content": "DT50\u79fb\u52a8\u6570\u636e\u7ec8\u7aef\n\u662f\u5982\u4f55\u6210\u4e3a\u7206\u6b3e\u7684"
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": "\u8f6f\u4ef6\u4ea7\u54c1\u6280\u672f\u652f\u6301"
+      },
+      {
+        "type": "text",
+        "content": "\u8f6f\u4ef6\u4ea7\u54c1\u89c4\u5212\u3001\u5f00\u53d1"
+      }
+    ],
+    "images": [
+      {
+        "path": "assets/slide5_img1.jpg",
+        "width": 1659183,
+        "height": 1601199
+      },
+      {
+        "path": "assets/slide5_img2.png",
+        "width": 2359660,
+        "height": 971550
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "number": 6,
+    "title": "",
+    "content": [
+      {
+        "type": "text",
+        "content": "\u9500\u552e\u3001\u5ba2\u6237\u9700\u6c42"
+      },
+      {
+        "type": "text",
+        "content": "OA\u6216\u90ae\u4ef6\u63a5\u6536\u4fe1\u606f"
+      },
+      {
+        "type": "text",
+        "content": "1\u3001\u552e\u524d\u6280\u672f\u652f\u6301\n2\u3001\u9879\u76ee\u5b9e\u65bd\u652f\u6301"
+      },
+      {
+        "type": "text",
+        "content": "\u8fdc\u7a0b\u6280\u672f\u652f\u6301\n\u73b0\u573a\u5b9e\u65bd\u652f\u6301"
+      },
+      {
+        "type": "text",
+        "content": "\u5ba2\u6237\u786e\u8ba4\u5b8c\u6210\u652f\u6301"
+      },
+      {
+        "type": "text",
+        "content": "3\n\u6982\u8981\u8bbe\u8ba1\n\u8be6\u7ec6\u8bbe\u8ba1"
+      },
+      {
+        "type": "text",
+        "content": "4\n\u5ba2\u6237\u9a8c\u6536\u53d1\u5e03"
+      },
+      {
+        "type": "text",
+        "content": "\u9700\u6c42\u8bc4\u5ba1"
+      },
+      {
+        "type": "text",
+        "content": "\u7cfb\u7edf\u5f00\u53d1"
+      },
+      {
+        "type": "text",
+        "content": "\u7cfb\u7edf\u7ef4\u62a4"
+      },
+      {
+        "type": "text",
+        "content": "\u5f00\u53d1\u9879\u76ee\u8f6c\u5165\u9879\u76ee\u90e8\u8bc4\u4f30\u5b89\u6392"
+      },
+      {
+        "type": "text",
+        "content": "\u5224\u65ad\u652f\u6301\u65b9\u5f0f"
+      },
+      {
+        "type": "text",
+        "content": "\u9879\u76ee\u8bb0\u5f55\u53ca\u542f\u52a8"
+      },
+      {
+        "type": "text",
+        "content": "1\n\u9879\u76ee\u542f\u52a8\u4f1a\u8bae"
+      },
+      {
+        "type": "text",
+        "content": " 2\n\u9879\u76ee\u9700\u6c42\u786e\u8ba4"
+      },
+      {
+        "type": "text",
+        "content": "\u7cfb\u7edf\u6d4b\u8bd5"
+      },
+      {
+        "type": "text",
+        "content": "\u786e\u5b9a\u9879\u76ee\u6210\u5458"
+      },
+      {
+        "type": "text",
+        "content": "\u7cfb\u7edf\u9a8c\u6536"
+      },
+      {
+        "type": "text",
+        "content": "1\u3001\u90e8\u95e8\u4e3b\u7ebf\u4e1a\u52a1\uff1a\u8f6f\u4ef6\u4ea7\u54c1\u6280\u672f\u652f\u6301\u3001\u8f6f\u4ef6\u4ea7\u54c1\u89c4\u5212\u5f00\u53d1"
+      },
+      {
+        "type": "text",
+        "content": "\u9700\u6c42\u8ba8\u8bba\n\u5408\u7406\u6027\u8bc4\u4f30\n\u9700\u6c42\u6587\u6863"
+      },
+      {
+        "type": "text",
+        "content": "\u5ba2\u6237\u9700\u6c42\n\u5185\u90e8\u8ba1\u5212"
+      },
+      {
+        "type": "text",
+        "content": "\u4ea7\u54c1\u542f\u52a8\u4f1a\n\u5f00\u53d1\u8ba1\u5212\u5236\u5b9a"
+      }
+    ],
+    "images": [],
+    "notes": ""
+  },
+  {
+    "number": 7,
+    "title": "",
+    "content": [
+      {
+        "type": "text",
+        "content": "\u201c"
+      },
+      {
+        "type": "text",
+        "content": "\u201d"
+      },
+      {
+        "type": "text",
+        "content": " UEE\u662f\u516c\u53f8\u6253\u9020\u7684\u8de8\u5e73\u53f0\u3001\u8de8\u7ec8\u7aef\u7684\u8f6f\u4ef6\u5408\u96c6\u53ca\u4e91\u670d\u52a1\u5e73\u53f0\u3002UEE\u5145\u5206\u53d1\u6325\u4e91\u670d\u52a1\u9ad8\u6548\u7387\u3001\u4f4e\u6210\u672c\u7684\u4f18\u52bf\uff0c\u52a9\u529b\u4f01\u4e1a\u52a0\u901f\u4e1a\u52a1\u521b\u65b0\u548c\u6570\u5b57\u5316\u8f6c\u578b\u3002\u4e3a\u4e86\u6ee1\u8db3\u884c\u4e1a\u5ba2\u6237\u53ca\u5408\u4f5c\u4f19\u4f34\u5bf9\u4e8e\u8bbe\u5907\u53ca\u5e94\u7528\u5168\u65b9\u4f4d\u7684\u7ba1\u7406\u9700\u6c42\uff0c\u6301\u7eed\u63d0\u5347\u667a\u80fd\u7ec8\u7aef\u786c\u4ef6\u4e0e\u8f6f\u4ef6\u7684\u6df1\u5ea6\u878d\u5408\uff0c\u63d0\u4f9b\u805a\u7126\u5ba2\u6237\u4e1a\u52a1\u9700\u6c42\u7684\u884c\u4e1a\u6574\u4f53\u89e3\u51b3\u65b9\u6848\u3002\n         "
+      },
+      {
+        "type": "text",
+        "content": "2\u3001\u90e8\u95e8\u4e3b\u7ebf\u4e1a\u52a1\uff1a\u8f6f\u4ef6\u4ea7\u54c1\n"
+      },
+      {
+        "type": "text",
+        "content": "\u53ef\u4ee5\u89e3\u51b3\u5ba2\u6237\u6700\u5173\u5fc3\u7684\u4e8b\u60c5\uff1a\n1.\u5927\u5e45\u51cf\u77ed\u8bbe\u5907\u9002\u914d\u4e0a\u7ebf\u7684\u5468\u671f\uff1b\n2.\u64cd\u4f5c\u7cfb\u7edf\u7684\u5bff\u547d\u8d85\u8fc7\u5ba2\u6237\u7684\u9884\u671f\uff1b\n3.\u7b80\u5316\u8bbe\u5907\u5206\u53d1\uff0c\u7b80\u5316\u5e94\u7528\u90e8\u7f72\uff0c\u589e\u5f3a\u7528\u6237\u6355\u83b7\u6570\u636e\u548c\u534f\u4f5c\u7684\u65b9\u5f0f\uff1b\n4.\u52a0\u5f3a\u6bcf\u53f0\u8bbe\u5907\u7684\u5b89\u5168\u6027\u3002\n         \n\u4f7f\u7528UEE\u8fbe\u5230\u8d62\u5f97\u4e1a\u52a1\uff0c\u52a0\u6df1\u5173\u7cfb\uff0c\u589e\u52a0\u6536\u5165\u7684\u76ee\u7684\u3002"
+      }
+    ],
+    "images": [
+      {
+        "path": "assets/slide7_img1.png",
+        "width": 5926772,
+        "height": 4445079
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "number": 8,
+    "title": "",
+    "content": [
+      {
+        "type": "text",
+        "content": "\u4ece\u8fde\u63a5\u5230\u667a\u80fd\uff0c\u6784\u5efa\u4e00\u4f53\u5316\u7269\u8054\u7f51\u751f\u6001\u7cfb\u7edf"
+      },
+      {
+        "type": "text",
+        "content": "\u5e94\u7528\u670d\u52a1\n\u9002\u7528\u4e8e\u591a\u884c\u4e1a\u591a\u5e94\u7528\u573a\u666f\n\u4e0e\u5408\u4f5c\u4f19\u4f34\u5171\u5efa\u6570\u5b57\u5316\u751f\u6001"
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": "\u4e91\u751f\u6001\nUEE\u751f\u6001\u4e91\u4e2d\u5fc3\uff0c\u6784\u5efa\n\u751f\u6001\u5168\u94fe\u63a5\uff0c\u8d4b\u80fd\u5408\u4f5c\u4f19\u4f34"
+      },
+      {
+        "type": "text",
+        "content": "UEE\u4e91\u751f\u6001\u4e2d\u5fc3"
+      },
+      {
+        "type": "text",
+        "content": "\u884c\u4e1a\u5e94\u7528\u5e02\u573a"
+      },
+      {
+        "type": "text",
+        "content": "UMS\u8fdc\u7a0b\u7ba1\u7406\u5e73\u53f0"
+      },
+      {
+        "type": "text",
+        "content": "\u4f01\u4e1a\u7ea7OS"
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": "\u7ec8\u7aef\u670d\u52a1\n\u4e13\u4e1aIoT\u667a\u80fd\u7ec8\u7aef\uff0c\u63d0\u4f9b\n\u4e91\u7aef\u4e00\u4f53\u5316\u7684\u4fe1\u606f\u611f\u77e5\u91c7\u96c6\u548c\u8ba1\u7b97\u80fd\u529b"
+      },
+      {
+        "type": "text",
+        "content": "\u667a\u80fd\u6570\u636e\u7ec8\u7aef"
+      },
+      {
+        "type": "text",
+        "content": "\u667a\u80fd\u652f\u4ed8\u7ec8\u7aef"
+      },
+      {
+        "type": "text",
+        "content": "\u4e13\u7528\u6253\u5370\u673a"
+      },
+      {
+        "type": "text",
+        "content": "\u667a\u80fd\u81ea\u52a8\u5316\u88c5\u5907"
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": "\u2026\u2026"
+      },
+      {
+        "type": "text",
+        "content": "\u4e13\u4e1a\u8bb8\u53ef\u5de5\u5177"
+      }
+    ],
+    "images": [
+      {
+        "path": "assets/slide8_img1.png",
+        "width": 7444107,
+        "height": 410211
+      },
+      {
+        "path": "assets/slide8_img2.png",
+        "width": 7444107,
+        "height": 819151
+      },
+      {
+        "path": "assets/slide8_img3.png",
+        "width": 7444107,
+        "height": 950595
+      },
+      {
+        "path": "assets/slide8_img4.png",
+        "width": 7444107,
+        "height": 278766
+      },
+      {
+        "path": "assets/slide8_img5.png",
+        "width": 474981,
+        "height": 474981
+      },
+      {
+        "path": "assets/slide8_img6.png",
+        "width": 280036,
+        "height": 336551
+      },
+      {
+        "path": "assets/slide8_img7.png",
+        "width": 7444107,
+        "height": 410210
+      },
+      {
+        "path": "assets/slide8_img8.png",
+        "width": 7444107,
+        "height": 819151
+      },
+      {
+        "path": "assets/slide8_img9.png",
+        "width": 685166,
+        "height": 969011
+      },
+      {
+        "path": "assets/slide8_img10.png",
+        "width": 869951,
+        "height": 1022351
+      },
+      {
+        "path": "assets/slide8_img11.png",
+        "width": 719456,
+        "height": 995046
+      },
+      {
+        "path": "assets/slide8_img12.png",
+        "width": 555626,
+        "height": 598171
+      },
+      {
+        "path": "assets/slide8_img13.png",
+        "width": 377825,
+        "height": 864871
+      },
+      {
+        "path": "assets/slide8_img14.png",
+        "width": 1155701,
+        "height": 878841
+      },
+      {
+        "path": "assets/slide8_img15.png",
+        "width": 1355726,
+        "height": 1141731
+      },
+      {
+        "path": "assets/slide8_img16.png",
+        "width": 1579246,
+        "height": 1278890
+      },
+      {
+        "path": "assets/slide8_img17.png",
+        "width": 1160146,
+        "height": 681356
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "number": 9,
+    "title": "",
+    "content": [
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": "\u8bbe\u5907\u5f00\u53d1"
+      },
+      {
+        "type": "text",
+        "content": "UEE\u751f\u6001\u4e91\u4e2d\u5fc3\uff0c\u6784\u5efa\u751f\u6001\u5168\u94fe\u63a5"
+      },
+      {
+        "type": "text",
+        "content": "\u5408\u4f5c\u4f19\u4f34\u751f\u6001"
+      },
+      {
+        "type": "text",
+        "content": "USDK\n\u5f00\u53d1\u8005\u6587\u6863"
+      },
+      {
+        "type": "text",
+        "content": "EnterpriseOS\n\u4f01\u4e1a\u7ea7OS"
+      },
+      {
+        "type": "text",
+        "content": "OTA\n\u56fa\u4ef6\u5347\u7ea7"
+      },
+      {
+        "type": "text",
+        "content": "APP Store \n\u5e94\u7528\u5e02\u573a"
+      },
+      {
+        "type": "text",
+        "content": "\u5408\u4f5c\u4f19\u4f34\u5e94\u7528(10000+\u4e3b\u6d41\u5e94\u7528)"
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": "\u8bbe\u5907\u7ba1\u7406"
+      },
+      {
+        "type": "text",
+        "content": "UFS\n\u5feb\u901f\u5b9a\u5236\u5de5\u5177"
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": "\u7cfb\u7edf\u5de5\u5177"
+      },
+      {
+        "type": "text",
+        "content": "AutoInstall\n\u81ea\u52a8\u5b89\u88c5APP"
+      },
+      {
+        "type": "text",
+        "content": "U Stage\n\u540c\u6b65\u8bbe\u7f6eAPP"
+      },
+      {
+        "type": "text",
+        "content": "WiFi Diagnostics\nWIFI\u8bca\u65ad"
+      },
+      {
+        "type": "text",
+        "content": "Hardware Detection\n\u786c\u4ef6\u68c0\u6d4b"
+      },
+      {
+        "type": "text",
+        "content": "UWB\n\u5ba4\u5185\u5398\u7c73\u7ea7\u5b9a\u4f4d"
+      },
+      {
+        "type": "text",
+        "content": "OCR\n\u6587\u5b57\u8bc6\u522b"
+      },
+      {
+        "type": "text",
+        "content": "U-Talking\n\u7f51\u7edc\u5bf9\u8bb2\u8f6f\u4ef6"
+      },
+      {
+        "type": "text",
+        "content": "Identification\n\u8eab\u4efd\u8bc1\u8bc6\u522b"
+      },
+      {
+        "type": "text",
+        "content": "Online Scanning\n\u5728\u7ebf\u626b\u63cf"
+      },
+      {
+        "type": "text",
+        "content": "Velocity TE(Telnet)\n\u5b89\u5353\u7248\u672c\u4eff\u771f\u7ec8\u7aef"
+      },
+      {
+        "type": "text",
+        "content": "UDIdemo\n\u533b\u7597\u5668\u68b0\u8d4b\u7801\u8ffd\u6eaf"
+      },
+      {
+        "type": "text",
+        "content": "\u8bbe\u7f6e\u7c7b\u5de5\u5177"
+      },
+      {
+        "type": "text",
+        "content": "Battery monitor\n\u7535\u6c60\u7ba1\u7406"
+      },
+      {
+        "type": "text",
+        "content": "Log Capture\nLog\u65e5\u5fd7\u6293\u53d6"
+      },
+      {
+        "type": "text",
+        "content": "\u8bca\u65ad\u7c7b\u5de5\u5177"
+      },
+      {
+        "type": "text",
+        "content": "\u5b9e\u7528\u578b\u5de5\u5177"
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": "Feature Settings\n\u7cfb\u7edf\u7279\u8272\u8bbe\u7f6e"
+      },
+      {
+        "type": "text",
+        "content": "ScanWedge\n\u626b\u7801\u8bbe\u7f6e"
+      },
+      {
+        "type": "text",
+        "content": "Key Mapping\n\u6309\u952e\u6620\u5c04"
+      },
+      {
+        "type": "text",
+        "content": "RFIDWedge\nRFID\u8bbe\u7f6e"
+      },
+      {
+        "type": "text",
+        "content": "Enterprise Launcher\n\u4f01\u4e1a\u6a21\u5f0f"
+      },
+      {
+        "type": "text",
+        "content": "Software HUB\n\u5feb\u901f\u914d\u7f6e\u5de5\u5177"
+      },
+      {
+        "type": "text",
+        "content": "UROVO UMS\n\u8fdc\u7a0b\u8bbe\u5907\u7ba1\u7406\u5e73\u53f0"
+      },
+      {
+        "type": "text",
+        "content": "UTMS\n\u667a\u80fd\u652f\u4ed8\u7ec8\u7aef\u7ba1\u7406\u5e73\u53f0"
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": "KMS\n\u79d8\u94a5\u7ba1\u7406\u7cfb\u7edf"
+      },
+      {
+        "type": "text",
+        "content": "Scanning\u00a0Dial/SMS\u00a0\n\u5feb\u9012\u4e91\u52a9\u624b"
+      },
+      {
+        "type": "text",
+        "content": "Velocity WEB  \u5de5\u4e1a\u6d4f\u89c8\u5668"
+      }
+    ],
+    "images": [
+      {
+        "path": "assets/slide9_img1.png",
+        "width": 994411,
+        "height": 398146
+      },
+      {
+        "path": "assets/slide9_img2.png",
+        "width": 443231,
+        "height": 443866
+      },
+      {
+        "path": "assets/slide9_img3.png",
+        "width": 457836,
+        "height": 414656
+      },
+      {
+        "path": "assets/slide9_img4.png",
+        "width": 396241,
+        "height": 358141
+      },
+      {
+        "path": "assets/slide9_img5.png",
+        "width": 393066,
+        "height": 354966
+      },
+      {
+        "path": "assets/slide9_img6.png",
+        "width": 393066,
+        "height": 354966
+      },
+      {
+        "path": "assets/slide9_img7.png",
+        "width": 405131,
+        "height": 366396
+      },
+      {
+        "path": "assets/slide9_img8.png",
+        "width": 396241,
+        "height": 358141
+      },
+      {
+        "path": "assets/slide9_img9.png",
+        "width": 396241,
+        "height": 358141
+      },
+      {
+        "path": "assets/slide9_img10.png",
+        "width": 393066,
+        "height": 354966
+      },
+      {
+        "path": "assets/slide9_img11.png",
+        "width": 393066,
+        "height": 354966
+      },
+      {
+        "path": "assets/slide9_img12.png",
+        "width": 400686,
+        "height": 361951
+      },
+      {
+        "path": "assets/slide9_img13.png",
+        "width": 393066,
+        "height": 354966
+      },
+      {
+        "path": "assets/slide9_img14.png",
+        "width": 400686,
+        "height": 361951
+      },
+      {
+        "path": "assets/slide9_img15.png",
+        "width": 393066,
+        "height": 354966
+      },
+      {
+        "path": "assets/slide9_img16.png",
+        "width": 393066,
+        "height": 354966
+      },
+      {
+        "path": "assets/slide9_img17.png",
+        "width": 393066,
+        "height": 354966
+      },
+      {
+        "path": "assets/slide9_img18.png",
+        "width": 397511,
+        "height": 359411
+      },
+      {
+        "path": "assets/slide9_img19.png",
+        "width": 354331,
+        "height": 354331
+      },
+      {
+        "path": "assets/slide9_img20.png",
+        "width": 366170,
+        "height": 366170
+      },
+      {
+        "path": "assets/slide9_img21.png",
+        "width": 988255,
+        "height": 341588
+      },
+      {
+        "path": "assets/slide9_img22.tiff",
+        "width": 370837,
+        "height": 370837
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "number": 10,
+    "title": "",
+    "content": [
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": "\u201c"
+      },
+      {
+        "type": "text",
+        "content": "\u201d"
+      },
+      {
+        "type": "text",
+        "content": "Enterprise Launcher\u4f01\u4e1a\u6a21\u5f0f\n\u4f01\u4e1a\u684c\u9762\u53ef\u4ee5\u8f7b\u677e\u5730\u5c06\u9650\u5236\u8bbe\u5907\u4e3a\u4e00\u4e2a\u6216\u591a\u4e2a\u6307\u5b9a\u7684\u5e94\u7528\n\u7a0b\u5e8f\u4f7f\u7528,\u529f\u80fd\u7f29\u51cf\u7248\u7684\u672c\u5730MDM\u3001MAM\uff0c\u62e5\u6709\u90e8\u5206\u5b89\u5353\n\u6743\u9650\u3002"
+      }
+    ],
+    "images": [
+      {
+        "path": "assets/slide10_img1.png",
+        "width": 1816101,
+        "height": 3632201
+      },
+      {
+        "path": "assets/slide10_img2.tiff",
+        "width": 838201,
+        "height": 838201
+      },
+      {
+        "path": "assets/slide10_img3.png",
+        "width": 1815609,
+        "height": 3631216
+      },
+      {
+        "path": "assets/slide10_img4.png",
+        "width": 2042560,
+        "height": 4085119
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "number": 11,
+    "title": "",
+    "content": [
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": "U Stage \u540c\u6b65\u52a9\u624b\nU Stage (\u540c\u6b65\u52a9\u624b)  \u63d0\u4f9b\u7ed9\u4f01\u4e1aIT\u7ba1\u7406\u5458\u3001\u4ee3\u7406\u5546\u505a\u5feb\u901f\u8bbe\n\u5907\u914d\u7f6e\u540c\u6b65\uff0c\u6309\u7167\u4f01\u4e1a\u9700\u6c42\u505a\u597d\u7b2c\u4e00\u53f0\u8bbe\u5907\u914d\u7f6e\u540e\uff0c\u5176\u4ed6\u8bbe\n\u5907\u5373\u53ef\u901a\u8fc7\u7b80\u5355\u7684\u65b9\u5f0f\uff0c\u5feb\u901f\u540c\u6b65\u914d\u7f6e\u3002\u8ba9\u6d77\u91cf\u8bbe\u5907\u7b80\u5355\u5feb\n\u901f\u5730\u8fbe\u5230\u5de5\u4f5c\u72b6\u6001\uff0c\u65b9\u4fbf\u4f01\u4e1a\u7ba1\u63a7\uff0c\u540c\u65f6\u53ef\u51cf\u5c11\u4eba\u4e3a\u914d\u7f6e\u7684\n\u5931\u8bef\u3002"
+      },
+      {
+        "type": "text",
+        "content": "\u201c"
+      },
+      {
+        "type": "text",
+        "content": "\u201d"
+      }
+    ],
+    "images": [
+      {
+        "path": "assets/slide11_img1.png",
+        "width": 1000385,
+        "height": 980131
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "number": 12,
+    "title": "",
+    "content": [
+      {
+        "type": "text",
+        "content": "RFIDWedge\u81ea\u5b9a\u4e49RFID\u8bbe\u7f6e"
+      },
+      {
+        "type": "text",
+        "content": "RFIDWedge\u652f\u6301\u6807\u7b7e\u6570\u636e\u683c\u5f0f\u5316\u3001\u53ef\u914d\u7f6e\u6807\u7b7e\u8f93\u51fa\u65b9\u5f0f\u3001\u81ea\u5b9a\u4e49rfid\u6309\u952e\u53ca\u89e6\u53d1\u6a21\u5f0f\u3001\u53ef\u5173\u8054\u5e94\u7528\uff0c\u4e0d\u540c\u5e94\u7528\u4e0d\u540c\u914d\u7f6e\u3001\u4e00\u4f53\u5f0fRFID\u8bbe\u5907\u3001\u53ef\u62c6\u5378RFID\u8bbe\u5907\u5747\u652f\u6301\u4f7f\u7528\u3002"
+      },
+      {
+        "type": "text",
+        "content": "ScanWedge\u81ea\u5b9a\u4e49\u626b\u7801\u8bbe\u7f6e"
+      },
+      {
+        "type": "text",
+        "content": "ScanWedge(\u626b\u63cf\u6570\u636e\u8f6c\u6362\u5668)\u65e0\u9700\u7f16\u5199\u4efb\u4f55\u4ee3\u7801\uff0c\u5373\u53ef\u5c06\u626b\u63cf\u6570\u636e\u6309\u9700\u96c6\u6210\u5230\u5e94\u7528\u7a0b\u5e8f\u4e2d\u3002\u53ef\u4ece\u591a\u79cd\u8f93\u5165\u6e90(\u5982\u626b\u63cf\u5934\u3001\u6444\u50cf\u5934RFID\u7b49)\u83b7\u53d6\u6570\u636e\uff0c\u5e76\u4f7f\u7528\u7b80\u5355\u6216\u590d\u6742\u7684\u89c4\u5219\u8fdb\u884c\u6570\u636e\u5904\u7406\uff0c\u6700\u7ec8\u5c06\u6570\u636e\u8f93\u51fa\u5230\u4e1a\u52a1APP\u4e0a\u3002"
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": "1\u3001\u652f\u6301\u6807\u7b7e\u6570\u636e\u683c\u5f0f\u5316"
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": "3\u3001\u81ea\u5b9a\u4e49rfid\u6309\u952e\u53ca\u89e6\u53d1\u6a21\u5f0f"
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": "2\u3001\u53ef\u914d\u7f6e\u6807\u7b7e\u8f93\u51fa\u65b9\u5f0f"
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": "4\u3001\u53ef\u5173\u8054\u5e94\u7528\uff0c\u4e0d\u540c\u5e94\u7528\u4e0d\u540c\u914d\u7f6e"
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": "5\u3001\u4e00\u4f53\u5f0fRFID\u8bbe\u5907\u3001\u53ef\u62c6\u5378RFID\u8bbe\u5907\u5747\u652f\u6301\u4f7f\u7528"
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": "1\u3001\u6761\u7801\u683c\u5f0f\u5316"
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": "2\u3001\u4f01\u4e1a\u7279\u6b8a\u8bbe\u7f6e"
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": "3\u3001\u53ef\u914d\u7f6e\u4e0d\u540c\u7684\u626b\u7801\u9700\u6c42"
+      }
+    ],
+    "images": [
+      {
+        "path": "assets/slide12_img1.tiff",
+        "width": 838201,
+        "height": 838201
+      },
+      {
+        "path": "assets/slide12_img2.tiff",
+        "width": 838201,
+        "height": 838201
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "number": 13,
+    "title": "",
+    "content": [
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": "Scanning Dial/SMS  \u4e91\u62e8\u53f7"
+      },
+      {
+        "type": "text",
+        "content": "\u5927\u5927\u63d0\u9ad8\u6700\u540e\u4e00\u516c\u91cc\u914d\u9001\u7684\u6548\u7387\n\u626b\u7801\u62e8\u53f7\uff0c\u53ef\u5e94\u7528\u4e8e\u4e1a\u52a1\u5458\u4e0a\u95e8\u6d3e\u9001\u7b49\u573a\u666f\uff0c\u6bd4\u4f20\u7edf\n\u62e8\u53f7\u6548\u7387\u63d0\u9ad8\u6570\u767e\u500d\n\u6279\u91cf\u7fa4\u53d1\u77ed\u4fe1\uff0c\u53ef\u5e94\u7528\u4e8e\u7f51\u70b9\u3001\u9a7f\u7ad9\u7b49\u573a\u666f\uff0c\u6bd4\u4eba\u5de5\n\u7535\u8bdd/\u77ed\u4fe1\u6c9f\u901a\u6548\u7387\u63d0\u9ad8\u6570\u767e\u500d"
+      }
+    ],
+    "images": [
+      {
+        "path": "assets/slide13_img1.tiff",
+        "width": 838201,
+        "height": 838201
+      },
+      {
+        "path": "assets/slide13_img2.tiff",
+        "width": 1816101,
+        "height": 3632201
+      },
+      {
+        "path": "assets/slide13_img3.tiff",
+        "width": 1816101,
+        "height": 3669732
+      },
+      {
+        "path": "assets/slide13_img4.tiff",
+        "width": 2044701,
+        "height": 4089401
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "number": 14,
+    "title": "",
+    "content": [
+      {
+        "type": "text",
+        "content": "\u4e8c\u3001\u90e8\u95e8\u5176\u4ed6\u4e1a\u52a1\u8bb2\u89e3\n"
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": "\u4ea7\u54c1\u9700\u6c42"
+      },
+      {
+        "type": "text",
+        "content": "\u4ea7\u54c1\u4ea4\u4ed8"
+      },
+      {
+        "type": "text",
+        "content": "\u4ea7\u54c1\u91cf\u4ea7"
+      },
+      {
+        "type": "text",
+        "content": "\u4ea7\u54c1\u4ea4\u4ed8"
+      },
+      {
+        "type": "text",
+        "content": "\u4ea7\u54c1\u552e\u540e"
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": ""
+      }
+    ],
+    "images": [
+      {
+        "path": "assets/slide14_img1.tiff",
+        "width": 1692541,
+        "height": 360040
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "number": 15,
+    "title": "",
+    "content": [
+      {
+        "type": "text",
+        "content": "1\u3001\u90e8\u95e8\u5176\u4ed6\u4e1a\u52a1\u2014\u2014\u534f\u52a9\u8f6f\u4ef6\u4ea7\u54c1\u63a8\u5e7f"
+      },
+      {
+        "type": "text",
+        "content": "\u8fd0\u7ef4\u652f\u6491"
+      },
+      {
+        "type": "text",
+        "content": "\u4ea7\u54c1\u9500\u552e"
+      },
+      {
+        "type": "text",
+        "content": "\u4ea7\u54c1\u4e0a\u7ebf"
+      },
+      {
+        "type": "text",
+        "content": "\u4ea7\u54c1\u63a8\u5e7f"
+      },
+      {
+        "type": "text",
+        "content": "\u5e02\u573a\u53cd\u9988"
+      },
+      {
+        "type": "text",
+        "content": "\u6210\u672c\u6838\u7b97"
+      },
+      {
+        "type": "text",
+        "content": "\u5e02\u573a\u5b9a\u4ef7"
+      },
+      {
+        "type": "text",
+        "content": "\u4ea7\u54c1\u4f18\u5316"
+      },
+      {
+        "type": "text",
+        "content": "\u6280\u672f\u4fdd\u969c/\u4f7f\u7528\u6307\u5bfc"
+      }
+    ],
+    "images": [
+      {
+        "path": "assets/slide15_img1.png",
+        "width": 2210684,
+        "height": 2058572
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "number": 16,
+    "title": "",
+    "content": [
+      {
+        "type": "text",
+        "content": "2\u3001\u90e8\u95e8\u5176\u4ed6\u4e1a\u52a1\u2014\u2014IT\u4fe1\u606f\u5316"
+      },
+      {
+        "type": "text",
+        "content": "\u5bf9\u63a5\u6218\u7565\u652f\u6301\u8fd0\u8425\u670d\u52a1\u4e1a\u52a1"
+      },
+      {
+        "type": "text",
+        "content": "01"
+      },
+      {
+        "type": "text",
+        "content": "02"
+      },
+      {
+        "type": "text",
+        "content": "03"
+      },
+      {
+        "type": "text",
+        "content": "04"
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": ""
+      },
+      {
+        "type": "text",
+        "content": "IT\u4fe1\u606f\u5316\u6218\u7565\u89c4\u5212"
+      },
+      {
+        "type": "text",
+        "content": "\u516c\u53f8IT\u4fe1\u606f\u7cfb\u7edf\u89c4\u5212\n\nIT\u4fe1\u606f\u5316\u76f8\u5173\u7ba1\u7406\u89c4\u7ae0\u5236\u5ea6\u5efa\u7acb\n\nIT\u4fe1\u606f\u5316\u76f8\u5173\u8d44\u6e90\u50a8\u5907"
+      },
+      {
+        "type": "text",
+        "content": "\u4fe1\u606f\u5316\u7cfb\u7edf\u5b9e\u65bd\u53ca\u4f18\u5316"
+      },
+      {
+        "type": "text",
+        "content": "\u5404\u4e1a\u52a1\u4fe1\u606f\u5316\u7cfb\u7edf\u5bfc\u5165\u5b9e\u65bd\n\n\u4fe1\u606f\u5316\u9879\u76ee\u5b9e\u65bd\u8fc7\u7a0b\u7ba1\u7406\n\n\u4fe1\u606f\u5316\u76f8\u5173\u8d44\u6e90\u548c\u6587\u6863\u7ba1\u7406\u53ca\u7528\u6237\u57f9\n\n\u8bad\u7ba1\u7406\n\n\u76f8\u5173\u4e1a\u52a1\u7cfb\u7edf\u7684\u6301\u7eed\u4f18\u5316\u7ba1\u7406"
+      },
+      {
+        "type": "text",
+        "content": "IT\u57fa\u7840\u8bbe\u65bd\u8bbe\u5907\u7ba1\u7406"
+      },
+      {
+        "type": "text",
+        "content": "\u529e\u516c\u8bbe\u5907\u65e5\u5e38\u7ef4\u62a4\u7ba1\u7406\n\nIT\u57fa\u7840\u8bbe\u65bd\u8bbe\u5907\u65e5\u5e38\u7ef4\u62a4\u7ba1\u7406\n\nIT\u8d44\u4ea7\u7ba1\u7406"
+      },
+      {
+        "type": "text",
+        "content": "\u7f51\u7edc\u4e0e\u4fe1\u606f\u5b89\u5168\u7ba1\u7406"
+      },
+      {
+        "type": "text",
+        "content": "\u7f51\u7edc\u9632\u706b\u9632\u6bd2\n\n\u5404\u7c7b\u7528\u6237\u6743\u9650\u7ba1\u7406\n\n\u77e5\u8bc6\u4ea7\u6743\u53ca\u6587\u6863\u7b49\u52a0\u5bc6\u7ba1\u7406\n"
+      }
+    ],
+    "images": [],
+    "notes": ""
+  },
+  {
+    "number": 17,
+    "title": "",
+    "content": [
+      {
+        "type": "text",
+        "content": "Q & A"
+      }
+    ],
+    "images": [],
+    "notes": ""
+  },
+  {
+    "number": 18,
+    "title": "",
+    "content": [],
+    "images": [],
+    "notes": ""
+  }
+]

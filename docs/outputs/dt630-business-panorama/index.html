@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>优博讯业务全景认知图 · DT630</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1a1f2e;
+      --ink-soft: #5c6370;
+      --paper: #f7f4ef;
+      --card: #ffffff;
+      --line: #ddd6cb;
+      --a: #3d5a80;
+      --a-bg: #e8eef5;
+      --b: #2d6a4f;
+      --b-bg: #e8f3ec;
+      --c: #8b5a2b;
+      --c-bg: #f5ebe0;
+      --d: #6b4c9a;
+      --d-bg: #f0ebff;
+      --max: 680px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    @page { size: auto; margin: 0; }
+
+    body {
+      font-family: "DM Sans", "PingFang SC", sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.55;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .doc {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 20px 48px;
+    }
+
+    /* header */
+    .title-block {
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--ink);
+      margin-bottom: 28px;
+    }
+
+    .title-block h1 {
+      font-family: "Noto Serif SC", serif;
+      font-size: 1.65rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      line-height: 1.3;
+    }
+
+    .title-block .desc {
+      margin-top: 10px;
+      font-size: 0.875rem;
+      color: var(--ink-soft);
+    }
+
+    .product-strip {
+      margin-top: 16px;
+      padding: 14px 16px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      border-left: 4px solid var(--a);
+    }
+
+    .product-strip .label {
+      font-size: 0.7rem;
+      color: var(--ink-soft);
+      letter-spacing: 0.1em;
+    }
+
+    .product-strip .name {
+      font-family: "Noto Serif SC", serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin: 4px 0;
+    }
+
+    .product-strip .spec {
+      font-size: 0.78rem;
+      color: var(--ink-soft);
+    }
+
+    /* section */
+    .section {
+      margin-bottom: 32px;
+      break-inside: avoid;
+    }
+
+    .section-head {
+      margin-bottom: 14px;
+    }
+
+    .section-head .num {
+      font-family: "Noto Serif SC", serif;
+      font-size: 0.72rem;
+      color: var(--c);
+      letter-spacing: 0.15em;
+      font-weight: 700;
+    }
+
+    .section-head h2 {
+      font-family: "Noto Serif SC", serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-top: 4px;
+    }
+
+    .section-head p {
+      font-size: 0.78rem;
+      color: var(--ink-soft);
+      margin-top: 4px;
+    }
+
+    /* §1 vertical pipeline */
+    .v-pipe {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .v-step {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px 16px;
+      position: relative;
+    }
+
+    .v-step + .v-step { margin-top: 28px; }
+
+    .v-step::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: -28px;
+      width: 2px;
+      height: 28px;
+      background: var(--line);
+      transform: translateX(-50%);
+    }
+
+    .v-step:first-child::before { display: none; }
+
+    .v-step .tag {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      opacity: 0.65;
+    }
+
+    .v-step h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 4px 0 8px;
+    }
+
+    .v-step ul {
+      list-style: none;
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+    }
+
+    .v-step li { padding: 2px 0; }
+    .v-step li::before { content: "— "; color: var(--ink); }
+
+    .v-step .case {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--line);
+      font-size: 0.75rem;
+      color: var(--a);
+    }
+
+    .v-step.prod { border-top: 3px solid var(--a); background: var(--a-bg); }
+    .v-step.rd { border-top: 3px solid var(--b); background: var(--b-bg); }
+    .v-step.mkt { border-top: 3px solid var(--c); background: var(--c-bg); }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 14px;
+    }
+
+    .chips span {
+      font-size: 0.7rem;
+      padding: 4px 10px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--ink-soft);
+    }
+
+    /* §2 phases */
+    .phase-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .phase {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px 14px;
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .phase .code {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-align: center;
+      padding: 6px 0;
+      border-radius: 8px;
+    }
+
+    .phase:nth-child(1) .code { background: var(--a-bg); color: var(--a); }
+    .phase:nth-child(2) .code { background: var(--b-bg); color: var(--b); }
+    .phase:nth-child(3) .code { background: var(--c-bg); color: var(--c); }
+    .phase:nth-child(4) .code { background: var(--d-bg); color: var(--d); }
+
+    .phase h4 { font-size: 0.85rem; margin-bottom: 4px; }
+    .phase p { font-size: 0.75rem; color: var(--ink-soft); }
+    .phase .out { font-size: 0.72rem; margin-top: 6px; font-weight: 600; }
+
+    /* §3 roles */
+    .hub-card {
+      background: var(--ink);
+      color: #fff;
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .hub-card strong { font-size: 0.95rem; display: block; margin-bottom: 4px; }
+    .hub-card span { font-size: 0.75rem; opacity: 0.8; }
+
+    .role-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .role-item {
+      display: grid;
+      grid-template-columns: 32px 1fr;
+      gap: 10px;
+      padding: 10px 12px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+
+    .role-item .id {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--a);
+    }
+
+    .role-item .rt { font-size: 0.82rem; font-weight: 700; }
+    .role-item .rd { font-size: 0.72rem; color: var(--ink-soft); margin-top: 2px; }
+
+    .platform {
+      margin-top: 12px;
+      padding: 10px 12px;
+      background: var(--card);
+      border: 1px dashed var(--line);
+      border-radius: 10px;
+      font-size: 0.72rem;
+      color: var(--ink-soft);
+    }
+
+    .platform b { color: var(--ink); font-weight: 600; }
+
+    /* §4 gates */
+    .gate-flow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .gate-flow span {
+      flex: 1;
+      min-width: 56px;
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 8px 4px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .gate-flow span:last-child {
+      background: var(--d-bg);
+      border-color: var(--d);
+      color: var(--d);
+    }
+
+    .gate-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 8px;
+    }
+
+    .gate-card .badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: var(--d-bg);
+      color: var(--d);
+      margin-bottom: 6px;
+    }
+
+    .gate-card dl {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 4px 10px;
+      font-size: 0.75rem;
+    }
+
+    .gate-card dt { color: var(--ink-soft); }
+    .gate-card dd { color: var(--ink); }
+
+    .grade-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .grade-item {
+      padding: 10px 12px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font-size: 0.75rem;
+      color: var(--ink-soft);
+    }
+
+    .grade-item b {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--ink);
+      margin-bottom: 3px;
+    }
+
+    .footer {
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      font-size: 0.68rem;
+      color: #999;
+      text-align: center;
+    }
+
+    @media print {
+      html, body { margin: 0; padding: 0; background: var(--paper); }
+      .doc { max-width: var(--max); margin: 0 auto; padding: 28px 20px 48px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="doc">
+
+    <header class="title-block">
+      <h1>优博讯业务全景认知图</h1>
+      <p class="desc">描述产品从市场需求识别、研发验证、量产交付到生命周期管理的组织流程与协作关系。以 DT630 为示例产品贯穿各阶段。</p>
+      <div class="product-strip">
+        <div class="label">示例产品</div>
+        <div class="name">DT630</div>
+        <div class="spec">企业级智能手机 · 内置 UHF RFID · Android 15 · 5G · IP68</div>
+      </div>
+    </header>
+
+    <!-- 壹 -->
+    <section class="section">
+      <div class="section-head">
+        <div class="num">壹</div>
+        <h2>产研销主链路</h2>
+        <p>产品价值从定义、实现到交付的依次流转</p>
+      </div>
+      <div class="v-pipe">
+        <div class="v-step prod">
+          <div class="tag">PRODUCT</div>
+          <h3>产 · 定义与立项</h3>
+          <ul>
+            <li>市场调研 · 竞品分析 · 立项论证</li>
+            <li>PRD / 体验设计 · 合规预研</li>
+            <li>CDCP 概念决策评审</li>
+          </ul>
+          <div class="case">DT630：定位 RFID + 5G 企业智能手机，内置 UHF 1.2m 批量识读</div>
+        </div>
+        <div class="v-step rd">
+          <div class="tag">R&amp;D</div>
+          <h3>研 · 实现与验证</h3>
+          <ul>
+            <li>硬件 / 软件 / 结构并行开发</li>
+            <li>EVT → DVT → PVT 逐级验证</li>
+            <li>PDCP / LRR 决策评审</li>
+          </ul>
+          <div class="case">DT630：8 核 + NPU · Android 15 · IP68 · RFID 引擎联调</div>
+        </div>
+        <div class="v-step mkt">
+          <div class="tag">DELIVERY</div>
+          <h3>销 · 量产与交付</h3>
+          <ul>
+            <li>量产导入 · 渠道与物料发布</li>
+            <li>订单履行 · 物流交付</li>
+            <li>售后体系 · 客诉与反馈闭环</li>
+          </ul>
+          <div class="case">DT630：RFID 盘点 · 物流揽派 · 医疗政务 NFC 等应用场景</div>
+        </div>
+      </div>
+      <div class="chips">
+        <span>策略中心</span>
+        <span>营销中心</span>
+        <span>产品部</span>
+        <span>移动产品事业部</span>
+        <span>行业应用事业部</span>
+        <span>市场部</span>
+        <span>工程部</span>
+        <span>供应链</span>
+        <span>制造交付</span>
+        <span>财务</span>
+        <span>客户服务中心</span>
+      </div>
+    </section>
+
+    <!-- 贰 -->
+    <section class="section">
+      <div class="section-head">
+        <div class="num">贰</div>
+        <h2>研发四阶段</h2>
+        <p>核心活动与阶段交付物</p>
+      </div>
+      <div class="phase-list">
+        <div class="phase">
+          <div class="code">EVT</div>
+          <div>
+            <h4>工程验证 · 原型样机</h4>
+            <p>核心原型 · PCB 布局 · 初版软件 · 基本功能验证</p>
+            <div class="out">交付物：可演示原型 · 功能清单</div>
+          </div>
+        </div>
+        <div class="phase">
+          <div class="code">DVT</div>
+          <div>
+            <h4>设计验证 · 工程样机</h4>
+            <p>模具试制 · 可靠性测试 · 系统集成 · 认证准备</p>
+            <div class="out">交付物：工程样机 · 测试报告 · 认证进度</div>
+          </div>
+        </div>
+        <div class="phase">
+          <div class="code">PVT</div>
+          <div>
+            <h4>生产验证 · 小批量</h4>
+            <p>试产跑线 · 制程验证 · 工装优化 · 良率提升</p>
+            <div class="out">交付物：小批量样机 · 产线一致性报告</div>
+          </div>
+        </div>
+        <div class="phase">
+          <div class="code">MP</div>
+          <div>
+            <h4>量产 · 正式上市</h4>
+            <p>规模化生产 · 质量管控 · 交付 · 售后支持</p>
+            <div class="out">交付物：量产机 · 规格书 · 产品资料</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 叁 -->
+    <section class="section">
+      <div class="section-head">
+        <div class="num">叁</div>
+        <h2>组织角色体系</h2>
+        <p>跨职能协作与职责划分</p>
+      </div>
+      <div class="hub-card">
+        <strong>产品全生命周期</strong>
+        <span>需求识别 → 方案实现 → 验证交付 → 持续迭代</span>
+      </div>
+      <div class="role-list">
+        <div class="role-item"><div class="id">A</div><div><div class="rt">产品经理 PM</div><div class="rd">产品规划 · 规格定义 · 上市策略</div></div></div>
+        <div class="role-item"><div class="id">B</div><div><div class="rt">项目经理 PjM</div><div class="rd">进度管控 · 跨部门协调 · 里程碑管理</div></div></div>
+        <div class="role-item"><div class="id">C</div><div><div class="rt">硬件 / 结构工程师</div><div class="rd">主板 · 天线 · 防护 · 模组集成</div></div></div>
+        <div class="role-item"><div class="id">D</div><div><div class="rt">软件工程师</div><div class="rd">系统平台 · 扫描/RFID 服务 · SDK</div></div></div>
+        <div class="role-item"><div class="id">E</div><div><div class="rt">质量 / 测试 TE</div><div class="rd">阶段测试 · 认证 · 缺陷管理</div></div></div>
+        <div class="role-item"><div class="id">F</div><div><div class="rt">NPI / 工程</div><div class="rd">样机制作 · 产线导入 · 制程优化</div></div></div>
+        <div class="role-item"><div class="id">G</div><div><div class="rt">运营 / 交付</div><div class="rd">供应链 · 生产计划 · 订单履行</div></div></div>
+        <div class="role-item"><div class="id">H</div><div><div class="rt">技术支持 FAE</div><div class="rd">方案评估 · 样机支持 · 实施与客诉处理</div></div></div>
+      </div>
+      <div class="platform">
+        <b>平台支撑：</b>人力资源 · 财务 · 法务 · 品牌市场 · IT · 资料库（file.urovo.com）
+      </div>
+    </section>
+
+    <!-- 肆 -->
+    <section class="section">
+      <div class="section-head">
+        <div class="num">肆</div>
+        <h2>质量门径与准出标准</h2>
+        <p>阶段评审节点与通过条件</p>
+      </div>
+      <div class="gate-flow">
+        <span>立项</span><span>EVT</span><span>DVT</span><span>PVT</span><span>MP</span>
+      </div>
+
+      <div class="gate-card">
+        <span class="badge">G1 · 立项</span>
+        <dl>
+          <dt>准出条件</dt><dd>市场需求确认 · 商业论证 · CDCP 通过</dd>
+          <dt>责任方</dt><dd>PM · 策略中心</dd>
+        </dl>
+      </div>
+      <div class="gate-card">
+        <span class="badge">G2 · EVT → DVT</span>
+        <dl>
+          <dt>准出条件</dt><dd>核心功能验证 · 硬件方案冻结 · 初版软件可演示</dd>
+          <dt>责任方</dt><dd>PM · 研发</dd>
+        </dl>
+      </div>
+      <div class="gate-card">
+        <span class="badge">G3 · DVT → PVT</span>
+        <dl>
+          <dt>准出条件</dt><dd>可靠性达标 · 认证进度明确 · 软件稳定性</dd>
+          <dt>责任方</dt><dd>TE · PM</dd>
+        </dl>
+      </div>
+      <div class="gate-card">
+        <span class="badge">G4 · PVT → MP</span>
+        <dl>
+          <dt>准出条件</dt><dd>试产良率达标 · 制程稳定 · LRR 通过</dd>
+          <dt>责任方</dt><dd>NPI · 供应链</dd>
+        </dl>
+      </div>
+      <div class="gate-card">
+        <span class="badge">G5 · 交付</span>
+        <dl>
+          <dt>准出条件</dt><dd>量产一致性 · 售后体系就绪 · 产品资料更新</dd>
+          <dt>责任方</dt><dd>客服中心 · 市场部</dd>
+        </dl>
+      </div>
+
+      <div class="grade-list">
+        <div class="grade-item"><b>A 类 · 战略新品</b>完整门径评审 · 全阶段 EVT/DVT/PVT（如 DT630）</div>
+        <div class="grade-item"><b>B 类 · 迭代改款</b>简化验证路径 · 复用既有平台</div>
+        <div class="grade-item"><b>C 类 · 定制变更</b>由行业应用事业部单独评估范围与周期</div>
+      </div>
+    </section>
+
+    <footer class="footer">优博讯 · 业务全景认知图 · DT630 示例 · 2026</footer>
+  </article>
+</body>
+</html>

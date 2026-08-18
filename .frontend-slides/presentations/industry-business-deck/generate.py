@@ -1,0 +1,891 @@
+#!/usr/bin/env python3
+"""Generate high-density industry-business-deck index.html."""
+
+import os
+
+OUT = os.path.dirname(os.path.abspath(__file__))
+VIEWPORT_CSS = open(
+    r"D:\Projects\urovo-training-site\.cursor\skills\frontend-slides\viewport-base.css",
+    encoding="utf-8",
+).read()
+
+slides = []
+
+def add(html, notes=""):
+    slides.append({"html": html, "notes": notes})
+
+# 1 — Cover
+add("""
+<section class="slide cover-slide active">
+  <div class="cover-deco"></div>
+  <div class="cover-dots"></div>
+  <div class="cover-inner">
+    <div class="accent-line reveal"></div>
+    <p class="cover-meta reveal">集训课件 · 深入业务篇</p>
+    <h1 class="cover-title reveal">行业应用事业部及业务流程</h1>
+    <p class="cover-sub reveal">讲师：赖铭</p>
+  </div>
+</section>
+""")
+
+# 2 — Vision & goals (merged)
+add("""
+<section class="slide content-slide">
+  <div class="slide-header reveal"><span class="eyebrow">先导：部门愿景目标</span><span class="tag-pill">01</span></div>
+  <div class="two-col reveal">
+    <div class="card-tinted">
+      <h3 class="card-h3">愿景</h3>
+      <p class="body-text">由软件驱动硬件</p>
+    </div>
+    <div class="card-tinted">
+      <h3 class="card-h3">目标</h3>
+      <ul class="compact-list">
+        <li>努力让公司没有难做的项目</li>
+        <li>打造几款优秀的软件产品</li>
+      </ul>
+    </div>
+  </div>
+</section>
+""")
+
+# 3 — Org
+add("""
+<section class="slide content-slide">
+  <div class="slide-header reveal"><span class="eyebrow">先导</span><span class="tag-pill">02</span></div>
+  <h2 class="slide-h2 reveal">部门组织架构</h2>
+  <div class="card-tinted reveal"><p class="body-text muted">（原课件为 SmartArt 组织架构图，请参考原始 PPT 附件）</p></div>
+</section>
+""")
+
+# 4 — Staff
+add("""
+<section class="slide content-slide">
+  <div class="slide-header reveal"><span class="eyebrow">先导</span><span class="tag-pill">03</span></div>
+  <h2 class="slide-h2 reveal">部门人员及分工</h2>
+  <div class="card-tinted reveal"><p class="body-text muted">（原课件为人员分工表，请参考原始 PPT 附件）</p></div>
+</section>
+""")
+
+# 5 — Main business + lifecycle + images
+add("""
+<section class="slide dense-slide">
+  <div class="slide-header reveal"><span class="eyebrow">一、部门主线业务讲解</span><span class="tag-pill">主线</span></div>
+  <div class="flow-tags reveal">
+    <span>产品需求</span><span>产品规划</span><span>产品开发</span><span>产品样机</span>
+    <span>产品推广</span><span>产品销售</span><span>产品交付</span><span>产品量产</span><span>产品售后</span>
+  </div>
+  <div class="dual-image reveal">
+    <div class="img-cell"><p class="img-caption">业务流程</p><img src="assets/slide5_img2.png" alt="业务流程图"></div>
+    <div class="img-cell"><p class="img-caption">DT50 移动数据终端是如何成为爆款的</p><img src="assets/slide5_img1.jpg" alt="DT50"></div>
+  </div>
+  <p class="footnote reveal">软件产品技术支持 · 软件产品规划、开发</p>
+</section>
+""")
+
+# 6 — Support flow (dense grid)
+add("""
+<section class="slide dense-slide">
+  <div class="slide-header reveal"><span class="eyebrow">软件产品技术支持 / 规划开发</span><span class="tag-pill">流程</span></div>
+  <div class="flow-grid reveal">
+    <div class="flow-col"><h4>需求入口</h4><ul><li>销售、客户需求</li><li>OA 或邮件接收信息</li><li>判断支持方式</li><li>远程 / 现场技术支持</li><li>需求讨论 · 合理性评估 · 需求文档</li></ul></div>
+    <div class="flow-col"><h4>项目启动</h4><ul><li>项目记录及启动</li><li>项目启动会议</li><li>项目需求确认</li><li>确定项目成员</li><li>客户需求 / 内部计划</li></ul></div>
+    <div class="flow-col"><h4>设计开发</h4><ul><li>概要设计 · 详细设计</li><li>需求评审</li><li>系统开发</li><li>系统测试</li><li>产品启动会 · 开发计划制定</li></ul></div>
+    <div class="flow-col"><h4>验收交付</h4><ul><li>系统验收</li><li>客户验收发布</li><li>客户确认完成支持</li><li>系统维护</li><li>开发项目转入项目部评估安排</li></ul></div>
+  </div>
+  <p class="footnote reveal">售前技术支持 · 项目实施支持 · 售中 / 售后全流程</p>
+</section>
+""")
+
+# 7 — UEE product
+add("""
+<section class="slide dense-slide">
+  <div class="slide-header reveal"><span class="eyebrow">二、部门主线业务：软件产品</span><span class="tag-pill">UEE</span></div>
+  <div class="split-dense reveal">
+    <div class="split-text">
+      <p class="body-text">UEE 是公司打造的跨平台、跨终端的软件合集及云服务平台，充分发挥云服务高效率、低成本的优势，助力企业加速业务创新和数字化转型。为行业客户及合作伙伴提供聚焦业务需求的行业整体解决方案。</p>
+      <h4 class="sub-h4">解决客户最关心的事</h4>
+      <ul class="compact-list two-col-list">
+        <li>大幅缩短设备适配上线的周期</li>
+        <li>操作系统的寿命超过客户的预期</li>
+        <li>简化设备分发与应用部署，增强数据采集和协作</li>
+        <li>加强每台设备的安全性</li>
+      </ul>
+      <div class="highlight-inline">使用 UEE 达到赢得业务、加深关系、增加收入的目的</div>
+    </div>
+    <div class="split-img"><img src="assets/slide7_img1.png" alt="UEE 平台"></div>
+  </div>
+</section>
+""")
+
+# 8 — IoT ecosystem
+add("""
+<section class="slide dense-slide">
+  <div class="slide-header reveal"><span class="eyebrow">物联网生态</span><span class="tag-pill">UEE</span></div>
+  <h2 class="slide-h2 sm reveal">从连接到智能，构建一体化物联网生态系统</h2>
+  <div class="stat-row four reveal">
+    <div class="stat-cell"><span class="stat-name">终端服务</span><span class="stat-desc">智能数据终端 · 智能支付终端 · 专用打印机 · 智能自动化装备 · 企业级 OS</span></div>
+    <div class="stat-cell"><span class="stat-name">云生态</span><span class="stat-desc">UEE 生态云中心 · UMS 远程管理平台 · 构建生态全链接</span></div>
+    <div class="stat-cell"><span class="stat-name">应用服务</span><span class="stat-desc">适用于多行业多应用场景 · 与合作伙伴共建数字化生态</span></div>
+    <div class="stat-cell"><span class="stat-name">行业应用市场</span><span class="stat-desc">专业许可工具 · 行业应用市场 · 合作伙伴生态</span></div>
+  </div>
+  <div class="image-frame sm reveal"><img src="assets/slide8_img2.png" alt="物联网生态架构"></div>
+</section>
+""")
+
+# 9 — UEE tools matrix
+add("""
+<section class="slide dense-slide">
+  <div class="slide-header reveal"><span class="eyebrow">UEE 生态工具矩阵</span><span class="tag-pill">生态</span></div>
+  <div class="tool-grid reveal">
+    <div class="tool-group"><h4>设备开发</h4><p>USDK · EnterpriseOS · OTA · APP Store · 合作伙伴应用 (10000+ 主流应用)</p></div>
+    <div class="tool-group"><h4>设备管理</h4><p>UFS 快速定制 · UROVO UMS · UTMS · KMS · Velocity WEB 工业浏览器</p></div>
+    <div class="tool-group"><h4>系统工具</h4><p>AutoInstall · U Stage · WiFi Diagnostics · Hardware Detection · UWB · OCR · U-Talking · Identification · Online Scanning · Velocity TE · UDIdemo</p></div>
+    <div class="tool-group"><h4>设置 / 诊断 / 实用</h4><p>Feature Settings · ScanWedge · Key Mapping · RFIDWedge · Enterprise Launcher · Software HUB · Battery monitor · Log Capture · Scanning Dial/SMS 快递云助手</p></div>
+  </div>
+  <div class="image-frame sm reveal"><img src="assets/slide9_img21.png" alt="UEE 工具矩阵"></div>
+</section>
+""")
+
+# 10 — Enterprise Launcher
+add("""
+<section class="slide dense-slide">
+  <div class="slide-header reveal"><span class="eyebrow">功能详解</span><span class="tag-pill">Enterprise Launcher</span></div>
+  <div class="split-dense reveal">
+    <div class="split-text">
+      <h2 class="slide-h2 sm">Enterprise Launcher 企业模式</h2>
+      <p class="body-text">企业桌面可以轻松地将限制设备为一个或多个指定的应用程序使用，功能缩减版本的本地 MDM、MAM，拥有部分安卓权限。</p>
+    </div>
+    <div class="split-img dual-sm"><img src="assets/slide10_img1.png" alt="Enterprise Launcher 1"><img src="assets/slide10_img3.png" alt="Enterprise Launcher 2"></div>
+  </div>
+</section>
+""")
+
+# 11 — U Stage
+add("""
+<section class="slide dense-slide">
+  <div class="slide-header reveal"><span class="eyebrow">功能详解</span><span class="tag-pill">U Stage</span></div>
+  <div class="split-dense reveal">
+    <div class="split-text">
+      <h2 class="slide-h2 sm">U Stage 同步助手</h2>
+      <p class="body-text">提供给企业 IT 管理员、代理商做快速设备配置同步。按照企业需求做好第一台设备配置后，其他设备即可通过简单的方式快速同步配置。让海量设备简单快速地达到工作状态，方便企业管控，同时可减少人为配置的失误。</p>
+    </div>
+    <div class="split-img"><img src="assets/slide11_img1.png" alt="U Stage"></div>
+  </div>
+</section>
+""")
+
+# 12 — RFID & ScanWedge
+add("""
+<section class="slide dense-slide">
+  <div class="slide-header reveal"><span class="eyebrow">功能详解</span><span class="tag-pill">RFID & Scan</span></div>
+  <div class="feature-dual reveal">
+    <div class="feature-block">
+      <h3 class="card-h3">RFIDWedge 自定义 RFID 设置</h3>
+      <p class="body-text sm">支持标签数据格式化、可配置标签输出方式、自定义 RFID 按键及触发模式、可关联应用，一体式 / 可拆卸 RFID 设备均支持。</p>
+      <ul class="compact-list"><li>支持标签数据格式化</li><li>可配置标签输出方式</li><li>自定义 RFID 按键及触发模式</li><li>可关联应用，不同应用不同配置</li><li>一体式 / 可拆卸 RFID 设备均支持</li></ul>
+      <img class="inline-img" src="assets/slide12_img1.png" alt="RFIDWedge">
+    </div>
+    <div class="feature-block">
+      <h3 class="card-h3">ScanWedge 自定义扫码设置</h3>
+      <p class="body-text sm">扫描数据转换器，无需编写代码即可将扫描数据按需集成到应用程序。可从扫描头、摄像头、RFID 等多种输入源获取数据。</p>
+      <ul class="compact-list"><li>条码格式化</li><li>企业特殊设置</li><li>可配置不同的扫码需求</li></ul>
+      <img class="inline-img" src="assets/slide12_img2.png" alt="ScanWedge">
+    </div>
+  </div>
+</section>
+""")
+
+# 13 — Cloud dial
+add("""
+<section class="slide dense-slide">
+  <div class="slide-header reveal"><span class="eyebrow">功能详解</span><span class="tag-pill">云拨号</span></div>
+  <div class="split-dense reveal">
+    <div class="split-text">
+      <h2 class="slide-h2 sm">Scanning Dial/SMS 云拨号</h2>
+      <p class="body-text">大大提高最后一公里配送的效率。扫码拨号，可应用于业务员上门派送等场景，比传统拨号效率提高数百倍。批量群发短信，可应用于网点、驿站等场景，比人工电话 / 短信沟通效率提高数百倍。</p>
+    </div>
+    <div class="split-img triple-sm">
+      <img src="assets/slide13_img2.png" alt="云拨号 1">
+      <img src="assets/slide13_img3.png" alt="云拨号 2">
+      <img src="assets/slide13_img4.png" alt="云拨号 3">
+    </div>
+  </div>
+</section>
+""")
+
+# 14 — Other business intro
+add("""
+<section class="slide dense-slide">
+  <div class="slide-header reveal"><span class="eyebrow">二、部门其他业务讲解</span><span class="tag-pill">其他</span></div>
+  <div class="flow-tags reveal">
+    <span>产品需求</span><span>产品交付</span><span>产品量产</span><span>产品售后</span>
+  </div>
+  <div class="image-frame sm reveal"><img src="assets/slide14_img1.png" alt="其他业务流程"></div>
+</section>
+""")
+
+# 15 — Promotion
+add("""
+<section class="slide dense-slide">
+  <div class="slide-header reveal"><span class="eyebrow">协助软件产品推广</span><span class="tag-pill">其他业务</span></div>
+  <div class="split-dense reveal">
+    <div class="split-text">
+      <h2 class="slide-h2 sm">部门其他业务 — 协助软件产品推广</h2>
+      <div class="flow-tags compact">
+        <span>产品上线</span><span>产品推广</span><span>产品销售</span><span>市场反馈</span>
+        <span>成本核算</span><span>市场定价</span><span>产品优化</span><span>技术保障 / 使用指导</span><span>运维支撑</span>
+      </div>
+    </div>
+    <div class="split-img"><img src="assets/slide15_img1.png" alt="推广流程"></div>
+  </div>
+</section>
+""")
+
+# 16 — IT
+add("""
+<section class="slide dense-slide">
+  <div class="slide-header reveal"><span class="eyebrow">IT 信息化</span><span class="tag-pill">其他业务</span></div>
+  <h2 class="slide-h2 sm reveal">对接战略支持运营服务业务</h2>
+  <div class="detail-grid reveal">
+    <div class="detail-block"><span class="detail-num">01</span><h4>IT 信息化战略规划</h4><p>公司 IT 信息系统规划 · IT 信息化相关管理规章制度建立 · IT 信息化相关资源储备</p></div>
+    <div class="detail-block"><span class="detail-num">02</span><h4>信息化系统实施及优化</h4><p>各业务信息化系统导入实施 · 信息化项目实施过程管理 · 资源文档管理及用户培训 · 相关业务系统持续优化</p></div>
+    <div class="detail-block"><span class="detail-num">03</span><h4>IT 基础设施设备管理</h4><p>办公设备日常维护管理 · IT 基础设施设备日常维护 · IT 资产管理</p></div>
+    <div class="detail-block"><span class="detail-num">04</span><h4>网络与信息安全管理</h4><p>网络防火防毒 · 各类用户权限管理 · 知识产权及文档等加密管理</p></div>
+  </div>
+</section>
+""")
+
+# 17 — Q&A
+add("""
+<section class="slide qa-slide">
+  <div class="closing-circles"></div>
+  <h1 class="qa-title reveal">Q & A</h1>
+  <p class="qa-sub reveal">感谢聆听</p>
+</section>
+""")
+
+total = len(slides)
+parts = []
+for i, s in enumerate(slides):
+    html = s["html"]
+    if i == 0:
+        if "active" not in html:
+            html = html.replace('class="slide', 'class="slide active')
+    else:
+        html = html.replace(" active", "")
+    if s["notes"]:
+        html = f"<!-- Speaker notes: {s['notes']} -->\n{html}"
+    parts.append(html)
+
+body_slides = "\n".join(parts)
+
+html_out = f"""<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>行业应用事业部及业务流程</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* === CSS CUSTOM PROPERTIES — BLUE PROFESSIONAL HIGH DENSITY === */
+:root {{
+    --stage-bg: #e8e4d8;
+    --slide-bg: #fdfae7;
+    --primary: #1e2bfa;
+    --text: #111111;
+    --text-muted: #6b6b6b;
+    --text-light: #9a9a9a;
+    --accent-light: rgba(30, 43, 250, 0.08);
+    --card-bg: rgba(30, 43, 250, 0.04);
+    --border: rgba(30, 43, 250, 0.2);
+    --font-display: 'Noto Sans SC', sans-serif;
+    --font-body: 'Noto Serif SC', serif;
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --duration-normal: 0.5s;
+    --pad-x: 64px;
+    --pad-y: 52px;
+}}
+
+/* === VIEWPORT BASE (MANDATORY) === */
+{VIEWPORT_CSS}
+
+* {{ margin: 0; padding: 0; box-sizing: border-box; }}
+
+.reveal {{
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity var(--duration-normal) var(--ease-out-expo),
+                transform var(--duration-normal) var(--ease-out-expo);
+}}
+.slide.visible .reveal {{ opacity: 1; transform: translateY(0); }}
+.reveal:nth-child(1) {{ transition-delay: 0.05s; }}
+.reveal:nth-child(2) {{ transition-delay: 0.12s; }}
+.reveal:nth-child(3) {{ transition-delay: 0.19s; }}
+.reveal:nth-child(4) {{ transition-delay: 0.26s; }}
+.reveal:nth-child(5) {{ transition-delay: 0.33s; }}
+
+.slide-header {{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+}}
+.eyebrow {{
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--primary);
+}}
+.tag-pill {{
+    padding: 6px 18px;
+    background: var(--accent-light);
+    color: var(--primary);
+    border-radius: 100px;
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 500;
+    flex-shrink: 0;
+}}
+.accent-line {{ width: 60px; height: 4px; background: var(--primary); border-radius: 2px; margin-bottom: 20px; }}
+
+.slide-h2 {{
+    font-family: var(--font-display);
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text);
+    margin-bottom: 20px;
+}}
+.slide-h2.sm {{ font-size: 34px; margin-bottom: 14px; }}
+.body-text {{
+    font-family: var(--font-body);
+    font-size: 21px;
+    line-height: 1.65;
+    color: var(--text-muted);
+}}
+.body-text.sm {{ font-size: 19px; line-height: 1.6; }}
+.body-text.muted {{ color: var(--text-light); }}
+.card-h3 {{
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 10px;
+}}
+.sub-h4 {{
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 14px 0 8px;
+}}
+.footnote {{
+    font-family: var(--font-display);
+    font-size: 16px;
+    color: var(--text-light);
+    margin-top: 10px;
+    flex-shrink: 0;
+}}
+
+.content-slide, .dense-slide {{
+    padding: var(--pad-y) var(--pad-x);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}}
+
+.card-tinted {{
+    background: var(--card-bg);
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 28px;
+}}
+.two-col {{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    flex: 1;
+}}
+.compact-list {{
+    list-style: none;
+}}
+.compact-list li {{
+    font-family: var(--font-body);
+    font-size: 20px;
+    line-height: 1.55;
+    color: var(--text-muted);
+    padding: 5px 0 5px 22px;
+    position: relative;
+}}
+.compact-list li::before {{
+    content: '';
+    position: absolute;
+    left: 0; top: 14px;
+    width: 7px; height: 7px;
+    background: var(--primary);
+    border-radius: 50%;
+}}
+.two-col-list {{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 16px;
+}}
+
+.flow-tags {{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+    flex-shrink: 0;
+}}
+.flow-tags span {{
+    padding: 7px 16px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-family: var(--font-display);
+    font-size: 17px;
+    color: var(--text);
+}}
+.flow-tags.compact span {{ font-size: 15px; padding: 5px 12px; }}
+
+.dual-image {{
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 16px;
+    flex: 1;
+    min-height: 0;
+}}
+.img-cell {{
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}}
+.img-caption {{
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+    flex-shrink: 0;
+}}
+.img-cell img, .image-frame img, .split-img img, .inline-img {{
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    object-fit: contain;
+    border-radius: 6px;
+}}
+
+.flow-grid {{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    flex: 1;
+    min-height: 0;
+}}
+.flow-col {{
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    overflow: hidden;
+}}
+.flow-col h4 {{
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+}}
+.flow-col ul {{ list-style: none; }}
+.flow-col li {{
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--text-muted);
+    padding: 4px 0;
+}}
+
+.split-dense {{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    flex: 1;
+    min-height: 0;
+    align-items: start;
+}}
+.split-img {{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 0;
+}}
+.split-img img {{ max-height: 780px; }}
+.split-img.dual-sm {{ flex-direction: row; gap: 10px; }}
+.split-img.dual-sm img {{ max-height: 420px; flex: 1; }}
+.split-img.triple-sm {{ flex-direction: row; gap: 8px; }}
+.split-img.triple-sm img {{ max-height: 380px; flex: 1; }}
+
+.highlight-inline {{
+    margin-top: 12px;
+    padding: 12px 16px;
+    background: var(--accent-light);
+    border-left: 4px solid var(--primary);
+    border-radius: 8px;
+    font-family: var(--font-display);
+    font-size: 18px;
+    color: var(--text);
+    line-height: 1.5;
+}}
+
+.stat-row.four {{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 12px;
+    flex-shrink: 0;
+}}
+.stat-cell {{
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 18px;
+}}
+.stat-name {{
+    display: block;
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 6px;
+}}
+.stat-desc {{
+    display: block;
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: var(--text-muted);
+    line-height: 1.5;
+}}
+
+.image-frame {{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+}}
+.image-frame.sm img {{ max-height: 420px; }}
+
+.tool-grid {{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-shrink: 0;
+}}
+.tool-group {{
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 16px;
+}}
+.tool-group h4 {{
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 6px;
+}}
+.tool-group p {{
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--text-muted);
+}}
+
+.feature-dual {{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    flex: 1;
+    min-height: 0;
+}}
+.feature-block {{
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}}
+.feature-block .compact-list {{ flex: 1; }}
+.feature-block .inline-img {{
+    max-height: 200px;
+    margin-top: 10px;
+    flex: 0 0 auto;
+}}
+
+.detail-grid {{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    flex: 1;
+}}
+.detail-block {{
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+    position: relative;
+    padding-left: 56px;
+}}
+.detail-num {{
+    position: absolute;
+    left: 16px; top: 18px;
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--primary);
+}}
+.detail-block h4 {{
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+}}
+.detail-block p {{
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--text-muted);
+}}
+
+/* === COVER === */
+.cover-slide {{
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}}
+.cover-deco {{
+    position: absolute;
+    right: 0; top: 0; bottom: 0;
+    width: 38%;
+    background: var(--accent-light);
+    clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+}}
+.cover-dots {{
+    position: absolute;
+    right: 100px; top: 100px;
+    width: 60px; height: 60px;
+    background-image: radial-gradient(circle, var(--primary) 3px, transparent 3px);
+    background-size: 16px 16px;
+    opacity: 0.25;
+}}
+.cover-inner {{ padding: var(--pad-y) var(--pad-x); position: relative; z-index: 2; }}
+.cover-meta {{ font-family: var(--font-display); font-size: 20px; color: var(--primary); margin-bottom: 16px; }}
+.cover-title {{ font-family: var(--font-display); font-size: 80px; font-weight: 700; line-height: 1.15; color: var(--text); margin-bottom: 32px; }}
+.cover-sub {{ font-family: var(--font-body); font-size: 30px; color: var(--text-muted); }}
+
+/* === Q&A === */
+.qa-slide {{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}}
+.closing-circles {{
+    position: absolute;
+    width: 480px; height: 480px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    opacity: 0.35;
+}}
+.closing-circles::after {{
+    content: '';
+    position: absolute;
+    inset: 65px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    opacity: 0.5;
+}}
+.qa-title {{ font-family: var(--font-display); font-size: 100px; font-weight: 700; color: var(--primary); position: relative; z-index: 2; }}
+.qa-sub {{ font-family: var(--font-body); font-size: 30px; color: var(--text-muted); margin-top: 16px; position: relative; z-index: 2; }}
+
+/* === DECK CHROME === */
+.progress-bar {{ position: fixed; bottom: 0; left: 0; height: 3px; background: var(--primary); transition: width 0.4s ease; z-index: 1000; }}
+.slide-counter {{ position: fixed; bottom: 24px; left: 28px; font-family: var(--font-display); font-size: 15px; color: var(--text-muted); z-index: 1000; }}
+.nav-controls {{ position: fixed; bottom: 18px; right: 28px; display: flex; gap: 10px; z-index: 1000; }}
+.nav-btn {{
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    border: 1.5px solid var(--border);
+    background: var(--slide-bg);
+    color: var(--primary);
+    font-size: 16px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+}}
+.nav-btn:hover {{ background: var(--primary); color: var(--slide-bg); }}
+.nav-btn:disabled {{ opacity: 0.3; cursor: default; }}
+.nav-btn:disabled:hover {{ background: var(--slide-bg); color: var(--primary); }}
+.nav-hint {{ position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); font-size: 13px; color: var(--text-light); z-index: 1000; }}
+
+.edit-hotzone {{ position: fixed; top: 0; left: 0; width: 80px; height: 80px; z-index: 10000; cursor: pointer; }}
+.edit-toggle {{
+    position: fixed; top: 14px; left: 14px;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 10001;
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    border: 1.5px solid var(--border);
+    background: var(--slide-bg);
+    cursor: pointer;
+}}
+.edit-toggle.show, .edit-toggle.active {{ opacity: 1; pointer-events: auto; }}
+[contenteditable="true"] {{ outline: 2px dashed var(--primary); outline-offset: 3px; }}
+</style>
+</head>
+<body>
+<div class="edit-hotzone" id="editHotzone"></div>
+<button class="edit-toggle" id="editToggle" title="编辑模式 (E)">✏️</button>
+<div class="deck-viewport">
+<main class="deck-stage" id="deckStage">
+{body_slides}
+</main>
+</div>
+<div class="progress-bar" id="progressBar"></div>
+<div class="slide-counter" id="slideCounter">1 / {total}</div>
+<div class="nav-hint">← → 或空格键翻页</div>
+<div class="nav-controls">
+<button class="nav-btn" id="prevBtn" aria-label="上一页">←</button>
+<button class="nav-btn" id="nextBtn" aria-label="下一页">→</button>
+</div>
+<script>
+class SlidePresentation {{
+    constructor() {{
+        this.slides = document.querySelectorAll('.slide');
+        this.total = this.slides.length;
+        this.current = 0;
+        this.stage = document.getElementById('deckStage');
+        this.progressBar = document.getElementById('progressBar');
+        this.counter = document.getElementById('slideCounter');
+        this.prevBtn = document.getElementById('prevBtn');
+        this.nextBtn = document.getElementById('nextBtn');
+        this.setupStageScale();
+        this.setupNav();
+        this.showSlide(0);
+    }}
+    setupStageScale() {{
+        const scale = () => {{
+            const f = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+            const x = (window.innerWidth - 1920 * f) / 2;
+            const y = (window.innerHeight - 1080 * f) / 2;
+            this.stage.style.transform = `translate(${{x}}px, ${{y}}px) scale(${{f}})`;
+        }};
+        scale();
+        window.addEventListener('resize', scale);
+    }}
+    setupNav() {{
+        this.prevBtn.addEventListener('click', () => this.prev());
+        this.nextBtn.addEventListener('click', () => this.next());
+        document.addEventListener('keydown', (e) => {{
+            if (e.target.getAttribute('contenteditable') === 'true') return;
+            if (['ArrowRight',' ','PageDown'].includes(e.key)) {{ e.preventDefault(); this.next(); }}
+            if (['ArrowLeft','PageUp'].includes(e.key)) {{ e.preventDefault(); this.prev(); }}
+            if (e.key === 'Home') {{ e.preventDefault(); this.showSlide(0); }}
+            if (e.key === 'End') {{ e.preventDefault(); this.showSlide(this.total - 1); }}
+        }});
+        let touchX = 0;
+        document.addEventListener('touchstart', (e) => {{ touchX = e.touches[0].clientX; }});
+        document.addEventListener('touchend', (e) => {{
+            const dx = e.changedTouches[0].clientX - touchX;
+            if (Math.abs(dx) > 50) dx < 0 ? this.next() : this.prev();
+        }});
+    }}
+    showSlide(i) {{
+        this.current = Math.max(0, Math.min(i, this.total - 1));
+        this.slides.forEach((s, idx) => {{
+            s.classList.toggle('active', idx === this.current);
+            s.classList.toggle('visible', idx === this.current);
+        }});
+        this.progressBar.style.width = ((this.current + 1) / this.total * 100) + '%';
+        this.counter.textContent = (this.current + 1) + ' / ' + this.total;
+        this.prevBtn.disabled = this.current === 0;
+        this.nextBtn.disabled = this.current === this.total - 1;
+    }}
+    next() {{ if (this.current < this.total - 1) this.showSlide(this.current + 1); }}
+    prev() {{ if (this.current > 0) this.showSlide(this.current - 1); }}
+}}
+class InlineEditor {{
+    constructor() {{
+        this.isActive = false;
+        this.toggle = document.getElementById('editToggle');
+        this.hotzone = document.getElementById('editHotzone');
+        this.storageKey = 'industry-business-deck-edits-v2';
+        this.hideTimeout = null;
+        this.setup();
+        this.load();
+    }}
+    setup() {{
+        this.toggle.addEventListener('click', () => this.toggleEditMode());
+        this.hotzone.addEventListener('click', () => this.toggleEditMode());
+        [this.hotzone, this.toggle].forEach(el => {{
+            el.addEventListener('mouseenter', () => {{ clearTimeout(this.hideTimeout); this.toggle.classList.add('show'); }});
+            el.addEventListener('mouseleave', () => {{
+                this.hideTimeout = setTimeout(() => {{ if (!this.isActive) this.toggle.classList.remove('show'); }}, 400);
+            }});
+        }});
+        document.addEventListener('keydown', (e) => {{
+            if ((e.key === 'e' || e.key === 'E') && e.target.getAttribute('contenteditable') !== 'true') this.toggleEditMode();
+            if (e.ctrlKey && e.key === 's') {{ e.preventDefault(); this.save(); }}
+        }});
+    }}
+    toggleEditMode() {{
+        this.isActive = !this.isActive;
+        this.toggle.classList.toggle('active', this.isActive);
+        document.querySelectorAll('.slide h1,.slide h2,.slide h3,.slide h4,.slide p,.slide li,.slide span').forEach(el => {{
+            if (this.isActive) el.setAttribute('contenteditable', 'true');
+            else el.removeAttribute('contenteditable');
+        }});
+    }}
+    save() {{
+        const data = {{}};
+        document.querySelectorAll('.slide').forEach((s, i) => {{ data[i] = s.innerHTML; }});
+        localStorage.setItem(this.storageKey, JSON.stringify(data));
+        alert('已保存到浏览器本地存储');
+    }}
+    load() {{
+        const raw = localStorage.getItem(this.storageKey);
+        if (!raw) return;
+        try {{
+            const data = JSON.parse(raw);
+            document.querySelectorAll('.slide').forEach((s, i) => {{ if (data[i]) s.innerHTML = data[i]; }});
+        }} catch(e) {{}}
+    }}
+}}
+new SlidePresentation();
+new InlineEditor();
+</script>
+</body>
+</html>
+"""
+
+with open(os.path.join(OUT, "index.html"), "w", encoding="utf-8") as f:
+    f.write(html_out)
+print(f"Generated {total} high-density slides")
