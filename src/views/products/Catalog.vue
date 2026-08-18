@@ -1,89 +1,95 @@
 <template>
-  <div class="catalog">
-    <header class="catalog-hero">
+  <div class="site-page catalog-page">
+    <header class="site-page-hero catalog-hero">
       <div>
+        <span class="site-page-eyebrow">{{ t('site.nav.products') }}</span>
         <h1>{{ t('catalog.title') }}</h1>
-        <p>{{ t('catalog.subtitle', { count: productCatalog.length }) }}</p>
+        <p>{{ t('catalog.subtitle') }}</p>
+        <p class="catalog-count">{{ t('catalog.subtitleCount', { count: productCatalog.length }) }}</p>
       </div>
-      <el-input
-        v-model="keyword"
-        :placeholder="t('catalog.searchPlaceholder')"
-        clearable
-        class="search"
-        :prefix-icon="Search"
-      />
     </header>
 
-    <div class="filter-bar">
-      <button
-        v-for="cat in productCategories"
-        :key="cat.id"
-        type="button"
-        class="filter-pill"
-        :class="{ active: activeCategory === cat.id }"
-        @click="setCategory(cat.id)"
-      >
-        {{ cat.title }}
-        <span class="pill-count">{{ countByCategory(cat.id) }}</span>
-      </button>
+    <div class="catalog-toolbar">
+      <div class="filter-bar">
+        <button
+          v-for="cat in productCategories"
+          :key="cat.id"
+          type="button"
+          class="filter-pill"
+          :class="{ active: activeCategory === cat.id }"
+          @click="setCategory(cat.id)"
+        >
+          {{ cat.title }}
+        </button>
+      </div>
+
+      <div class="catalog-search">
+        <input
+          v-model="keyword"
+          type="search"
+          class="catalog-search__input"
+          :placeholder="t('catalog.searchPlaceholder')"
+        />
+      </div>
     </div>
 
     <p v-if="resultHint" class="result-hint">{{ resultHint }}</p>
 
-    <TransitionGroup
-      v-if="filteredProducts.length"
-      name="grid"
-      tag="div"
-      class="product-grid"
-    >
+    <div v-if="filteredProducts.length" class="product-grid">
       <article
         v-for="item in filteredProducts"
         :key="item.id"
         class="product-card"
         @click="goDetail(item.id)"
       >
-        <div class="card-image">
+        <div class="product-card__image">
           <img
             :src="item.image"
             :alt="item.name"
             loading="lazy"
             decoding="async"
-            width="360"
-            height="270"
           />
-          <span class="card-badge">{{ getCategoryTitle(item.category) }}</span>
         </div>
-        <div class="card-content">
+        <div class="product-card__body">
+          <span class="product-card__cat">{{ getCategoryTitle(item.category) }}</span>
           <h3>{{ item.name }}</h3>
-          <p class="card-subtitle">{{ item.subtitle }}</p>
-          <p class="card-highlight">{{ item.highlight }}</p>
-          <span class="card-cta">{{ t('catalog.viewDetail') }}</span>
+          <p class="product-card__highlight">{{ item.highlight }}</p>
+          <span class="product-card__cta">{{ t('catalog.viewDetail') }}</span>
         </div>
       </article>
-    </TransitionGroup>
+    </div>
 
-    <el-empty v-else :description="t('catalog.notFound')" class="empty" />
+    <div v-else class="catalog-empty">
+      <p>{{ t('catalog.notFound') }}</p>
+    </div>
+
+    <div class="site-cta-band">
+      <div>
+        <h2>{{ t('catalog.ctaTitle') }}</h2>
+        <p>{{ t('catalog.ctaDesc') }}</p>
+      </div>
+      <a :href="contactSalesUrl" class="home-btn home-btn--primary" target="_blank" rel="noopener noreferrer">
+        {{ t('catalog.ctaButton') }}
+      </a>
+    </div>
   </div>
 </template>
 
 <script setup>
 import { ref, computed, watch, onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
-import { Search } from '@element-plus/icons-vue'
 import { useProductCatalog } from '@/composables/useProductCatalog'
+import { useSiteNavigation } from '@/composables/useSiteNavigation'
 import { useI18n } from '@/i18n'
 
 const router = useRouter()
 const route = useRoute()
 const { t } = useI18n()
 const { productCatalog, productCategories, getCategoryTitle } = useProductCatalog()
+const { contactSalesUrl } = useSiteNavigation()
+
 const keyword = ref('')
 const activeCategory = ref('all')
-
-function countByCategory(id) {
-  if (id === 'all') return productCatalog.value.length
-  return productCatalog.value.filter((p) => p.category === id).length
-}
 
 const filteredProducts = computed(() => {
   const kw = keyword.value.trim().toLowerCase()
@@ -131,63 +137,50 @@ watch(() => route.query.category, syncCategoryFromQuery)
 </script>
 
 <style scoped>
-.catalog {
-  max-width: var(--content-max);
-  margin: 0 auto;
-}
-
 .catalog-hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: var(--space-4);
-  margin-bottom: var(--space-6);
-  flex-wrap: wrap;
+  margin-bottom: 40px;
 }
 
-.catalog-hero h1 {
-  font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-text);
-  margin-bottom: var(--space-2);
-}
-
-.catalog-hero p {
-  font-size: var(--font-size-base);
+.catalog-count {
+  font-size: 14px;
   color: var(--color-text-muted);
+  margin-top: 8px;
 }
 
-.search {
-  width: min(100%, 280px);
-}
-
-/* Filter pills */
-.filter-bar {
+.catalog-toolbar {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-2);
-  margin-bottom: var(--space-5);
-  padding-bottom: var(--space-4);
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
   border-bottom: 1px solid var(--color-border);
 }
 
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+
 .filter-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-2) var(--space-4);
+  padding: 8px 16px;
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-full);
-  background: var(--color-bg-elevated);
-  font-family: inherit;
-  font-size: var(--font-size-sm);
+  border-radius: 4px;
+  background: #fff;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
   color: var(--color-text-secondary);
   cursor: pointer;
-  transition: all var(--duration-normal) var(--ease-out);
+  transition: border-color var(--transition-ui), color var(--transition-ui), background var(--transition-ui);
 }
 
 .filter-pill:hover {
-  border-color: var(--color-primary-muted);
+  border-color: var(--color-primary);
   color: var(--color-primary);
 }
 
@@ -195,163 +188,126 @@ watch(() => route.query.category, syncCategoryFromQuery)
   background: var(--color-primary);
   border-color: var(--color-primary);
   color: #fff;
-  box-shadow: var(--shadow-sm);
 }
 
-.pill-count {
-  font-size: var(--font-size-xs);
-  padding: 1px 7px;
-  border-radius: var(--radius-full);
-  background: var(--color-border-light);
+.catalog-search {
+  flex-shrink: 0;
+  width: min(100%, 280px);
+}
+
+.catalog-search__input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font: inherit;
+  font-size: 14px;
+  color: var(--color-navy);
+  background: #fff;
+  transition: border-color var(--transition-ui);
+}
+
+.catalog-search__input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.catalog-search__input::placeholder {
   color: var(--color-text-muted);
-  transition: background var(--duration-fast);
-}
-
-.filter-pill.active .pill-count {
-  background: rgba(255, 255, 255, 0.25);
-  color: #fff;
 }
 
 .result-hint {
-  font-size: var(--font-size-sm);
+  font-size: 13px;
   color: var(--color-text-muted);
-  margin: calc(-1 * var(--space-2)) 0 var(--space-4);
+  margin: -16px 0 24px;
 }
 
-/* Product grid */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: var(--space-4);
-  position: relative;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
 }
 
 .product-card {
-  background: var(--color-bg-elevated);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  overflow: hidden;
   cursor: pointer;
-  transition: transform var(--duration-fast) var(--ease-out),
-    box-shadow var(--duration-fast) var(--ease-out),
-    border-color var(--duration-fast);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 24px;
+  transition: border-color var(--transition-ui);
 }
 
 .product-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--color-primary-muted);
+  border-bottom-color: var(--color-primary);
 }
 
-.card-image {
-  position: relative;
+.product-card__image {
   aspect-ratio: 4/3;
-  background: linear-gradient(180deg, var(--color-primary-light) 0%, var(--color-bg) 100%);
+  background: var(--color-bg-subtle);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--space-3);
+  padding: 24px;
+  margin-bottom: 16px;
+  border-radius: var(--radius-card, 8px);
 }
 
-.card-image img {
+.product-card__image img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
 }
 
-.card-badge {
-  position: absolute;
-  top: var(--space-2);
-  left: var(--space-2);
-  font-size: var(--font-size-xs);
-  padding: 2px 8px;
-  background: rgba(255, 255, 255, 0.92);
-  color: var(--color-primary);
-  border-radius: var(--radius-full);
-  font-weight: var(--font-weight-medium);
-  border: 1px solid var(--color-primary-muted);
-}
-
-.card-content {
-  padding: var(--space-4);
-}
-
-.card-content h3 {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-primary);
-  margin-bottom: var(--space-1);
-}
-
-.card-subtitle {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-secondary);
-  line-height: var(--line-height-tight);
-  margin-bottom: var(--space-2);
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.card-highlight {
-  font-size: var(--font-size-xs);
+.product-card__cat {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: var(--color-text-muted);
-  line-height: var(--line-height-normal);
-  margin-bottom: var(--space-3);
+  margin-bottom: 6px;
+}
+
+.product-card__body h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  margin-bottom: 8px;
+}
+
+.product-card__highlight {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  margin-bottom: 12px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-.card-cta {
-  font-size: var(--font-size-sm);
+.product-card__cta {
+  font-size: 13px;
+  font-weight: 500;
   color: var(--color-primary);
-  font-weight: var(--font-weight-medium);
 }
 
-.empty {
-  padding: var(--space-12) 0;
+.catalog-empty {
+  padding: 64px 0;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 15px;
 }
 
-/* Grid filter animation */
-.grid-move,
-.grid-enter-active,
-.grid-leave-active {
-  transition: all var(--duration-normal) var(--ease-out);
-}
-
-.grid-enter-from {
-  opacity: 0;
-  transform: scale(0.94) translateY(12px);
-}
-
-.grid-leave-to {
-  opacity: 0;
-  transform: scale(0.94) translateY(-8px);
-}
-
-.grid-leave-active {
-  position: absolute;
-  width: calc((100% - 3 * var(--space-4)) / 4);
-}
-
-@media (max-width: 1200px) {
-  .grid-leave-active {
-    width: calc((100% - 2 * var(--space-4)) / 3);
+@media (max-width: 768px) {
+  .catalog-toolbar {
+    flex-direction: column;
   }
-}
 
-@media (max-width: 900px) {
-  .grid-leave-active {
-    width: calc((100% - var(--space-4)) / 2);
-  }
-}
-
-@media (max-width: 560px) {
-  .grid-leave-active {
+  .catalog-search {
     width: 100%;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>

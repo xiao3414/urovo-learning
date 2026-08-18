@@ -4,8 +4,20 @@
  */
 export const productTextEn = {
   dt630: {
-    subtitle: 'Enterprise smartphone · new benchmark for mobile work',
-    highlight: 'Android 15 · built-in UHF RFID · 50 MP · 5G',
+    positioning: 'Enterprise-grade smart mobile terminal',
+    subtitle: 'Enterprise smartphone · benchmark for frontline mobile work',
+    highlight: 'Android 15 · Built-in UHF RFID · 50 MP camera · 5G',
+    why: 'Combines smartphone usability with built-in UHF RFID, professional scanning, and 5G — for warehouse, logistics, and field operations without an external RFID sled.',
+    specs: [
+      { label: '处理器', value: '8-core 2.5 GHz · Dedicated AI NPU' },
+      { label: '系统', value: 'Android 15 (upgradable to Android 19)' },
+      { label: '屏幕', value: '6.58-inch 1080×2408 · 170.5×78.1×10.4 mm · 240 g' },
+      { label: '内存', value: '8+128 GB · Max 2 TB SD' },
+      { label: 'RFID', value: 'Built-in UHF · 1.2 m · ≥50 tags/sec · Gen2X' },
+      { label: '扫描', value: 'Rear professional scan engine · Instant scan-to-view · Green-dot aimer' },
+      { label: '防护', value: 'IP68 · 1.5 m drop (1.8 m with case)' },
+      { label: '电池', value: '4500 mAh removable' },
+    ],
     scenarios: [
       { title: 'RFID bulk count', desc: 'Built-in UHF — 1.2 m bulk read in warehouse, no sled required.' },
       { title: 'Premium last mile', desc: '5G + pro scan + camera — collect and deliver on one device.' },
@@ -58,6 +70,7 @@ export const productTextEn = {
     ],
   },
   'dt50-5g-harmony': {
+    name: 'DT50 5G',
     subtitle: 'OpenHarmony 5G mobile computer',
     highlight: 'OpenHarmony 5.0 · domestic platform · BeiDou · localized stack',
     scenarios: [
@@ -144,7 +157,7 @@ export const productTextEn = {
     scenarios: [
       { title: 'Production line', desc: 'Fixed station with scan trigger keys.' },
       { title: 'Quality station', desc: 'Photo, scan, and defect logging.' },
-      { title: 'Training kiosks', desc: 'Rugged tablet for shop-floor guides.' },
+      { title: 'Shop-floor guide kiosks', desc: 'Rugged tablet for shop-floor guides.' },
     ],
   },
   u2s: {
@@ -229,6 +242,7 @@ export const productTextEn = {
     ],
   },
   d81r: {
+    name: 'D81R Series',
     subtitle: 'Desktop RFID label printer',
     highlight: 'RFID encode-print · 203/300 DPI · smart calibration',
     scenarios: [
@@ -256,6 +270,7 @@ export const productTextEn = {
     ],
   },
   d7100: {
+    name: 'D7100 Series',
     subtitle: 'Thermal transfer desktop printer',
     highlight: '152 mm/s · 120 mm width · 200/300 DPI',
     scenarios: [

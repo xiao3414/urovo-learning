@@ -1,19 +1,26 @@
 import { computed } from 'vue'
 import { productCatalog, productCategories, getProductById as getById } from '@/data/products'
 import { productTextEn } from '@/i18n/products.en'
+import { productSpecsEn } from '@/i18n/productSpecs.en'
 import { useI18n, translateSpecLabel } from '@/i18n'
+import { translateSpecValue } from '@/i18n/specTranslate'
 import { useLocaleStore } from '@/stores/locale'
 
 function localizeProduct(product, locale) {
   if (!product || locale === 'zh') return product
   const en = productTextEn[product.id] || {}
+  const specsSource = en.specs || productSpecsEn[product.id] || product.specs
+  const hasEnSpecs = Boolean(en.specs || productSpecsEn[product.id])
   return {
     ...product,
+    name: en.name || product.name,
+    positioning: en.positioning || product.positioning,
+    why: en.why || product.why,
     subtitle: en.subtitle || product.subtitle,
     highlight: en.highlight || product.highlight,
-    specs: product.specs.map((s) => ({
+    specs: specsSource.map((s) => ({
       label: translateSpecLabel(s.label, locale),
-      value: s.value,
+      value: hasEnSpecs ? s.value : translateSpecValue(s.value),
     })),
     scenarios: en.scenarios || product.scenarios,
   }

@@ -1,385 +1,97 @@
 <template>
   <div class="home">
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <span class="hero-badge">{{ t('home.badge') }}</span>
-          <h1 v-html="t('home.title')" />
-          <p class="hero-desc">{{ t('home.desc', { count: productCount }) }}</p>
-          <div class="hero-actions">
-            <el-button type="primary" size="large" round @click="$router.push('/products')">
-              {{ t('home.browseCatalog') }}
-            </el-button>
-            <el-button size="large" round plain @click="startLearning">
-              {{ t('home.startLearning') }}
-            </el-button>
-            <el-button size="large" round plain @click="$router.push('/exam')">
-              {{ t('home.finalExam') }}
-            </el-button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section featured">
-      <div class="section-head">
-        <div>
-          <h2 class="section-title">{{ t('home.featuredTitle') }}</h2>
-          <p class="section-desc">{{ t('home.featuredDesc') }}</p>
-        </div>
-        <el-button type="primary" link @click="$router.push('/products')">
-          {{ t('home.viewAll', { count: productCount }) }}
-        </el-button>
-      </div>
-      <div class="featured-grid">
-        <article
-          v-for="item in featuredProducts"
-          :key="item.id"
-          class="featured-card"
-          @click="$router.push(`/products/${item.id}`)"
-        >
-          <div class="featured-img">
-            <img :src="item.image" :alt="item.name" loading="lazy" decoding="async" />
-          </div>
-          <div class="featured-body">
-            <span class="featured-cat">{{ getCategoryTitle(item.category) }}</span>
-            <h3>{{ item.name }}</h3>
-            <p>{{ item.subtitle }}</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section categories">
-      <h2 class="section-title">{{ t('home.categoryTitle') }}</h2>
-      <p class="section-desc">{{ t('home.categoryDesc') }}</p>
-      <div class="category-grid">
-        <button
-          v-for="cat in categoryShortcuts"
-          :key="cat.id"
-          type="button"
-          class="category-chip"
-          @click="$router.push({ path: '/products', query: { category: cat.id } })"
-        >
-          <span class="category-name">{{ cat.title }}</span>
-          <span class="category-count">{{ cat.count }}</span>
-        </button>
-      </div>
-    </section>
-
-    <section class="section modules">
-      <h2 class="section-title">{{ t('home.trainingTitle') }}</h2>
-      <p class="section-desc">{{ t('home.trainingDesc') }}</p>
-      <div class="module-grid">
-        <article
-          v-for="group in menuConfig.filter((g) => g.children || g.path)"
-          :key="group.id"
-          class="module-card"
-          @click="startGroup(group)"
-        >
-          <div class="module-icon">
-            <el-icon :size="26"><component :is="iconMap[group.icon]" /></el-icon>
-          </div>
-          <h3>{{ group.title }}</h3>
-          <p>{{ group.children ? t('home.subModules', { count: group.children.length }) : t('home.productsCount', { count: productCount }) }}</p>
-          <span class="module-link">{{ t('home.enter') }}</span>
-        </article>
-      </div>
-    </section>
+    <HomeHero :images="heroImages" />
+    <HomeFeatured
+      :products="featuredProducts"
+      :product-count="productCount"
+      :get-category-title="getCategoryTitle"
+    />
+    <HomePortfolio :categories="portfolioCategories" />
+    <HomeSolutions :items="industryCards" />
+    <HomeSoftware :items="softwareCards" />
+    <HomeWhy :items="whyItems" :showcase-image="whyShowcaseImage" />
+    <HomeContact :contact-url="contactSalesUrl" />
   </div>
 </template>
 
 <script setup>
 import { computed } from 'vue'
-import { useRouter } from 'vue-router'
-import { Box, Monitor, OfficeBuilding, ChatDotRound, Goods } from '@element-plus/icons-vue'
-import { useMenuConfig } from '@/composables/useMenuConfig'
+import HomeHero from '@/components/home/HomeHero.vue'
+import HomeFeatured from '@/components/home/HomeFeatured.vue'
+import HomePortfolio from '@/components/home/HomePortfolio.vue'
+import HomeSolutions from '@/components/home/HomeSolutions.vue'
+import HomeSoftware from '@/components/home/HomeSoftware.vue'
+import HomeWhy from '@/components/home/HomeWhy.vue'
+import HomeContact from '@/components/home/HomeContact.vue'
 import { useProductCatalog } from '@/composables/useProductCatalog'
+import { useHomeContent } from '@/composables/useHomeContent'
+import { useSiteNavigation } from '@/composables/useSiteNavigation'
 import { useI18n } from '@/i18n'
 
 const FEATURED_IDS = ['dt630', 'dt66', 'dt50-5g', 'rfg91', 'i9000s', 'k388-pro']
+const HERO_IDS = { main: 'dt630', secondaryA: 'rfg91', secondaryB: 'i9000s' }
 
-const router = useRouter()
-const { menuConfig, allPages } = useMenuConfig()
 const { productCatalog, productCount, getCategoryTitle, productCategories } = useProductCatalog()
+const { industries, software } = useHomeContent()
+const { contactSalesUrl } = useSiteNavigation()
 const { t } = useI18n()
-const iconMap = { Box, Monitor, OfficeBuilding, ChatDotRound, Goods }
+
+function findProduct(id) {
+  return productCatalog.value.find((p) => p.id === id)
+}
 
 const featuredProducts = computed(() =>
-  FEATURED_IDS.map((id) => productCatalog.value.find((p) => p.id === id)).filter(Boolean)
+  FEATURED_IDS.map((id) => findProduct(id)).filter(Boolean)
 )
 
-const categoryShortcuts = computed(() =>
+const heroImages = computed(() => ({
+  main: findProduct(HERO_IDS.main)?.imageDetail || findProduct(HERO_IDS.main)?.image || '',
+  secondaryA: findProduct(HERO_IDS.secondaryA)?.image || '',
+  secondaryB: findProduct(HERO_IDS.secondaryB)?.image || '',
+}))
+
+const portfolioCategories = computed(() =>
   productCategories.value
     .filter((c) => c.id !== 'all')
-    .map((c) => ({
-      ...c,
-      count: productCatalog.value.filter((p) => p.category === c.id).length,
-    }))
+    .map((c) => {
+      const products = productCatalog.value.filter((p) => p.category === c.id)
+      const representative = products[0]
+      return {
+        id: c.id,
+        title: c.title,
+        description: t(`home.portfolio.${c.id}`),
+        count: products.length,
+        image: representative?.image,
+      }
+    })
 )
 
-function startLearning() {
-  const trainingPage = allPages.value.find((p) => p.id === 'pda') || allPages.value[0]
-  if (trainingPage) router.push(trainingPage.path)
-}
+const industryCards = computed(() =>
+  industries.value.map((item) => ({
+    ...item,
+    image: findProduct(item.imageProductId)?.imageDetail || findProduct(item.imageProductId)?.image,
+  }))
+)
 
-function startGroup(group) {
-  if (group.path) {
-    router.push(group.path)
-    return
-  }
-  router.push(group.children[0].path)
-}
+const softwareCards = computed(() => software.value)
+
+const whyShowcaseImage = computed(() => {
+  const p = findProduct('dt630')
+  return p?.imageDetail || p?.image || ''
+})
+
+const whyItems = computed(() => [
+  { key: 'portfolio', index: '01', title: t('home.why.portfolio.title'), desc: t('home.why.portfolio.desc') },
+  { key: 'expertise', index: '02', title: t('home.why.expertise.title'), desc: t('home.why.expertise.desc') },
+  { key: 'solutions', index: '03', title: t('home.why.solutions.title'), desc: t('home.why.solutions.desc') },
+  { key: 'software', index: '04', title: t('home.why.software.title'), desc: t('home.why.software.desc') },
+  { key: 'apac', index: '05', title: t('home.why.apac.title'), desc: t('home.why.apac.desc') },
+])
 </script>
 
 <style scoped>
 .home {
-  max-width: var(--content-max);
-  margin: 0 auto;
-}
-
-.hero {
-  margin: calc(-1 * var(--space-6));
-  margin-bottom: var(--space-10);
-  padding: var(--space-10) var(--space-6);
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
-  color: #fff;
-}
-
-.hero-inner {
-  max-width: 720px;
-}
-
-.hero-copy {
-  flex: 1;
-  min-width: 280px;
-}
-
-.hero-badge {
-  display: inline-block;
-  padding: var(--space-1) var(--space-3);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-medium);
-  letter-spacing: 0.06em;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: var(--radius-full);
-  margin-bottom: var(--space-4);
-}
-
-.hero h1 {
-  font-size: clamp(1.75rem, 4vw, var(--font-size-2xl));
-  font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-tight);
-  margin-bottom: var(--space-4);
-}
-
-.hero-desc {
-  font-size: var(--font-size-md);
-  line-height: var(--line-height-normal);
-  opacity: 0.9;
-  max-width: 520px;
-  margin-bottom: var(--space-6);
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-3);
-}
-
-.hero-actions :deep(.el-button.is-plain) {
-  --el-button-bg-color: rgba(255, 255, 255, 0.12);
-  --el-button-border-color: rgba(255, 255, 255, 0.35);
-  --el-button-text-color: #fff;
-  --el-button-hover-bg-color: rgba(255, 255, 255, 0.22);
-  --el-button-hover-border-color: #fff;
-  --el-button-hover-text-color: #fff;
-}
-
-/* Sections */
-.section {
-  margin-bottom: var(--space-10);
-}
-
-.section-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: var(--space-4);
-  margin-bottom: var(--space-5);
-  flex-wrap: wrap;
-}
-
-.featured-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: var(--space-4);
-}
-
-.featured-card {
-  background: var(--color-bg-elevated);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform var(--duration-fast) var(--ease-out),
-    box-shadow var(--duration-fast) var(--ease-out),
-    border-color var(--duration-fast);
-}
-
-.featured-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--color-primary-muted);
-}
-
-.featured-img {
-  aspect-ratio: 4/3;
-  background: linear-gradient(180deg, var(--color-primary-light) 0%, var(--color-bg) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-3);
-}
-
-.featured-img img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-.featured-body {
-  padding: var(--space-3) var(--space-4) var(--space-4);
-}
-
-.featured-cat {
-  font-size: var(--font-size-xs);
-  color: var(--color-primary);
-  font-weight: var(--font-weight-medium);
-}
-
-.featured-body h3 {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text);
-  margin: var(--space-1) 0;
-}
-
-.featured-body p {
-  font-size: var(--font-size-xs);
-  color: var(--color-text-muted);
-  line-height: var(--line-height-tight);
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.category-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-3);
-}
-
-.category-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-2) var(--space-4);
-  background: var(--color-bg-elevated);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-full);
-  cursor: pointer;
-  font-family: inherit;
-  font-size: var(--font-size-sm);
-  color: var(--color-text-secondary);
-  transition: all var(--duration-fast) var(--ease-out);
-}
-
-.category-chip:hover {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-  background: var(--color-primary-light);
-}
-
-.category-count {
-  font-size: var(--font-size-xs);
-  background: var(--color-border-light);
-  padding: 2px 8px;
-  border-radius: var(--radius-full);
-  color: var(--color-text-muted);
-}
-
-.category-chip:hover .category-count {
-  background: rgba(0, 82, 217, 0.12);
-  color: var(--color-primary);
-}
-
-.module-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: var(--space-4);
-}
-
-.module-card {
-  background: var(--color-bg-elevated);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: var(--space-5);
-  cursor: pointer;
-  transition: all var(--duration-fast) var(--ease-out);
-  position: relative;
-}
-
-.module-card:hover {
-  border-color: var(--color-primary-muted);
-  box-shadow: var(--shadow-sm);
-  transform: translateY(-2px);
-}
-
-.module-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-md);
-  background: var(--color-primary-light);
-  color: var(--color-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: var(--space-3);
-}
-
-.module-card h3 {
-  font-size: var(--font-size-md);
-  font-weight: var(--font-weight-semibold);
-  margin-bottom: var(--space-1);
-}
-
-.module-card p {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-muted);
-}
-
-.module-link {
-  position: absolute;
-  right: var(--space-5);
-  bottom: var(--space-5);
-  font-size: var(--font-size-xs);
-  color: var(--color-primary);
-  opacity: 0;
-  transition: opacity var(--duration-fast);
-}
-
-.module-card:hover .module-link {
-  opacity: 1;
-}
-
-@media (max-width: 768px) {
-  .hero {
-    margin: calc(-1 * var(--space-4));
-    margin-bottom: var(--space-8);
-    padding: var(--space-8) var(--space-4);
-  }
+  width: 100%;
+  overflow-x: hidden;
 }
 </style>

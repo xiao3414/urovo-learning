@@ -10,8 +10,7 @@ function detectLocale() {
   } catch {
     /* ignore */
   }
-  const lang = typeof navigator !== 'undefined' ? navigator.language : 'en'
-  return lang.toLowerCase().startsWith('zh') ? 'zh' : 'en'
+  return 'en'
 }
 
 export const useLocaleStore = defineStore('locale', () => {

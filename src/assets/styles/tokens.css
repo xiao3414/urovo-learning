@@ -7,13 +7,14 @@
 
   /* Neutrals */
   --color-text: #1d2129;
-  --color-text-secondary: #606266;
+  --color-text-secondary: #64748b;
   --color-text-muted: #909399;
   --color-border: #e5e6eb;
   --color-border-light: #f0f2f5;
   --color-bg: #f5f7fa;
   --color-bg-elevated: #ffffff;
   --color-sidebar: #001529;
+  --color-navy: #001529;
 
   /* Typography */
   --font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
@@ -44,9 +45,9 @@
   --space-12: 48px;
 
   /* Radius & shadow */
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
   --radius-full: 999px;
   --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.06);
   --shadow-md: 0 4px 16px rgba(0, 82, 217, 0.08);
@@ -60,6 +61,7 @@
   /* Layout */
   --content-max: 1200px;
   --header-height: 56px;
+  --site-header-height: 68px;
 
   /* Element Plus bridge */
   --el-color-primary: var(--color-primary);

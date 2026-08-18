@@ -1,4 +1,4 @@
-import { computed } from 'vue'
+import { computed, unref } from 'vue'
 import * as zh from '@/data/trainingContent'
 import * as en from '@/i18n/content/trainingContent.en'
 import { useLocaleStore } from '@/stores/locale'
@@ -8,8 +8,9 @@ const packs = { zh, en }
 export function useTrainingContent(key) {
   const localeStore = useLocaleStore()
   return computed(() => {
+    const k = unref(key)
     const pack = packs[localeStore.locale] || packs.en
-    return pack[key]
+    return pack[k]
   })
 }
 

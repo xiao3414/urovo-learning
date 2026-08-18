@@ -165,7 +165,7 @@ export const productCatalog = [
     name: "DT50 5G（鸿蒙版）",
     subtitle: "开源鸿蒙 5G 智能终端",
     category: "pda",
-    image: `${import.meta.env.BASE_URL}products/dt50-5g-harmony.jpg`,
+    image: `${import.meta.env.BASE_URL}products/dt50-5g-harmony.webp`,
     highlight: "OpenHarmony 5.0 · 国产八核 · 单北斗 · 纯国产化",
     specs: [
       { label: "处理器", value: "国产八核 2.7GHz" },
