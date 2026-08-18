@@ -1,0 +1,31 @@
+---
+description: 每次改完代码自动 commit 并 push；保留可回退的提交历史
+alwaysApply: true
+---
+
+# Git 工作流（urovo-learning）
+
+## 提交与推送
+
+- 完成功能/修复后**默认立即 commit 并 push** 到 `origin/main`，除非用户明确说不要推送。
+- 每次 commit 只做一件事，写清楚 **why**（便于 `git revert`）。
+- 不要 `--force` push 到 `main`；不要 amend 已推送的 commit。
+
+## 便于回退的约定
+
+- 重要里程碑可在 push 后打 tag，例如：`git tag v1.0-apac-i18n && git push origin v1.0-apac-i18n`
+- 提交历史即回退清单；需要恢复旧版时优先用下面方式。
+
+## 回退方式（给用户参考）
+
+| 场景 | 命令 |
+|------|------|
+| 撤销**某一次**已推送的 commit（安全，保留历史） | `git revert <commit-hash>` 然后 push |
+| 本地回到某个旧版本看看 | `git checkout <commit-hash>` |
+| 让 main 回到某个旧 commit（需 force，慎用） | 先与用户确认，再 `git reset --hard <hash>` + `git push --force` |
+| 在 GitHub 上对比/下载旧版 | 仓库 → Commits → 点进 commit → Browse files |
+
+## 当前仓库
+
+- 远程：`https://github.com/xiao3414/urovo-learning.git`
+- 分支：`main`
