@@ -102,7 +102,7 @@ export default {
     yourAnswer: 'Your answer',
     correctAnswer: 'Correct answer',
     notAnswered: 'Not answered',
-    passMessage: 'Exam passed — progress saved!',
+    passMessage: 'Exam passed!',
     failMessage: 'Below pass score — review materials and retry',
   },
   categories: {

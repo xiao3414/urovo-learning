@@ -10,30 +10,12 @@
             <el-button type="primary" size="large" round @click="$router.push('/products')">
               {{ t('home.browseCatalog') }}
             </el-button>
-            <el-button size="large" round plain @click="continueLearning">
-              {{ lastPage ? t('home.continueLearning') : t('home.startLearning') }}
+            <el-button size="large" round plain @click="startLearning">
+              {{ t('home.startLearning') }}
             </el-button>
             <el-button size="large" round plain @click="$router.push('/exam')">
               {{ t('home.finalExam') }}
             </el-button>
-          </div>
-        </div>
-        <div class="hero-stats">
-          <div v-for="s in statItems" :key="s.label" class="stat-card">
-            <span class="stat-value">{{ s.value }}</span>
-            <span class="stat-label">{{ s.label }}</span>
-          </div>
-          <div class="progress-wrap">
-            <div class="progress-head">
-              <span>{{ t('nav.progress') }}</span>
-              <span>{{ progressStore.progressPercent }}%</span>
-            </div>
-            <el-progress
-              :percentage="progressStore.progressPercent"
-              :stroke-width="8"
-              :show-text="false"
-              color="#fff"
-            />
           </div>
         </div>
       </div>
@@ -113,13 +95,11 @@ import { useRouter } from 'vue-router'
 import { Box, Monitor, OfficeBuilding, ChatDotRound, Goods } from '@element-plus/icons-vue'
 import { useMenuConfig } from '@/composables/useMenuConfig'
 import { useProductCatalog } from '@/composables/useProductCatalog'
-import { useProgressStore } from '@/stores/progress'
 import { useI18n } from '@/i18n'
 
 const FEATURED_IDS = ['dt630', 'dt66', 'dt50-5g', 'rfg91', 'i9000s', 'k388-pro']
 
 const router = useRouter()
-const progressStore = useProgressStore()
 const { menuConfig, allPages } = useMenuConfig()
 const { productCatalog, productCount, getCategoryTitle, productCategories } = useProductCatalog()
 const { t } = useI18n()
@@ -138,19 +118,9 @@ const categoryShortcuts = computed(() =>
     }))
 )
 
-const statItems = computed(() => [
-  { label: t('home.modules'), value: progressStore.totalCount },
-  { label: t('home.completed'), value: progressStore.completedCount },
-  { label: t('home.productCatalog'), value: productCount },
-])
-
-const lastPage = computed(() =>
-  progressStore.lastVisited ? allPages.value.find((p) => p.id === progressStore.lastVisited) : null
-)
-
-function continueLearning() {
-  const target = lastPage.value || allPages.value[0]
-  if (target) router.push(target.path)
+function startLearning() {
+  const trainingPage = allPages.value.find((p) => p.id === 'pda') || allPages.value[0]
+  if (trainingPage) router.push(trainingPage.path)
 }
 
 function startGroup(group) {
@@ -178,11 +148,7 @@ function startGroup(group) {
 }
 
 .hero-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  gap: var(--space-8);
-  flex-wrap: wrap;
+  max-width: 720px;
 }
 
 .hero-copy {
@@ -231,49 +197,7 @@ function startGroup(group) {
   --el-button-hover-text-color: #fff;
 }
 
-.hero-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-3);
-  min-width: 280px;
-  flex: 0 1 360px;
-}
-
-.stat-card {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-md);
-  padding: var(--space-4);
-  text-align: center;
-  backdrop-filter: blur(4px);
-}
-
-.stat-value {
-  display: block;
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
-}
-
-.stat-label {
-  font-size: var(--font-size-xs);
-  opacity: 0.75;
-  margin-top: var(--space-1);
-}
-
-.progress-wrap {
-  grid-column: 1 / -1;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius-md);
-  padding: var(--space-3) var(--space-4);
-}
-
-.progress-head {
-  display: flex;
-  justify-content: space-between;
-  font-size: var(--font-size-xs);
-  opacity: 0.85;
-  margin-bottom: var(--space-2);
-}
-
+/* Sections */
 .section {
   margin-bottom: var(--space-10);
 }
@@ -456,11 +380,6 @@ function startGroup(group) {
     margin: calc(-1 * var(--space-4));
     margin-bottom: var(--space-8);
     padding: var(--space-8) var(--space-4);
-  }
-
-  .hero-stats {
-    width: 100%;
-    flex: 1 1 100%;
   }
 }
 </style>

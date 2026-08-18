@@ -124,7 +124,6 @@ function submitExam() {
   })
 
   if (passed.value) {
-    progressStore.markCompleted('exam')
     ElMessage.success(t('exam.passMessage'))
   } else {
     ElMessage.warning(t('exam.failMessage'))

@@ -5,13 +5,6 @@
         <h2>{{ content.title }}</h2>
         <p class="subtitle">{{ content.subtitle }}</p>
       </div>
-      <el-button
-        :type="progressStore.isCompleted(pageId) ? 'success' : 'primary'"
-        :icon="progressStore.isCompleted(pageId) ? CircleCheckFilled : CircleCheck"
-        @click="progressStore.toggleCompleted(pageId)"
-      >
-        {{ progressStore.isCompleted(pageId) ? t('training.completed') : t('training.markComplete') }}
-      </el-button>
     </div>
 
     <el-tabs v-model="activeTab" type="border-card">
@@ -92,10 +85,8 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import { CircleCheck, CircleCheckFilled } from '@element-plus/icons-vue'
+import { ref } from 'vue'
 import { ElMessage } from 'element-plus'
-import { useProgressStore } from '@/stores/progress'
 import { useI18n } from '@/i18n'
 
 const props = defineProps({
@@ -104,11 +95,8 @@ const props = defineProps({
   introLabel: { type: String, default: '' },
 })
 
-const progressStore = useProgressStore()
 const { t } = useI18n()
 const activeTab = ref('intro')
-
-onMounted(() => progressStore.visitPage(props.pageId))
 
 function copyText(text) {
   navigator.clipboard.writeText(text).then(() => ElMessage.success(t('training.copied')))

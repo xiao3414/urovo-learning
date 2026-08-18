@@ -102,7 +102,7 @@ export default {
     yourAnswer: '你的答案',
     correctAnswer: '正确答案',
     notAnswered: '未作答',
-    passMessage: '考试通过，已记录学习进度！',
+    passMessage: '考试通过！',
     failMessage: '未达及格线，建议复习后重考',
   },
   categories: {

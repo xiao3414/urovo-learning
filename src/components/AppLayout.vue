@@ -9,18 +9,6 @@
         </div>
       </div>
 
-      <div v-show="!collapsed" class="progress-card">
-        <div class="progress-label">
-          <span>{{ t('nav.progress') }}</span>
-          <span>{{ progressStore.completedCount }}/{{ progressStore.totalCount }}</span>
-        </div>
-        <el-progress
-          :percentage="progressStore.progressPercent"
-          :stroke-width="10"
-          :color="'var(--color-primary)'"
-        />
-      </div>
-
       <SidebarMenu :collapsed="collapsed" />
 
       <div class="sidebar-footer">
@@ -69,7 +57,6 @@ import { ref, computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { Fold, Expand } from '@element-plus/icons-vue'
 import SidebarMenu from './SidebarMenu.vue'
-import { useProgressStore } from '@/stores/progress'
 import { useMenuConfig } from '@/composables/useMenuConfig'
 import { useProductCatalog } from '@/composables/useProductCatalog'
 import { useI18n } from '@/i18n'
@@ -80,7 +67,6 @@ const Globe = {
 
 const collapsed = ref(false)
 const route = useRoute()
-const progressStore = useProgressStore()
 const { getPageTitle } = useMenuConfig()
 const { getProductById } = useProductCatalog()
 const { t, locale, setLocale } = useI18n()
@@ -134,19 +120,6 @@ const currentTitle = computed(() => {
   font-size: 12px;
   color: rgba(255, 255, 255, 0.65);
   margin-top: 2px;
-}
-
-.progress-card {
-  padding: 12px 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.progress-label {
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.75);
-  margin-bottom: 8px;
 }
 
 .sidebar-footer {
